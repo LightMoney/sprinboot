@@ -17,6 +17,7 @@
         <module name="springboot_security_oauth2" />
         <module name="springboot_aop" />
         <module name="springboot_fastdfs" />
+        <module name="redis_publish_subscriber" />
         <module name="swagger2" />
         <module name="springboot_redis" />
       </profile>
@@ -28,6 +29,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="rabbitmq_consumer" options="-parameters" />
+      <module name="redis_publish_subscriber" options="-parameters" />
       <module name="springboot_aop" options="-parameters" />
       <module name="springboot_fastdfs" options="-parameters" />
       <module name="springboot_mybatis_reverse" options="-parameters" />

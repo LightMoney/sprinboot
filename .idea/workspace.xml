@@ -2,37 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7231175b-37c5-4bf4-ab95-5e745b4b514d" name="Default" comment="更新websocket项目">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/websocket/src/main/java/cn/fan/websocket/web/DemoController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/websocket/src/main/resources/static/websocket.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redis_publish_subscriber/src/main/java/cn/fan/redis_publish_subscriber/config/RedisConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redis_publish_subscriber/src/main/java/cn/fan/redis_publish_subscriber/config/SubcriberConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redis_publish_subscriber/src/main/java/cn/fan/redis_publish_subscriber/publish/MessageSender.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redis_publish_subscriber/src/main/java/cn/fan/redis_publish_subscriber/receiver/MessageReceiver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redis_publish_subscriber/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rabbitmq_consumer/target/classes/cn/fan/RabbitmqConsumer.class" beforeDir="false" afterPath="$PROJECT_DIR$/rabbitmq_consumer/target/classes/cn/fan/RabbitmqConsumer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rabbitmq_consumer/target/classes/cn/fan/config/MessageListenerConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/rabbitmq_consumer/target/classes/cn/fan/config/MessageListenerConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rabbitmq_consumer/target/classes/cn/fan/receiver/DirectReceiver.class" beforeDir="false" afterPath="$PROJECT_DIR$/rabbitmq_consumer/target/classes/cn/fan/receiver/DirectReceiver.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rabbitmq_consumer/target/classes/cn/fan/receiver/FanoutReceiverA.class" beforeDir="false" afterPath="$PROJECT_DIR$/rabbitmq_consumer/target/classes/cn/fan/receiver/FanoutReceiverA.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rabbitmq_consumer/target/classes/cn/fan/receiver/FanoutReceiverB.class" beforeDir="false" afterPath="$PROJECT_DIR$/rabbitmq_consumer/target/classes/cn/fan/receiver/FanoutReceiverB.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rabbitmq_consumer/target/classes/cn/fan/receiver/FanoutReceiverC.class" beforeDir="false" afterPath="$PROJECT_DIR$/rabbitmq_consumer/target/classes/cn/fan/receiver/FanoutReceiverC.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rabbitmq_consumer/target/classes/cn/fan/receiver/ReceiverListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/rabbitmq_consumer/target/classes/cn/fan/receiver/ReceiverListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_aop/target/classes/cn/fan/aop/BrokerAspect.class" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_aop/target/classes/cn/fan/aop/BrokerAspect.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_security/target/classes/cn/fan/ApplicationSecurity.class" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_security/target/classes/cn/fan/ApplicationSecurity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_security/target/classes/cn/fan/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_security/target/classes/cn/fan/controller/LoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_security/target/classes/cn/fan/dao/SysPermissionMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_security/target/classes/cn/fan/dao/SysPermissionMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_security/target/classes/cn/fan/dao/SysRoleMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_security/target/classes/cn/fan/dao/SysRoleMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_security/target/classes/cn/fan/dao/SysUserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_security/target/classes/cn/fan/dao/SysUserMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_security/target/classes/cn/fan/dao/SysUserRoleMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_security/target/classes/cn/fan/dao/SysUserRoleMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_security/target/classes/cn/fan/domain/SysPermission.class" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_security/target/classes/cn/fan/domain/SysPermission.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_security/target/classes/cn/fan/domain/SysRole.class" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_security/target/classes/cn/fan/domain/SysRole.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_security/target/classes/cn/fan/domain/SysUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_security/target/classes/cn/fan/domain/SysUser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_security/target/classes/cn/fan/domain/SysUserRole.class" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_security/target/classes/cn/fan/domain/SysUserRole.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_security/target/classes/cn/fan/security/CustomPermissionEvaluator.class" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_security/target/classes/cn/fan/security/CustomPermissionEvaluator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_security/target/classes/cn/fan/security/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_security/target/classes/cn/fan/security/WebSecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_security/target/classes/cn/fan/service/CustomUserDetailsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_security/target/classes/cn/fan/service/CustomUserDetailsService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_security/target/classes/cn/fan/service/SysPermissionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_security/target/classes/cn/fan/service/SysPermissionService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_security/target/classes/cn/fan/service/SysRoleService.class" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_security/target/classes/cn/fan/service/SysRoleService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_security/target/classes/cn/fan/service/SysUserRoleService.class" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_security/target/classes/cn/fan/service/SysUserRoleService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_security/target/classes/cn/fan/service/SysUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_security/target/classes/cn/fan/service/SysUserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/websocket/src/main/java/cn/fan/websocket/core/WebSocketServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/websocket/src/main/java/cn/fan/websocket/core/WebSocketServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/websocket/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/websocket/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot_redis/src/main/java/cn/fan/config/RedisConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_redis/src/main/java/cn/fan/config/RedisConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,13 +24,19 @@
   <component name="CodeStyleSettingsInfer">
     <option name="done" value="true" />
   </component>
+  <component name="CoverageViewManager">
+    <option name="myElementSize" value="214" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="springboot_study" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="HTML File" />
         <option value="HTML4 File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -116,25 +101,26 @@
     <option name="notificationShown" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\workspace\springboot_study\springboot_fastdfs\src\main\resources" />
-      <recent name="E:\workspace\springboot_study\springboot_fastdfs\src\main\java\cn\fan\web" />
-      <recent name="E:\workspace\springboot_study\springboot_fastdfs\src\main\java\cn\fan\fastdfs" />
-      <recent name="E:\workspace\springboot_study\springboot_security_oauth2\src\main\resources\templates" />
-      <recent name="E:\workspace\springboot_study\springboot_security_oauth2\src\main\resources\static" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="cn.fan.config" />
-      <recent name="cn.fan" />
-      <recent name="cn.fan.security" />
-      <recent name="cn.fan.controller" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\workspace\springboot_study\springboot_redis\src\main\resources" />
       <recent name="E:\workspace\springboot_study\swagger2\src\main\resources" />
       <recent name="E:\workspace\springboot_study\swagger2\src\main\java\cn\fan\swagger" />
       <recent name="E:\workspace\springboot_study" />
       <recent name="E:\workspace\springboot_study\springboot_security\src\main\java\cn\fan" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="cn.fan.redis_publish_subscriber.config" />
+      <recent name="cn.fan.config" />
+      <recent name="cn.fan" />
+      <recent name="cn.fan.security" />
+      <recent name="cn.fan.controller" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\workspace\springboot_study\springboot_fastdfs\src\main\resources" />
+      <recent name="E:\workspace\springboot_study\springboot_fastdfs\src\main\java\cn\fan\web" />
+      <recent name="E:\workspace\springboot_study\springboot_fastdfs\src\main\java\cn\fan\fastdfs" />
+      <recent name="E:\workspace\springboot_study\springboot_security_oauth2\src\main\resources\templates" />
+      <recent name="E:\workspace\springboot_study\springboot_security_oauth2\src\main\resources\static" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -144,7 +130,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.WebsocketApplication">
+  <component name="RunManager" selected="Spring Boot.RedisPublishSubscriberApplication">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
@@ -180,6 +166,13 @@
         </pattern>
       </extension>
       <option name="SPRING_BOOT_MAIN_CLASS" value="cn.fan.RabbitmqConsumer" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RedisPublishSubscriberApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="redis_publish_subscriber" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="cn.fan.redis_publish_subscriber.RedisPublishSubscriberApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -270,6 +263,7 @@
       <item itemvalue="Spring Boot.SwaggerApplication (1)" />
       <item itemvalue="Spring Boot.ApplicationRedis" />
       <item itemvalue="Spring Boot.Springboot_aop" />
+      <item itemvalue="Spring Boot.RedisPublishSubscriberApplication" />
     </list>
     <recent_temporary>
       <list>
@@ -347,7 +341,7 @@
       <workItem from="1582783467410" duration="290000" />
       <workItem from="1582783783681" duration="10266000" />
       <workItem from="1582854200752" duration="1928000" />
-      <workItem from="1582856156747" duration="6574000" />
+      <workItem from="1582856156747" duration="14196000" />
     </task>
     <task id="LOCAL-00001" summary="修复结构，添加websocket项目">
       <created>1582858651857</created>
@@ -356,7 +350,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582858651858</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="更新websocket项目">
+      <created>1582862764012</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1582862764012</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -372,10 +373,10 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="392" y="97" key="#HTTP_Proxy/0.0.1600.860@0.0.1600.860" timestamp="1582262672916" />
-    <state x="218" y="100" key="#Project_Structure" timestamp="1582856842900">
+    <state x="218" y="100" key="#Project_Structure" timestamp="1582872189283">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="218" y="100" key="#Project_Structure/0.0.1600.860@0.0.1600.860" timestamp="1582856842900" />
+    <state x="218" y="100" key="#Project_Structure/0.0.1600.860@0.0.1600.860" timestamp="1582872189283" />
     <state x="797" y="296" key="#com.intellij.codeInsight.template.impl.EditVariableDialog" timestamp="1582596742297">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -388,10 +389,10 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="935" y="264" key="#xdebugger.evaluate/0.0.1600.860@0.0.1600.860" timestamp="1582697321761" />
-    <state x="255" y="47" key="CommitChangelistDialog2" timestamp="1582862670734">
+    <state x="255" y="47" key="CommitChangelistDialog2" timestamp="1582862755485">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="255" y="47" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1582862670734" />
+    <state x="255" y="47" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1582862755485" />
     <state width="480" height="466" key="DebuggerActiveHint" timestamp="1582532473854">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -400,62 +401,62 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="580" y="185" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1582856634159" />
-    <state width="1069" height="206" key="GridCell.Tab.0.bottom" timestamp="1582862244895">
+    <state width="1069" height="206" key="GridCell.Tab.0.bottom" timestamp="1582873756672">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1069" height="206" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1582862244895" />
-    <state width="1069" height="206" key="GridCell.Tab.0.center" timestamp="1582862244894">
+    <state width="1069" height="206" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1582873756672" />
+    <state width="1069" height="206" key="GridCell.Tab.0.center" timestamp="1582873756672">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1069" height="206" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1582862244894" />
-    <state width="1069" height="206" key="GridCell.Tab.0.left" timestamp="1582862244894">
+    <state width="1069" height="206" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1582873756672" />
+    <state width="1069" height="206" key="GridCell.Tab.0.left" timestamp="1582873756672">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1069" height="206" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1582862244894" />
-    <state width="1069" height="206" key="GridCell.Tab.0.right" timestamp="1582862244895">
+    <state width="1069" height="206" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1582873756672" />
+    <state width="1069" height="206" key="GridCell.Tab.0.right" timestamp="1582873756672">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1069" height="206" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1582862244895" />
-    <state width="1069" height="206" key="GridCell.Tab.1.bottom" timestamp="1582862244895">
+    <state width="1069" height="206" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1582873756672" />
+    <state width="1069" height="206" key="GridCell.Tab.1.bottom" timestamp="1582873756673">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1069" height="206" key="GridCell.Tab.1.bottom/0.0.1600.860@0.0.1600.860" timestamp="1582862244895" />
-    <state width="1069" height="206" key="GridCell.Tab.1.center" timestamp="1582862244895">
+    <state width="1069" height="206" key="GridCell.Tab.1.bottom/0.0.1600.860@0.0.1600.860" timestamp="1582873756673" />
+    <state width="1069" height="206" key="GridCell.Tab.1.center" timestamp="1582873756673">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1069" height="206" key="GridCell.Tab.1.center/0.0.1600.860@0.0.1600.860" timestamp="1582862244895" />
-    <state width="1069" height="206" key="GridCell.Tab.1.left" timestamp="1582862244895">
+    <state width="1069" height="206" key="GridCell.Tab.1.center/0.0.1600.860@0.0.1600.860" timestamp="1582873756673" />
+    <state width="1069" height="206" key="GridCell.Tab.1.left" timestamp="1582873756673">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1069" height="206" key="GridCell.Tab.1.left/0.0.1600.860@0.0.1600.860" timestamp="1582862244895" />
-    <state width="1069" height="206" key="GridCell.Tab.1.right" timestamp="1582862244895">
+    <state width="1069" height="206" key="GridCell.Tab.1.left/0.0.1600.860@0.0.1600.860" timestamp="1582873756673" />
+    <state width="1069" height="206" key="GridCell.Tab.1.right" timestamp="1582873756673">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1069" height="206" key="GridCell.Tab.1.right/0.0.1600.860@0.0.1600.860" timestamp="1582862244895" />
-    <state width="1069" height="206" key="GridCell.Tab.2.bottom" timestamp="1582862244896">
+    <state width="1069" height="206" key="GridCell.Tab.1.right/0.0.1600.860@0.0.1600.860" timestamp="1582873756673" />
+    <state width="1069" height="206" key="GridCell.Tab.2.bottom" timestamp="1582873543797">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1069" height="206" key="GridCell.Tab.2.bottom/0.0.1600.860@0.0.1600.860" timestamp="1582862244896" />
-    <state width="1069" height="206" key="GridCell.Tab.2.center" timestamp="1582862244896">
+    <state width="1069" height="206" key="GridCell.Tab.2.bottom/0.0.1600.860@0.0.1600.860" timestamp="1582873543797" />
+    <state width="1069" height="206" key="GridCell.Tab.2.center" timestamp="1582873543797">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1069" height="206" key="GridCell.Tab.2.center/0.0.1600.860@0.0.1600.860" timestamp="1582862244896" />
-    <state width="1069" height="206" key="GridCell.Tab.2.left" timestamp="1582862244895">
+    <state width="1069" height="206" key="GridCell.Tab.2.center/0.0.1600.860@0.0.1600.860" timestamp="1582873543797" />
+    <state width="1069" height="206" key="GridCell.Tab.2.left" timestamp="1582873543797">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1069" height="206" key="GridCell.Tab.2.left/0.0.1600.860@0.0.1600.860" timestamp="1582862244895" />
-    <state width="1069" height="206" key="GridCell.Tab.2.right" timestamp="1582862244896">
+    <state width="1069" height="206" key="GridCell.Tab.2.left/0.0.1600.860@0.0.1600.860" timestamp="1582873543797" />
+    <state width="1069" height="206" key="GridCell.Tab.2.right" timestamp="1582873543797">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1069" height="206" key="GridCell.Tab.2.right/0.0.1600.860@0.0.1600.860" timestamp="1582862244896" />
+    <state width="1069" height="206" key="GridCell.Tab.2.right/0.0.1600.860@0.0.1600.860" timestamp="1582873543797" />
     <state x="407" y="210" key="IDE.errors.dialog" timestamp="1582784075036">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="407" y="210" key="IDE.errors.dialog/0.0.1600.860@0.0.1600.860" timestamp="1582784075036" />
-    <state x="134" y="170" key="Maven.ArtifactSearchDialog" timestamp="1582859655053">
+    <state x="134" y="170" key="Maven.ArtifactSearchDialog" timestamp="1582872735639">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="134" y="170" key="Maven.ArtifactSearchDialog/0.0.1600.860@0.0.1600.860" timestamp="1582859655053" />
+    <state x="134" y="170" key="Maven.ArtifactSearchDialog/0.0.1600.860@0.0.1600.860" timestamp="1582872735639" />
     <state x="332" y="144" key="SettingsEditor" timestamp="1582783906663">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -480,10 +481,10 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="592" y="347" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1600.860@0.0.1600.860" timestamp="1582862508995" />
-    <state x="174" y="39" key="new project wizard" timestamp="1582855732163">
+    <state x="349" y="116" key="new project wizard" timestamp="1582871949580">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="174" y="39" key="new project wizard/0.0.1600.860@0.0.1600.860" timestamp="1582855732163" />
+    <state x="349" y="116" key="new project wizard/0.0.1600.860@0.0.1600.860" timestamp="1582871949580" />
     <state x="891" y="181" key="search.everywhere.popup" timestamp="1582526875711">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -499,5 +500,8 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/springboot_study$RedisPublishSubscriberApplication.ic" NAME="RedisPublishSubscriberApplication Coverage Results" MODIFIED="1582873696433" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

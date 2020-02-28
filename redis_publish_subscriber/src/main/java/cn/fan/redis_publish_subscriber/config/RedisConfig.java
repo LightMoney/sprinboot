@@ -1,4 +1,4 @@
-package cn.fan.config;
+package cn.fan.redis_publish_subscriber.config;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
@@ -84,7 +84,6 @@ public class RedisConfig {
                 add("codeNameCache");
             }
         };
-
         builder.initialCacheNames(cacheNames);
         return builder.build();
     }
