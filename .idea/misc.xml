@@ -13,6 +13,7 @@
         <option value="$PROJECT_DIR$/springboot_security_oauth2/pom.xml" />
         <option value="$PROJECT_DIR$/swagger1/pom.xml" />
         <option value="$PROJECT_DIR$/swagger2/pom.xml" />
+        <option value="$PROJECT_DIR$/websocket/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

@@ -25,8 +25,7 @@
         <module>swagger2</module>
         <module>springboot_security_oauth2</module>
         <module>springboot_redis</module>
-    
-		 <module>springboot_aop</module>
+        <module>springboot_aop</module>
     </modules>
 
 
