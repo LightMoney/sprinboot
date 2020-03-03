@@ -2,7 +2,8 @@ server:
     port: 8080
 spring:
     redis:
-        host: localhost
+#        host: localhost
+        host: 39.108.10.101
         port: 6379
         database: 0
         lettuce:

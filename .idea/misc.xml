@@ -15,6 +15,7 @@
         <option value="$PROJECT_DIR$/swagger2/pom.xml" />
         <option value="$PROJECT_DIR$/websocket/pom.xml" />
         <option value="$PROJECT_DIR$/redis_publish_subscriber/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot_easyexcle/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

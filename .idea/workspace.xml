@@ -1,17 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7231175b-37c5-4bf4-ab95-5e745b4b514d" name="Default" comment="更新websocket项目">
-      <change afterPath="$PROJECT_DIR$/redis_publish_subscriber/src/main/java/cn/fan/redis_publish_subscriber/config/RedisConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/redis_publish_subscriber/src/main/java/cn/fan/redis_publish_subscriber/config/SubcriberConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/redis_publish_subscriber/src/main/java/cn/fan/redis_publish_subscriber/publish/MessageSender.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/redis_publish_subscriber/src/main/java/cn/fan/redis_publish_subscriber/receiver/MessageReceiver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/redis_publish_subscriber/src/main/resources/application.yml" afterDir="false" />
+    <list default="true" id="7231175b-37c5-4bf4-ab95-5e745b4b514d" name="Default" comment="redis 发布订阅模式">
+      <change afterPath="$PROJECT_DIR$/springboot_easyexcle/src/main/java/cn/fan/springboot_easyexcle/anontation/FieldNotNull.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springboot_easyexcle/src/main/java/cn/fan/springboot_easyexcle/model/ExcelPropertyIndexModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springboot_easyexcle/src/main/java/cn/fan/springboot_easyexcle/model/MultiLineHeadExcelModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springboot_easyexcle/src/main/java/cn/fan/springboot_easyexcle/util/BeanToMap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springboot_easyexcle/src/main/java/cn/fan/springboot_easyexcle/util/EasyExcelUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springboot_easyexcle/src/main/java/com/alibaba/excel/event/AnalysisEventListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springboot_easyexcle/src/main/java/com/alibaba/excel/event/adapter/DefaultAnalysisEventListenerAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springboot_easyexcle/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_redis/src/main/java/cn/fan/config/RedisConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_redis/src/main/java/cn/fan/config/RedisConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot_redis/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_redis/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot_redis/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_redis/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot_redis/target/classes/cn/fan/config/RedisConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_redis/target/classes/cn/fan/config/RedisConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot_redis/target/classes/cn/fan/web/TestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_redis/target/classes/cn/fan/web/TestController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +96,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../workspace/springboot_study" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/springboot_easyexcle/src/main/java" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -101,26 +108,26 @@
     <option name="notificationShown" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\workspace\springboot_study\springboot_redis\src\main\resources" />
-      <recent name="E:\workspace\springboot_study\swagger2\src\main\resources" />
-      <recent name="E:\workspace\springboot_study\swagger2\src\main\java\cn\fan\swagger" />
-      <recent name="E:\workspace\springboot_study" />
-      <recent name="E:\workspace\springboot_study\springboot_security\src\main\java\cn\fan" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="cn.fan.redis_publish_subscriber.config" />
-      <recent name="cn.fan.config" />
-      <recent name="cn.fan" />
-      <recent name="cn.fan.security" />
-      <recent name="cn.fan.controller" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\workspace\springboot_study\springboot_fastdfs\src\main\resources" />
       <recent name="E:\workspace\springboot_study\springboot_fastdfs\src\main\java\cn\fan\web" />
       <recent name="E:\workspace\springboot_study\springboot_fastdfs\src\main\java\cn\fan\fastdfs" />
       <recent name="E:\workspace\springboot_study\springboot_security_oauth2\src\main\resources\templates" />
       <recent name="E:\workspace\springboot_study\springboot_security_oauth2\src\main\resources\static" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="cn.fan.springboot_easyexcle.anontation" />
+      <recent name="cn.fan.springboot_easyexcle.util" />
+      <recent name="cn.fan.redis_publish_subscriber.config" />
+      <recent name="cn.fan.config" />
+      <recent name="cn.fan" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\springboot_study\springboot_easyexcle\src\main\java" />
+      <recent name="E:\springboot_study\springboot_easyexcle\src\main\java\cn\fan\springboot_easyexcle" />
+      <recent name="E:\workspace\springboot_study\springboot_redis\src\main\resources" />
+      <recent name="E:\workspace\springboot_study\swagger2\src\main\resources" />
+      <recent name="E:\workspace\springboot_study\swagger2\src\main\java\cn\fan\swagger" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -130,9 +137,75 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.RedisPublishSubscriberApplication">
+  <component name="RunManager" selected="JUnit.SpringbootEasyexcleApplicationTests.read">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpringbootEasyexcleApplicationTests (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="springboot_easyexcle" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.fan.springboot_easyexcle.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cn.fan.springboot_easyexcle" />
+      <option name="MAIN_CLASS_NAME" value="cn.fan.springboot_easyexcle.SpringbootEasyexcleApplicationTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpringbootEasyexcleApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="springboot_easyexcle" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.fan.springboot_easyexcle.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cn.fan.springboot_easyexcle" />
+      <option name="MAIN_CLASS_NAME" value="cn.fan.springboot_easyexcle.SpringbootEasyexcleApplicationTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpringbootEasyexcleApplicationTests.read" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="springboot_easyexcle" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.fan.springboot_easyexcle.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cn.fan.springboot_easyexcle" />
+      <option name="MAIN_CLASS_NAME" value="cn.fan.springboot_easyexcle.SpringbootEasyexcleApplicationTests" />
+      <option name="METHOD_NAME" value="read" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpringbootEasyexcleApplicationTests.writeByModelExcle" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="springboot_easyexcle" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.fan.springboot_easyexcle.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cn.fan.springboot_easyexcle" />
+      <option name="MAIN_CLASS_NAME" value="cn.fan.springboot_easyexcle.SpringbootEasyexcleApplicationTests" />
+      <option name="METHOD_NAME" value="writeByModelExcle" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -157,19 +230,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RabbitmqConsumer" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="rabbitmq_consumer" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="cn.fan.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="SPRING_BOOT_MAIN_CLASS" value="cn.fan.RabbitmqConsumer" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="RedisPublishSubscriberApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="redis_publish_subscriber" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="cn.fan.redis_publish_subscriber.RedisPublishSubscriberApplication" />
@@ -177,15 +237,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SpringbootFasrDFSApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="springboot_fastdfs" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="cn.fan.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="SPRING_BOOT_MAIN_CLASS" value="cn.fan.SpringbootFasrDFSApplication" />
+    <configuration name="SpringbootEasyexcleApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="springboot_easyexcle" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="cn.fan.springboot_easyexcle.SpringbootEasyexcleApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -200,32 +254,6 @@
     <configuration name="SpringbootRedisApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="springboot_redis" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="cn.fan.springboot_redis.SpringbootRedisApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Springboot_aop" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="springboot_aop" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="cn.fan.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="SPRING_BOOT_MAIN_CLASS" value="cn.fan.Springboot_aop" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SwaggerApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="swagger2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="cn.fan.swagger.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="SPRING_BOOT_MAIN_CLASS" value="cn.fan.swagger.SwaggerApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -258,20 +286,21 @@
       <item itemvalue="Spring Boot.SwaggerApplication" />
       <item itemvalue="Spring Boot.SpringbootRedisApplication" />
       <item itemvalue="Spring Boot.WebsocketApplication" />
-      <item itemvalue="Spring Boot.RabbitmqConsumer" />
-      <item itemvalue="Spring Boot.SpringbootFasrDFSApplication" />
-      <item itemvalue="Spring Boot.SwaggerApplication (1)" />
-      <item itemvalue="Spring Boot.ApplicationRedis" />
-      <item itemvalue="Spring Boot.Springboot_aop" />
       <item itemvalue="Spring Boot.RedisPublishSubscriberApplication" />
+      <item itemvalue="Spring Boot.ApplicationRedis" />
+      <item itemvalue="Spring Boot.SpringbootEasyexcleApplication" />
+      <item itemvalue="JUnit.SpringbootEasyexcleApplicationTests" />
+      <item itemvalue="JUnit.SpringbootEasyexcleApplicationTests (1)" />
+      <item itemvalue="JUnit.SpringbootEasyexcleApplicationTests.writeByModelExcle" />
+      <item itemvalue="JUnit.SpringbootEasyexcleApplicationTests.read" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.Springboot_aop" />
+        <item itemvalue="JUnit.SpringbootEasyexcleApplicationTests.read" />
+        <item itemvalue="JUnit.SpringbootEasyexcleApplicationTests.writeByModelExcle" />
+        <item itemvalue="JUnit.SpringbootEasyexcleApplicationTests" />
+        <item itemvalue="JUnit.SpringbootEasyexcleApplicationTests (1)" />
         <item itemvalue="Spring Boot.ApplicationRedis" />
-        <item itemvalue="Spring Boot.SpringbootFasrDFSApplication" />
-        <item itemvalue="Spring Boot.SwaggerApplication (1)" />
-        <item itemvalue="Spring Boot.RabbitmqConsumer" />
       </list>
     </recent_temporary>
   </component>
@@ -284,11 +313,6 @@
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="Spring Boot" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="Spring Boot" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
             </expand>
             <select />
@@ -341,7 +365,13 @@
       <workItem from="1582783467410" duration="290000" />
       <workItem from="1582783783681" duration="10266000" />
       <workItem from="1582854200752" duration="1928000" />
-      <workItem from="1582856156747" duration="14196000" />
+      <workItem from="1582856156747" duration="14248000" />
+      <workItem from="1582945219397" duration="3404000" />
+      <workItem from="1582962724335" duration="45000" />
+      <workItem from="1582963210740" duration="1120000" />
+      <workItem from="1583131528613" duration="30000" />
+      <workItem from="1583131882305" duration="74000" />
+      <workItem from="1583200150014" duration="9814000" />
     </task>
     <task id="LOCAL-00001" summary="修复结构，添加websocket项目">
       <created>1582858651857</created>
@@ -357,7 +387,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582862764012</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="redis 发布订阅模式">
+      <created>1582880423199</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1582880423199</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -366,17 +403,18 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="修复结构，添加websocket项目" />
     <MESSAGE value="更新websocket项目" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新websocket项目" />
+    <MESSAGE value="redis 发布订阅模式" />
+    <option name="LAST_COMMIT_MESSAGE" value="redis 发布订阅模式" />
   </component>
   <component name="WindowStateProjectService">
     <state x="392" y="97" key="#HTTP_Proxy" timestamp="1582262672916">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="392" y="97" key="#HTTP_Proxy/0.0.1600.860@0.0.1600.860" timestamp="1582262672916" />
-    <state x="218" y="100" key="#Project_Structure" timestamp="1582872189283">
+    <state x="218" y="100" key="#Project_Structure" timestamp="1583200384252">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="218" y="100" key="#Project_Structure/0.0.1600.860@0.0.1600.860" timestamp="1582872189283" />
+    <state x="218" y="100" key="#Project_Structure/0.0.1600.860@0.0.1600.860" timestamp="1583200384252" />
     <state x="797" y="296" key="#com.intellij.codeInsight.template.impl.EditVariableDialog" timestamp="1582596742297">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -389,10 +427,10 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="935" y="264" key="#xdebugger.evaluate/0.0.1600.860@0.0.1600.860" timestamp="1582697321761" />
-    <state x="255" y="47" key="CommitChangelistDialog2" timestamp="1582862755485">
+    <state x="255" y="47" key="CommitChangelistDialog2" timestamp="1582959704250">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="255" y="47" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1582862755485" />
+    <state x="255" y="47" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1582959704250" />
     <state width="480" height="466" key="DebuggerActiveHint" timestamp="1582532473854">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -401,54 +439,54 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="580" y="185" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1582856634159" />
-    <state width="1069" height="206" key="GridCell.Tab.0.bottom" timestamp="1582873756672">
+    <state width="1557" height="315" key="GridCell.Tab.0.bottom" timestamp="1583215932061">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1069" height="206" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1582873756672" />
-    <state width="1069" height="206" key="GridCell.Tab.0.center" timestamp="1582873756672">
+    <state width="1557" height="315" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1583215932061" />
+    <state width="1557" height="315" key="GridCell.Tab.0.center" timestamp="1583215932061">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1069" height="206" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1582873756672" />
-    <state width="1069" height="206" key="GridCell.Tab.0.left" timestamp="1582873756672">
+    <state width="1557" height="315" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1583215932061" />
+    <state width="1557" height="315" key="GridCell.Tab.0.left" timestamp="1583215932061">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1069" height="206" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1582873756672" />
-    <state width="1069" height="206" key="GridCell.Tab.0.right" timestamp="1582873756672">
+    <state width="1557" height="315" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1583215932061" />
+    <state width="1557" height="315" key="GridCell.Tab.0.right" timestamp="1583215932061">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1069" height="206" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1582873756672" />
-    <state width="1069" height="206" key="GridCell.Tab.1.bottom" timestamp="1582873756673">
+    <state width="1557" height="315" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1583215932061" />
+    <state width="1069" height="206" key="GridCell.Tab.1.bottom" timestamp="1582959710966">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1069" height="206" key="GridCell.Tab.1.bottom/0.0.1600.860@0.0.1600.860" timestamp="1582873756673" />
-    <state width="1069" height="206" key="GridCell.Tab.1.center" timestamp="1582873756673">
+    <state width="1069" height="206" key="GridCell.Tab.1.bottom/0.0.1600.860@0.0.1600.860" timestamp="1582959710966" />
+    <state width="1069" height="206" key="GridCell.Tab.1.center" timestamp="1582959710966">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1069" height="206" key="GridCell.Tab.1.center/0.0.1600.860@0.0.1600.860" timestamp="1582873756673" />
-    <state width="1069" height="206" key="GridCell.Tab.1.left" timestamp="1582873756673">
+    <state width="1069" height="206" key="GridCell.Tab.1.center/0.0.1600.860@0.0.1600.860" timestamp="1582959710966" />
+    <state width="1069" height="206" key="GridCell.Tab.1.left" timestamp="1582959710966">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1069" height="206" key="GridCell.Tab.1.left/0.0.1600.860@0.0.1600.860" timestamp="1582873756673" />
-    <state width="1069" height="206" key="GridCell.Tab.1.right" timestamp="1582873756673">
+    <state width="1069" height="206" key="GridCell.Tab.1.left/0.0.1600.860@0.0.1600.860" timestamp="1582959710966" />
+    <state width="1069" height="206" key="GridCell.Tab.1.right" timestamp="1582959710966">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1069" height="206" key="GridCell.Tab.1.right/0.0.1600.860@0.0.1600.860" timestamp="1582873756673" />
-    <state width="1069" height="206" key="GridCell.Tab.2.bottom" timestamp="1582873543797">
+    <state width="1069" height="206" key="GridCell.Tab.1.right/0.0.1600.860@0.0.1600.860" timestamp="1582959710966" />
+    <state width="1069" height="206" key="GridCell.Tab.2.bottom" timestamp="1582959710966">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1069" height="206" key="GridCell.Tab.2.bottom/0.0.1600.860@0.0.1600.860" timestamp="1582873543797" />
-    <state width="1069" height="206" key="GridCell.Tab.2.center" timestamp="1582873543797">
+    <state width="1069" height="206" key="GridCell.Tab.2.bottom/0.0.1600.860@0.0.1600.860" timestamp="1582959710966" />
+    <state width="1069" height="206" key="GridCell.Tab.2.center" timestamp="1582959710966">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1069" height="206" key="GridCell.Tab.2.center/0.0.1600.860@0.0.1600.860" timestamp="1582873543797" />
-    <state width="1069" height="206" key="GridCell.Tab.2.left" timestamp="1582873543797">
+    <state width="1069" height="206" key="GridCell.Tab.2.center/0.0.1600.860@0.0.1600.860" timestamp="1582959710966" />
+    <state width="1069" height="206" key="GridCell.Tab.2.left" timestamp="1582959710966">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1069" height="206" key="GridCell.Tab.2.left/0.0.1600.860@0.0.1600.860" timestamp="1582873543797" />
-    <state width="1069" height="206" key="GridCell.Tab.2.right" timestamp="1582873543797">
+    <state width="1069" height="206" key="GridCell.Tab.2.left/0.0.1600.860@0.0.1600.860" timestamp="1582959710966" />
+    <state width="1069" height="206" key="GridCell.Tab.2.right" timestamp="1582959710966">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1069" height="206" key="GridCell.Tab.2.right/0.0.1600.860@0.0.1600.860" timestamp="1582873543797" />
+    <state width="1069" height="206" key="GridCell.Tab.2.right/0.0.1600.860@0.0.1600.860" timestamp="1582959710966" />
     <state x="407" y="210" key="IDE.errors.dialog" timestamp="1582784075036">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -477,14 +515,14 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="498" y="323" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1600.860@0.0.1600.860" timestamp="1582599654397" />
-    <state x="592" y="347" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1582862508995">
+    <state x="592" y="347" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1583216353623">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="592" y="347" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1600.860@0.0.1600.860" timestamp="1582862508995" />
-    <state x="349" y="116" key="new project wizard" timestamp="1582871949580">
+    <state x="592" y="347" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1600.860@0.0.1600.860" timestamp="1583216353623" />
+    <state x="349" y="116" key="new project wizard" timestamp="1583200233608">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="349" y="116" key="new project wizard/0.0.1600.860@0.0.1600.860" timestamp="1582871949580" />
+    <state x="349" y="116" key="new project wizard/0.0.1600.860@0.0.1600.860" timestamp="1583200233608" />
     <state x="891" y="181" key="search.everywhere.popup" timestamp="1582526875711">
       <screen x="0" y="0" width="1600" height="860" />
     </state>

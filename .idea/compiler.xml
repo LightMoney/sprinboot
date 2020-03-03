@@ -7,19 +7,20 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="springboot_webservice" />
-        <module name="websocket" />
-        <module name="springboot_security" />
-        <module name="springboot_mybatis_reverse" />
-        <module name="springboot_rabbitmq" />
-        <module name="test_mongdb" />
         <module name="rabbitmq_consumer" />
-        <module name="springboot_security_oauth2" />
+        <module name="springboot_easyexcle" />
         <module name="springboot_aop" />
-        <module name="springboot_fastdfs" />
-        <module name="redis_publish_subscriber" />
+        <module name="springboot_webservice" />
         <module name="swagger2" />
+        <module name="websocket" />
+        <module name="redis_publish_subscriber" />
         <module name="springboot_redis" />
+        <module name="springboot_rabbitmq" />
+        <module name="springboot_security" />
+        <module name="springboot_security_oauth2" />
+        <module name="springboot_mybatis_reverse" />
+        <module name="test_mongdb" />
+        <module name="springboot_fastdfs" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -31,6 +32,7 @@
       <module name="rabbitmq_consumer" options="-parameters" />
       <module name="redis_publish_subscriber" options="-parameters" />
       <module name="springboot_aop" options="-parameters" />
+      <module name="springboot_easyexcle" options="-parameters" />
       <module name="springboot_fastdfs" options="-parameters" />
       <module name="springboot_mybatis_reverse" options="-parameters" />
       <module name="springboot_rabbitmq" options="-parameters" />
