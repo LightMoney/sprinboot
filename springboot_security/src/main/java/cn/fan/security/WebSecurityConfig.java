@@ -1,5 +1,6 @@
 package cn.fan.security;
 
+import cn.fan.handler.LoginSuccessHandler;
 import cn.fan.service.CustomUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -78,7 +79,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 // 设置登陆页
                 .formLogin().loginPage("/login")
                 // 设置登陆成功页
-                .defaultSuccessUrl("/").permitAll()
+                .defaultSuccessUrl("/").successHandler(new LoginSuccessHandler()).permitAll()
                 // 登录失败Url
                 .failureUrl("/login/error")
                 // 自定义登陆用户名和密码参数，默认为username和password

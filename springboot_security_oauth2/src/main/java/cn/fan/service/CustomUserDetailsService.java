@@ -10,7 +10,6 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -56,6 +55,8 @@ public class CustomUserDetailsService implements UserDetailsService
 //        });
 
 //返回UseDetails的实现
-        return new User(sysUser.getName(),passwordEncoder.encode(sysUser.getPassword()),authorities);
+//        return new User(sysUser.getName(),passwordEncoder.encode(sysUser.getPassword()),authorities);
+        //数据库存的加密过这里就不加密了
+        return new User(sysUser.getName(),sysUser.getPassword(),authorities);
     }
 }

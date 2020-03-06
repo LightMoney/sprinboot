@@ -19,6 +19,7 @@ public class LoginController {
 
     @RequestMapping("/")
     public String showHome() {
+        //获取当前用户相当于principle
         String name = SecurityContextHolder.getContext().getAuthentication().getName();
         log.info("当前登陆用户：" + name);
         return "home";

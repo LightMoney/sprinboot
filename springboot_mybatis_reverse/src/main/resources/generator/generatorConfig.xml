@@ -5,8 +5,11 @@
 <!-- 第二种mybatis逆向生成xml配置 -->
 <generatorConfiguration>
     <!-- 需要指明数据库连接器的绝对路径 -->
+<!--    <classPathEntry-->
+<!--            location="E:\repository\mysql\mysql-connector-java\5.1.6\mysql-connector-java-5.1.6.jar"/>-->
     <classPathEntry
-            location="E:\repository\mysql\mysql-connector-java\5.1.6\mysql-connector-java-5.1.6.jar"/>
+            location="E:\repository\com\microsoft\sqlserver\mssql-jdbc\6.2.0.jre8\mssql-jdbc-6.2.0.jre8.jar"/>
+
     <context id="sqlserverTables" targetRuntime="MyBatis3">
         <!-- 生成的pojo，将implements Serializable-->
         <plugin type="org.mybatis.generator.plugins.SerializablePlugin"></plugin>
@@ -16,11 +19,16 @@
         </commentGenerator>
 
         <!-- 数据库链接URL、用户名、密码 -->
-         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                         connectionURL="jdbc:mysql://localhost:3306/cps"
-                         userId="root"
-                         password="root">
-         </jdbcConnection>
+<!--         <jdbcConnection driverClass="com.mysql.jdbc.Driver"-->
+<!--                         connectionURL="jdbc:mysql://localhost:3306/cps"-->
+<!--                         userId="root"-->
+<!--                         password="root">-->
+<!--         </jdbcConnection>-->
+        <jdbcConnection driverClass="com.microsoft.sqlserver.jdbc.SQLServerDriver"
+                        connectionURL="jdbc:sqlserver://10.3.1.3:1433;DatabaseName=htgtshop"
+                        userId="sa"
+                        password="Hthl@2018">
+        </jdbcConnection>
         <!--<jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver"
                         connectionURL="jdbc:oracle:thin:@10.1.103.250:1521:orcl"
                         userId="fis"
@@ -57,7 +65,11 @@
 
 
         <!-- 要生成的表tableName是数据库中的表名或视图名 domainObjectName是实体类名-->
-        <table tableName="dept" domainObjectName="Dept"
+<!--        <table tableName="dept" domainObjectName="Dept"-->
+<!--               enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"-->
+<!--               enableSelectByExample="false" selectByExampleQueryId="false" >-->
+<!--            <property name="useActualColumnNames" value="false"/>-->
+        <table tableName="Product" domainObjectName="Product"
                enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
                enableSelectByExample="false" selectByExampleQueryId="false" >
             <property name="useActualColumnNames" value="false"/>

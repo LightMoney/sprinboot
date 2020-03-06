@@ -51,6 +51,8 @@ public class CustomUserDetailsService implements UserDetailsService
         });
 
 //返回UseDetails的实现类
-        return new User(sysUser.getName(),passwordEncoder.encode(sysUser.getPassword()),authorities);
+        //        return new User(sysUser.getName(),passwordEncoder.encode(sysUser.getPassword()),authorities);
+        //数据库存的加密过这里就不加密了
+        return new User(sysUser.getName(),sysUser.getPassword(),authorities);
     }
 }

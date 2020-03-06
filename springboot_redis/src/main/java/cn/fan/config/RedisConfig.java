@@ -73,11 +73,12 @@ public class RedisConfig {
     }
 
 
-    // 缓存管理器
+    // 缓存管理器（这里可以设置默认的过期时间）
     @Bean
     public CacheManager cacheManager() {
         RedisCacheManager.RedisCacheManagerBuilder builder = RedisCacheManager.RedisCacheManagerBuilder
                 .fromConnectionFactory(lettuceConnectionFactory);
+        //设置缓存空间集合
         @SuppressWarnings("serial")
         Set<String> cacheNames = new HashSet<String>() {
             {

@@ -7,7 +7,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
-import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -21,7 +20,6 @@ import org.springframework.security.oauth2.provider.approval.TokenStoreUserAppro
 import org.springframework.security.oauth2.provider.request.DefaultOAuth2RequestFactory;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.oauth2.provider.token.store.redis.RedisTokenStore;
-import org.springframework.security.web.access.expression.DefaultWebSecurityExpressionHandler;
 import org.springframework.security.web.authentication.rememberme.JdbcTokenRepositoryImpl;
 import org.springframework.security.web.authentication.rememberme.PersistentTokenRepository;
 
@@ -42,13 +40,13 @@ import javax.sql.DataSource;
  **/
 @Configuration
 @EnableWebSecurity
-@EnableGlobalMethodSecurity(prePostEnabled = true)
+//@EnableGlobalMethodSecurity(prePostEnabled = true)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     RedisConnectionFactory redisConnectionFactory;
     @Autowired
-   private ClientDetailsService clientDetailsService;
+    private ClientDetailsService clientDetailsService;
 
 
     //使用redis来存储token信息
@@ -62,7 +60,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     public CustomUserDetailsService myUserDetailsService() {
         return new CustomUserDetailsService();
     }
-//    使用上面的方式时一定不要用错方法名如：userDetailsService
+
+    //    使用上面的方式时一定不要用错方法名如：userDetailsService
 //@Autowired
 //private  CustomUserDetailsService userDetailsService;
     @Bean
@@ -71,23 +70,22 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
 
-
-//    在认证服务器中，该类没有注入
+    //    在认证服务器中，该类没有注入
     @Bean
     @Override
     public AuthenticationManager authenticationManagerBean() throws Exception {
         return super.authenticationManagerBean();
     }
 
-    /**
-     * 注入自定义PermissionEvaluator   haspermission默认flase 需自己实现
-     */
-    @Bean
-    public DefaultWebSecurityExpressionHandler webSecurityExpressionHandler() {
-        DefaultWebSecurityExpressionHandler handler = new DefaultWebSecurityExpressionHandler();
-        handler.setPermissionEvaluator(new CustomPermissionEvaluator());
-        return handler;
-    }
+//    /**
+//     * 注入自定义PermissionEvaluator   haspermission默认flase 需自己实现
+//     */
+//    @Bean
+//    public DefaultWebSecurityExpressionHandler webSecurityExpressionHandler() {
+//        DefaultWebSecurityExpressionHandler handler = new DefaultWebSecurityExpressionHandler();
+//        handler.setPermissionEvaluator(new CustomPermissionEvaluator());
+//        return handler;
+//    }
 
 
     //   创建一个连接将token放入数据库
@@ -116,6 +114,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .formLogin().loginPage("/login")
                 // 设置登陆成功页
                 .defaultSuccessUrl("/").permitAll()
+//                .successHandler(new LoginSuccessHandler())//配置处理器后默认的跳转页就无效了，只能在处理器中处理跳转
                 // 登录失败Url
                 .failureUrl("/login/error")
                 .and()
@@ -128,8 +127,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .userDetailsService(myUserDetailsService());
         // 关闭CSRF跨域
         http.csrf().disable();
-
-
 
 
     }
