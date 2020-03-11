@@ -1,5 +1,7 @@
 package cn.fan.swagger.config;
 
+import cn.fan.swagger.ano.ApiVersion;
+import cn.fan.swagger.interf.ApiVersionConstant;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -15,12 +17,14 @@ import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 
 @Configuration
 @EnableSwagger2
 public class SwaggerConfig {
+    //默认版本的接口api-docs分组
     @Bean
     public Docket creatRestApi() {
         return new Docket(DocumentationType.SWAGGER_2)
@@ -35,6 +39,31 @@ public class SwaggerConfig {
                 .build();
 //.globalOperationParameters(globalOperation());
     }
+
+/**
+ * ApiVersion为创建的注解获取组类
+ * ApiVersionConstant版本管理接口
+ * @ApiVersion(group = ApiVersionConstant.FAP_APP101)就可以对应分组
+ */
+
+    //app1.0.0版本对外接口
+    @Bean
+    public Docket vApp100(){
+        return new Docket(DocumentationType.SWAGGER_2)
+                .apiInfo(apiInfo())
+                .groupName(ApiVersionConstant.FAP_APP100)
+                .select()
+                .apis(input -> {
+                    ApiVersion apiVersion = input.getHandlerMethod().getMethodAnnotation(ApiVersion.class);
+                    if(apiVersion!=null&& Arrays.asList(apiVersion.group()).contains(ApiVersionConstant.FAP_APP100)){
+                        return true;
+                    }
+                    return false;
+                })//controller路径
+                .paths(PathSelectors.any())
+                .build();
+    }
+
     /**
      *
      * - swagger.title=标题

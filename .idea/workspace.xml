@@ -1,109 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7231175b-37c5-4bf4-ab95-5e745b4b514d" name="Default" comment="redis 发布订阅模式">
-      <change afterPath="$PROJECT_DIR$/springboot_security/src/main/java/cn/fan/handler/LoginSuccessHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/springboot_security_oauth2/src/main/java/cn/fan/handler/LoginSuccessHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+    <list default="true" id="7231175b-37c5-4bf4-ab95-5e745b4b514d" name="Default" comment="对security的修正 添加登录成功处理器">
+      <change afterPath="$PROJECT_DIR$/swagger2/src/main/java/cn/fan/swagger/ano/ApiVersion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/swagger2/src/main/java/cn/fan/swagger/interf/ApiVersionConstant.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rabbitmq_consumer/target/classes/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rabbitmq_consumer/target/classes/cn/fan/RabbitmqConsumer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rabbitmq_consumer/target/classes/cn/fan/config/DirectRabbitConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rabbitmq_consumer/target/classes/cn/fan/config/FanoutRabbitConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rabbitmq_consumer/target/classes/cn/fan/config/MessageListenerConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rabbitmq_consumer/target/classes/cn/fan/config/TopicRabbitConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rabbitmq_consumer/target/classes/cn/fan/receiver/DirectReceiver.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rabbitmq_consumer/target/classes/cn/fan/receiver/FanoutReceiverA.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rabbitmq_consumer/target/classes/cn/fan/receiver/FanoutReceiverB.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rabbitmq_consumer/target/classes/cn/fan/receiver/FanoutReceiverC.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rabbitmq_consumer/target/classes/cn/fan/receiver/ReceiverListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_aop/target/classes/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_aop/target/classes/cn/fan/Springboot_aop.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_aop/target/classes/cn/fan/aop/BrokerAspect.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_aop/target/classes/cn/fan/controller/AopController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_fastdfs/target/classes/META-INF/springboot_fastdfs.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_fastdfs/target/classes/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_fastdfs/target/classes/cn/fan/SpringbootFasrDFSApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_fastdfs/target/classes/cn/fan/fast2/FastDFSClient.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_fastdfs/target/classes/cn/fan/web/UploadController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_fastdfs/target/classes/fdfs_client.conf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_fastdfs/target/classes/log4j.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_fastdfs/target/classes/static/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_fastdfs/target/classes/static/uploadStatus.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_mybatis_reverse/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_mybatis_reverse/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_mybatis_reverse/src/main/java/cn/fan/dao/DeptMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_mybatis_reverse/src/main/java/cn/fan/entity/Dept.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_mybatis_reverse/src/main/resources/generator/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_mybatis_reverse/src/main/resources/generator/generatorConfig.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_mybatis_reverse/src/main/resources/mybatis/mapper/DeptMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_mybatis_reverse/target/classes/generator/generatorConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_mybatis_reverse/target/classes/mybatis/mapper/DeptMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_redis/src/main/java/cn/fan/config/RedisConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_redis/src/main/java/cn/fan/config/RedisConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_redis/target/classes/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_redis/target/classes/cn/fan/ApplicationRedis.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_redis/target/classes/cn/fan/config/RedisConfig$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_redis/target/classes/cn/fan/config/RedisConfig$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_redis/target/classes/cn/fan/config/RedisConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_redis/target/classes/cn/fan/config/SwaggerConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_redis/target/classes/cn/fan/result/CommonCode.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_redis/target/classes/cn/fan/result/Response.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_redis/target/classes/cn/fan/result/ResponseResult.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_redis/target/classes/cn/fan/result/ResultCode.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_redis/target/classes/cn/fan/web/TestController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_security/src/main/java/cn/fan/security/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_security/src/main/java/cn/fan/security/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_security/src/main/java/cn/fan/service/CustomUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_security/src/main/java/cn/fan/service/CustomUserDetailsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_security/target/classes/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_security/target/classes/cn/fan/ApplicationSecurity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_security/target/classes/cn/fan/controller/LoginController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_security/target/classes/cn/fan/dao/SysPermissionMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_security/target/classes/cn/fan/dao/SysRoleMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_security/target/classes/cn/fan/dao/SysUserMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_security/target/classes/cn/fan/dao/SysUserRoleMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_security/target/classes/cn/fan/domain/SysPermission.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_security/target/classes/cn/fan/domain/SysRole.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_security/target/classes/cn/fan/domain/SysUser.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_security/target/classes/cn/fan/domain/SysUserRole.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_security/target/classes/cn/fan/security/CustomPermissionEvaluator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_security/target/classes/cn/fan/security/WebSecurityConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_security/target/classes/cn/fan/service/CustomUserDetailsService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_security/target/classes/cn/fan/service/SysPermissionService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_security/target/classes/cn/fan/service/SysRoleService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_security/target/classes/cn/fan/service/SysUserRoleService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_security/target/classes/cn/fan/service/SysUserService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_security/target/classes/templates/home.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_security/target/classes/templates/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_security_oauth2/src/main/java/cn/fan/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_security_oauth2/src/main/java/cn/fan/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_security_oauth2/src/main/java/cn/fan/security/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_security_oauth2/src/main/java/cn/fan/security/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_security_oauth2/src/main/java/cn/fan/service/CustomUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_security_oauth2/src/main/java/cn/fan/service/CustomUserDetailsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_security_oauth2/target/classes/cn/fan/ApplicationSecurityoauth.class" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_security_oauth2/target/classes/cn/fan/ApplicationSecurityoauth.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_security_oauth2/target/classes/cn/fan/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_security_oauth2/target/classes/cn/fan/controller/LoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_security_oauth2/target/classes/cn/fan/dao/SysPermissionMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_security_oauth2/target/classes/cn/fan/dao/SysPermissionMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_security_oauth2/target/classes/cn/fan/dao/SysRoleMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_security_oauth2/target/classes/cn/fan/dao/SysRoleMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_security_oauth2/target/classes/cn/fan/dao/SysUserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_security_oauth2/target/classes/cn/fan/dao/SysUserMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_security_oauth2/target/classes/cn/fan/dao/SysUserRoleMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_security_oauth2/target/classes/cn/fan/dao/SysUserRoleMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_security_oauth2/target/classes/cn/fan/domain/SysPermission.class" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_security_oauth2/target/classes/cn/fan/domain/SysPermission.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_security_oauth2/target/classes/cn/fan/domain/SysRole.class" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_security_oauth2/target/classes/cn/fan/domain/SysRole.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_security_oauth2/target/classes/cn/fan/domain/SysUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_security_oauth2/target/classes/cn/fan/domain/SysUser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_security_oauth2/target/classes/cn/fan/domain/SysUserRole.class" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_security_oauth2/target/classes/cn/fan/domain/SysUserRole.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_security_oauth2/target/classes/cn/fan/security/CustomPermissionEvaluator.class" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_security_oauth2/target/classes/cn/fan/security/CustomPermissionEvaluator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_security_oauth2/target/classes/cn/fan/security/Oauth2ServerConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_security_oauth2/target/classes/cn/fan/security/Oauth2ServerConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_security_oauth2/target/classes/cn/fan/security/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_security_oauth2/target/classes/cn/fan/security/WebSecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_security_oauth2/target/classes/cn/fan/service/CustomUserDetailsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_security_oauth2/target/classes/cn/fan/service/CustomUserDetailsService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_security_oauth2/target/classes/cn/fan/service/SysPermissionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_security_oauth2/target/classes/cn/fan/service/SysPermissionService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_security_oauth2/target/classes/cn/fan/service/SysRoleService.class" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_security_oauth2/target/classes/cn/fan/service/SysRoleService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_security_oauth2/target/classes/cn/fan/service/SysUserRoleService.class" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_security_oauth2/target/classes/cn/fan/service/SysUserRoleService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_security_oauth2/target/classes/cn/fan/service/SysUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_security_oauth2/target/classes/cn/fan/service/SysUserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_webservice/target/classes/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_webservice/target/classes/cn/fan/CxfApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_webservice/target/classes/cn/fan/config/CxfConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_webservice/target/classes/cn/fan/service/DemoService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_webservice/target/classes/cn/fan/service/impl/DemoServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_mongdb/target/classes/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_mongdb/target/classes/cn/fan/MongdbApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_mongdb/target/classes/cn/fan/model/Book.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_mongdb/target/classes/cn/fan/service/MongoDbService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_mongdb/target/classes/cn/fan/web/MongoDbController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/swagger2/src/main/java/cn/fan/swagger/config/SwaggerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/swagger2/src/main/java/cn/fan/swagger/config/SwaggerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swagger2/src/main/java/cn/fan/swagger/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/swagger2/src/main/java/cn/fan/swagger/controller/UserController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -456,6 +359,14 @@
       <workItem from="1583399488875" duration="1188000" />
       <workItem from="1583460721422" duration="5719000" />
       <workItem from="1583475906094" duration="800000" />
+      <workItem from="1583485910552" duration="186000" />
+      <workItem from="1583488228898" duration="629000" />
+      <workItem from="1583541061705" duration="618000" />
+      <workItem from="1583543282173" duration="952000" />
+      <workItem from="1583546929868" duration="210000" />
+      <workItem from="1583725858562" duration="1231000" />
+      <workItem from="1583744972576" duration="756000" />
+      <workItem from="1583902282115" duration="3153000" />
     </task>
     <task id="LOCAL-00001" summary="修复结构，添加websocket项目">
       <created>1582858651857</created>
@@ -485,7 +396,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583216543172</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="对security的修正 添加登录成功处理器">
+      <created>1583486083434</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1583486083435</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -496,7 +414,8 @@
     <MESSAGE value="更新websocket项目" />
     <MESSAGE value="redis 发布订阅模式" />
     <MESSAGE value="easyexcl操作excl" />
-    <option name="LAST_COMMIT_MESSAGE" value="easyexcl操作excl" />
+    <MESSAGE value="对security的修正 添加登录成功处理器" />
+    <option name="LAST_COMMIT_MESSAGE" value="对security的修正 添加登录成功处理器" />
   </component>
   <component name="WindowStateProjectService">
     <state x="392" y="97" key="#HTTP_Proxy" timestamp="1582262672916">
@@ -523,10 +442,10 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="935" y="264" key="#xdebugger.evaluate/0.0.1600.860@0.0.1600.860" timestamp="1582697321761" />
-    <state x="255" y="47" key="CommitChangelistDialog2" timestamp="1583216540507">
+    <state x="255" y="47" key="CommitChangelistDialog2" timestamp="1583486075696">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="255" y="47" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1583216540507" />
+    <state x="255" y="47" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1583486075696" />
     <state width="480" height="466" key="DebuggerActiveHint" timestamp="1582532473854">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -607,10 +526,10 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state width="700" height="378" key="XDebugger.FullValuePopup/0.0.1600.860@0.0.1600.860" timestamp="1582686422932" />
-    <state x="480" y="254" key="com.intellij.ide.util.TipDialog" timestamp="1582856165033">
+    <state x="480" y="254" key="com.intellij.ide.util.TipDialog" timestamp="1583541061694">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="480" y="254" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1582856165033" />
+    <state x="480" y="254" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1583541061694" />
     <state x="498" y="323" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1582599654397">
       <screen x="0" y="0" width="1600" height="860" />
     </state>

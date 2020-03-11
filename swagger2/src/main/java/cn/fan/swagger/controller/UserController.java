@@ -25,7 +25,7 @@ public class UserController {
 
 
     @RequestMapping(value = "/save", method = RequestMethod.POST)
-    //@ApiImplicitParam(name = "user", value = "用户实体user", required = true, dataType = "User")
+    //@ApiImplicitParam(name = "user", value = "用户实体user", required = true, dataType = "User")//这会使参数为body体
     @ApiOperation(value = "创建用户", notes = "创建用户")
     public Map<String, Object> saveUser(@ApiParam(required = true, name = "user", value = "用户实体user") @RequestBody @Valid User user) {
         Map<String, Object> ret = new HashMap<>();
