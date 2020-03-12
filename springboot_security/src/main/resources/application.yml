@@ -1,5 +1,5 @@
 server:
-  port: 8888
+  port: 8082
 spring:
   redis:
     host: localhost
@@ -22,3 +22,4 @@ spring:
 mybatis:
   configuration:
     map-underscore-to-camel-case: true
+#admin  123456
