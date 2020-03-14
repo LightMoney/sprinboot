@@ -20,6 +20,7 @@
         <module>springboot_webservice</module>
         <module>test_mongdb</module>
         <module>springboot_security</module>
+        <module>springboot_security_jwt</module>
         <module>springboot_mybatis_reverse</module>
         <module>springboot_fastdfs</module>
         <module>swagger2</module>
@@ -28,6 +29,7 @@
         <module>springboot_aop</module>
         <module>springboot_easyexcle</module>
         <module>redis_publish_subscriber</module>
+
     </modules>
 
 

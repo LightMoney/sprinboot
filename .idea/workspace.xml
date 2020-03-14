@@ -1,16 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7231175b-37c5-4bf4-ab95-5e745b4b514d" name="Default" comment="添加swagger分组设置">
-      <change afterPath="$PROJECT_DIR$/springboot_security/src/main/java/cn/fan/result/CommonCode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/springboot_security/src/main/java/cn/fan/result/Response.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/springboot_security/src/main/java/cn/fan/result/ResponseResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/springboot_security/src/main/java/cn/fan/result/ResultCode.java" afterDir="false" />
+    <list default="true" id="7231175b-37c5-4bf4-ab95-5e745b4b514d" name="Default" comment="添加security获取当前用户信息">
+      <change afterPath="$PROJECT_DIR$/springboot_security_jwt/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springboot_security_jwt/springboot_security_jwt.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springboot_security_jwt/src/main/java/cn/fan/ApplicationSecurity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springboot_security_jwt/src/main/java/cn/fan/controller/LoginController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springboot_security_jwt/src/main/java/cn/fan/dao/SysPermissionMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springboot_security_jwt/src/main/java/cn/fan/dao/SysRoleMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springboot_security_jwt/src/main/java/cn/fan/dao/SysUserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springboot_security_jwt/src/main/java/cn/fan/dao/SysUserRoleMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springboot_security_jwt/src/main/java/cn/fan/domain/Jwt.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springboot_security_jwt/src/main/java/cn/fan/domain/SysPermission.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springboot_security_jwt/src/main/java/cn/fan/domain/SysRole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springboot_security_jwt/src/main/java/cn/fan/domain/SysUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springboot_security_jwt/src/main/java/cn/fan/domain/SysUserRole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springboot_security_jwt/src/main/java/cn/fan/filter/JWTAuthenticationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springboot_security_jwt/src/main/java/cn/fan/handler/LoginFailureHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springboot_security_jwt/src/main/java/cn/fan/handler/LoginSuccessHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springboot_security_jwt/src/main/java/cn/fan/result/CommonCode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springboot_security_jwt/src/main/java/cn/fan/result/Response.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springboot_security_jwt/src/main/java/cn/fan/result/ResponseResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springboot_security_jwt/src/main/java/cn/fan/result/ResultCode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springboot_security_jwt/src/main/java/cn/fan/security/CustomPermissionEvaluator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springboot_security_jwt/src/main/java/cn/fan/security/WebSecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springboot_security_jwt/src/main/java/cn/fan/service/CustomUserDetailsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springboot_security_jwt/src/main/java/cn/fan/service/SysPermissionService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springboot_security_jwt/src/main/java/cn/fan/service/SysRoleService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springboot_security_jwt/src/main/java/cn/fan/service/SysUserRoleService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springboot_security_jwt/src/main/java/cn/fan/service/SysUserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springboot_security_jwt/src/main/java/cn/fan/util/JwtUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springboot_security_jwt/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springboot_security_jwt/src/main/resources/templates/home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springboot_security_jwt/src/main/resources/templates/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springboot_security_jwt/src/main/resources/说明文档" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springboot_security_jwt/target/classes/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springboot_security_jwt/target/classes/cn/fan/ApplicationSecurity.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springboot_security_jwt/target/classes/cn/fan/controller/LoginController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springboot_security_jwt/target/classes/cn/fan/dao/SysPermissionMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springboot_security_jwt/target/classes/cn/fan/dao/SysRoleMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springboot_security_jwt/target/classes/cn/fan/dao/SysUserMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springboot_security_jwt/target/classes/cn/fan/dao/SysUserRoleMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springboot_security_jwt/target/classes/cn/fan/domain/SysPermission.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springboot_security_jwt/target/classes/cn/fan/domain/SysRole.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springboot_security_jwt/target/classes/cn/fan/domain/SysUser.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springboot_security_jwt/target/classes/cn/fan/domain/SysUserRole.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springboot_security_jwt/target/classes/cn/fan/handler/LoginSuccessHandler.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springboot_security_jwt/target/classes/cn/fan/result/CommonCode.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springboot_security_jwt/target/classes/cn/fan/result/Response.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springboot_security_jwt/target/classes/cn/fan/result/ResponseResult.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springboot_security_jwt/target/classes/cn/fan/result/ResultCode.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springboot_security_jwt/target/classes/cn/fan/security/CustomPermissionEvaluator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springboot_security_jwt/target/classes/cn/fan/security/WebSecurityConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springboot_security_jwt/target/classes/cn/fan/service/CustomUserDetailsService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springboot_security_jwt/target/classes/cn/fan/service/SysPermissionService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springboot_security_jwt/target/classes/cn/fan/service/SysRoleService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springboot_security_jwt/target/classes/cn/fan/service/SysUserRoleService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springboot_security_jwt/target/classes/cn/fan/service/SysUserService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springboot_security_jwt/target/classes/templates/home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springboot_security_jwt/target/classes/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_security/src/main/java/cn/fan/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_security/src/main/java/cn/fan/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_security/src/main/java/cn/fan/dao/SysUserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_security/src/main/java/cn/fan/dao/SysUserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_security/src/main/java/cn/fan/handler/LoginSuccessHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_security/src/main/java/cn/fan/handler/LoginSuccessHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_security/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_security/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot_security/src/main/java/cn/fan/security/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_security/src/main/java/cn/fan/security/WebSecurityConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +133,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/springboot_security/src/main/java/cn/fan" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/springboot_security_jwt/src/main/java/cn/fan/handler" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -92,12 +145,12 @@
     <option name="notificationShown" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\workspace\springboot_study\springboot_fastdfs\src\main\resources" />
-      <recent name="E:\workspace\springboot_study\springboot_fastdfs\src\main\java\cn\fan\web" />
-      <recent name="E:\workspace\springboot_study\springboot_fastdfs\src\main\java\cn\fan\fastdfs" />
-      <recent name="E:\workspace\springboot_study\springboot_security_oauth2\src\main\resources\templates" />
-      <recent name="E:\workspace\springboot_study\springboot_security_oauth2\src\main\resources\static" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\springboot_study\springboot_security_jwt\src\main\java\cn\fan\handler" />
+      <recent name="E:\springboot_study\springboot_security_jwt\src\main\java\cn\fan\filter" />
+      <recent name="E:\springboot_study" />
+      <recent name="E:\springboot_study\springboot_security\src\main\java\cn\fan" />
+      <recent name="E:\springboot_study\springboot_easyexcle\src\main\java" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="cn.fan.handler" />
@@ -106,12 +159,12 @@
       <recent name="cn.fan.redis_publish_subscriber.config" />
       <recent name="cn.fan.config" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\springboot_study\springboot_security\src\main\java\cn\fan" />
-      <recent name="E:\springboot_study\springboot_easyexcle\src\main\java" />
-      <recent name="E:\springboot_study\springboot_easyexcle\src\main\java\cn\fan\springboot_easyexcle" />
-      <recent name="E:\workspace\springboot_study\springboot_redis\src\main\resources" />
-      <recent name="E:\workspace\springboot_study\swagger2\src\main\resources" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\workspace\springboot_study\springboot_fastdfs\src\main\resources" />
+      <recent name="E:\workspace\springboot_study\springboot_fastdfs\src\main\java\cn\fan\web" />
+      <recent name="E:\workspace\springboot_study\springboot_fastdfs\src\main\java\cn\fan\fastdfs" />
+      <recent name="E:\workspace\springboot_study\springboot_security_oauth2\src\main\resources\templates" />
+      <recent name="E:\workspace\springboot_study\springboot_security_oauth2\src\main\resources\static" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -121,25 +174,9 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.ApplicationSecurity">
+  <component name="RunManager" selected="Spring Boot.ApplicationSecurity (1)">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SpringbootEasyexcleApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="springboot_easyexcle" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="cn.fan.springboot_easyexcle.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="cn.fan.springboot_easyexcle" />
-      <option name="MAIN_CLASS_NAME" value="cn.fan.springboot_easyexcle.SpringbootEasyexcleApplicationTests" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -181,6 +218,19 @@
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ApplicationSecurity (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="springboot_security_jwt" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.fan.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="cn.fan.ApplicationSecurity" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -263,7 +313,6 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.SpringbootEasyexcleApplicationTests" />
       <item itemvalue="JUnit.SpringbootEasyexcleApplicationTests.writeByModelExcle" />
       <item itemvalue="JUnit.SpringbootEasyexcleApplicationTests.read" />
       <item itemvalue="Spring Boot.SpringbootRabbitmqApplication" />
@@ -274,14 +323,15 @@
       <item itemvalue="Spring Boot.SpringbootEasyexcleApplication" />
       <item itemvalue="Spring Boot.ApplicationSecurityoauth" />
       <item itemvalue="Spring Boot.ApplicationSecurity" />
+      <item itemvalue="Spring Boot.ApplicationSecurity (1)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.ApplicationSecurity (1)" />
         <item itemvalue="Spring Boot.ApplicationSecurity" />
         <item itemvalue="Spring Boot.ApplicationSecurityoauth" />
         <item itemvalue="JUnit.SpringbootEasyexcleApplicationTests.read" />
         <item itemvalue="JUnit.SpringbootEasyexcleApplicationTests.writeByModelExcle" />
-        <item itemvalue="JUnit.SpringbootEasyexcleApplicationTests" />
       </list>
     </recent_temporary>
   </component>
@@ -298,7 +348,7 @@
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="Spring Boot" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="Running" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
             </expand>
             <select />
@@ -373,7 +423,10 @@
       <workItem from="1583725858562" duration="1231000" />
       <workItem from="1583744972576" duration="756000" />
       <workItem from="1583902282115" duration="3410000" />
-      <workItem from="1583981390919" duration="6378000" />
+      <workItem from="1583981390919" duration="7480000" />
+      <workItem from="1584069156349" duration="368000" />
+      <workItem from="1584069551763" duration="6321000" />
+      <workItem from="1584159283413" duration="5686000" />
     </task>
     <task id="LOCAL-00001" summary="修复结构，添加websocket项目">
       <created>1582858651857</created>
@@ -417,7 +470,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583911874544</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="添加security获取当前用户信息">
+      <created>1583994071504</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1583994071504</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -430,25 +490,30 @@
     <MESSAGE value="easyexcl操作excl" />
     <MESSAGE value="对security的修正 添加登录成功处理器" />
     <MESSAGE value="添加swagger分组设置" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加swagger分组设置" />
+    <MESSAGE value="添加security获取当前用户信息" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加security获取当前用户信息" />
   </component>
   <component name="WindowStateProjectService">
     <state x="392" y="97" key="#HTTP_Proxy" timestamp="1582262672916">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="392" y="97" key="#HTTP_Proxy/0.0.1600.860@0.0.1600.860" timestamp="1582262672916" />
-    <state x="218" y="100" key="#Project_Structure" timestamp="1583200384252">
+    <state x="218" y="100" key="#Project_Structure" timestamp="1584070085072">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="218" y="100" key="#Project_Structure/0.0.1600.860@0.0.1600.860" timestamp="1583200384252" />
+    <state x="218" y="100" key="#Project_Structure/0.0.1600.860@0.0.1600.860" timestamp="1584070085072" />
     <state x="797" y="296" key="#com.intellij.codeInsight.template.impl.EditVariableDialog" timestamp="1582596742297">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="797" y="296" key="#com.intellij.codeInsight.template.impl.EditVariableDialog/0.0.1600.860@0.0.1600.860" timestamp="1582596742297" />
-    <state x="615" y="138" key="#com.intellij.ide.util.MemberChooser" timestamp="1583313446934">
+    <state x="539" y="232" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1584070739958">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="615" y="138" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860@0.0.1600.860" timestamp="1583313446934" />
+    <state x="539" y="232" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1600.860@0.0.1600.860" timestamp="1584070739958" />
+    <state x="615" y="138" key="#com.intellij.ide.util.MemberChooser" timestamp="1584167879057">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="615" y="138" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860@0.0.1600.860" timestamp="1584167879057" />
     <state x="530" y="176" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1583462154162">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -457,10 +522,10 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="935" y="264" key="#xdebugger.evaluate/0.0.1600.860@0.0.1600.860" timestamp="1582697321761" />
-    <state x="255" y="47" key="CommitChangelistDialog2" timestamp="1583911871493">
+    <state x="255" y="47" key="CommitChangelistDialog2" timestamp="1583994069714">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="255" y="47" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1583911871493" />
+    <state x="255" y="47" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1583994069714" />
     <state width="480" height="466" key="DebuggerActiveHint" timestamp="1582532473854">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -469,58 +534,58 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="37" y="97" key="DiffContextDialog/0.0.1600.860@0.0.1600.860" timestamp="1583216480640" />
-    <state x="580" y="185" key="FileChooserDialogImpl" timestamp="1583296079587">
+    <state x="580" y="185" key="FileChooserDialogImpl" timestamp="1584070550227">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="580" y="185" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1583296079587" />
-    <state width="1069" height="318" key="GridCell.Tab.0.bottom" timestamp="1583994015536">
+    <state x="580" y="185" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1584070550227" />
+    <state width="1069" height="318" key="GridCell.Tab.0.bottom" timestamp="1584167886313">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1069" height="318" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1583994015536" />
-    <state width="1069" height="318" key="GridCell.Tab.0.center" timestamp="1583994015536">
+    <state width="1069" height="318" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1584167886313" />
+    <state width="1069" height="318" key="GridCell.Tab.0.center" timestamp="1584167886313">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1069" height="318" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1583994015536" />
-    <state width="1069" height="318" key="GridCell.Tab.0.left" timestamp="1583994015536">
+    <state width="1069" height="318" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1584167886313" />
+    <state width="1069" height="318" key="GridCell.Tab.0.left" timestamp="1584167886313">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1069" height="318" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1583994015536" />
-    <state width="1069" height="318" key="GridCell.Tab.0.right" timestamp="1583994015536">
+    <state width="1069" height="318" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1584167886313" />
+    <state width="1069" height="318" key="GridCell.Tab.0.right" timestamp="1584167886313">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1069" height="318" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1583994015536" />
-    <state width="1069" height="318" key="GridCell.Tab.1.bottom" timestamp="1583994015537">
+    <state width="1069" height="318" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1584167886313" />
+    <state width="1069" height="318" key="GridCell.Tab.1.bottom" timestamp="1584167886313">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1069" height="318" key="GridCell.Tab.1.bottom/0.0.1600.860@0.0.1600.860" timestamp="1583994015537" />
-    <state width="1069" height="318" key="GridCell.Tab.1.center" timestamp="1583994015537">
+    <state width="1069" height="318" key="GridCell.Tab.1.bottom/0.0.1600.860@0.0.1600.860" timestamp="1584167886313" />
+    <state width="1069" height="318" key="GridCell.Tab.1.center" timestamp="1584167886313">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1069" height="318" key="GridCell.Tab.1.center/0.0.1600.860@0.0.1600.860" timestamp="1583994015537" />
-    <state width="1069" height="318" key="GridCell.Tab.1.left" timestamp="1583994015536">
+    <state width="1069" height="318" key="GridCell.Tab.1.center/0.0.1600.860@0.0.1600.860" timestamp="1584167886313" />
+    <state width="1069" height="318" key="GridCell.Tab.1.left" timestamp="1584167886313">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1069" height="318" key="GridCell.Tab.1.left/0.0.1600.860@0.0.1600.860" timestamp="1583994015536" />
-    <state width="1069" height="318" key="GridCell.Tab.1.right" timestamp="1583994015537">
+    <state width="1069" height="318" key="GridCell.Tab.1.left/0.0.1600.860@0.0.1600.860" timestamp="1584167886313" />
+    <state width="1069" height="318" key="GridCell.Tab.1.right" timestamp="1584167886313">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1069" height="318" key="GridCell.Tab.1.right/0.0.1600.860@0.0.1600.860" timestamp="1583994015537" />
-    <state width="1069" height="318" key="GridCell.Tab.2.bottom" timestamp="1583994015537">
+    <state width="1069" height="318" key="GridCell.Tab.1.right/0.0.1600.860@0.0.1600.860" timestamp="1584167886313" />
+    <state width="1069" height="318" key="GridCell.Tab.2.bottom" timestamp="1584167886314">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1069" height="318" key="GridCell.Tab.2.bottom/0.0.1600.860@0.0.1600.860" timestamp="1583994015537" />
-    <state width="1069" height="318" key="GridCell.Tab.2.center" timestamp="1583994015537">
+    <state width="1069" height="318" key="GridCell.Tab.2.bottom/0.0.1600.860@0.0.1600.860" timestamp="1584167886314" />
+    <state width="1069" height="318" key="GridCell.Tab.2.center" timestamp="1584167886314">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1069" height="318" key="GridCell.Tab.2.center/0.0.1600.860@0.0.1600.860" timestamp="1583994015537" />
-    <state width="1069" height="318" key="GridCell.Tab.2.left" timestamp="1583994015537">
+    <state width="1069" height="318" key="GridCell.Tab.2.center/0.0.1600.860@0.0.1600.860" timestamp="1584167886314" />
+    <state width="1069" height="318" key="GridCell.Tab.2.left" timestamp="1584167886313">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1069" height="318" key="GridCell.Tab.2.left/0.0.1600.860@0.0.1600.860" timestamp="1583994015537" />
-    <state width="1069" height="318" key="GridCell.Tab.2.right" timestamp="1583994015537">
+    <state width="1069" height="318" key="GridCell.Tab.2.left/0.0.1600.860@0.0.1600.860" timestamp="1584167886313" />
+    <state width="1069" height="318" key="GridCell.Tab.2.right" timestamp="1584167886314">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1069" height="318" key="GridCell.Tab.2.right/0.0.1600.860@0.0.1600.860" timestamp="1583994015537" />
+    <state width="1069" height="318" key="GridCell.Tab.2.right/0.0.1600.860@0.0.1600.860" timestamp="1584167886314" />
     <state x="407" y="210" key="IDE.errors.dialog" timestamp="1582784075036">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -573,16 +638,6 @@
           <url>file://$PROJECT_DIR$/springboot_security_oauth2/src/main/java/cn/fan/service/CustomUserDetailsService.java</url>
           <line>57</line>
           <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/springboot_security/src/main/java/cn/fan/controller/LoginController.java</url>
-          <line>47</line>
-          <option name="timeStamp" value="24" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/springboot_security/src/main/java/cn/fan/controller/LoginController.java</url>
-          <line>58</line>
-          <option name="timeStamp" value="25" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

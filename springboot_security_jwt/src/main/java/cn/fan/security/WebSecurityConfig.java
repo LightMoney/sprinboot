@@ -1,5 +1,7 @@
 package cn.fan.security;
 
+import cn.fan.filter.JWTAuthenticationFilter;
+import cn.fan.handler.LoginFailureHandler;
 import cn.fan.handler.LoginSuccessHandler;
 import cn.fan.service.CustomUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,9 +13,11 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.access.expression.DefaultWebSecurityExpressionHandler;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.security.web.authentication.rememberme.JdbcTokenRepositoryImpl;
 import org.springframework.security.web.authentication.rememberme.PersistentTokenRepository;
 
@@ -77,9 +81,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .anyRequest().authenticated()
                 .and()
                 // 设置登陆页
-                .formLogin().loginPage("/login")
+                .formLogin().loginProcessingUrl("/login")
                 // 设置登陆成功页
 //                .defaultSuccessUrl("/")使用处理器，默认设置失效
+                .failureHandler(new LoginFailureHandler())
                 .successHandler(new LoginSuccessHandler()).permitAll()
                 // 登录失败Url
                 .failureUrl("/login/error")
@@ -94,6 +99,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .tokenRepository(persistentTokenRepository())
                 .tokenValiditySeconds(60)//60s 不设置时间默认浏览器关闭cookie丢失，自动登录失效
                 .userDetailsService(userDetailsService);
+        //无状态 没有session
+        http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+        /* 配置token验证过滤器 */
+        http.addFilterBefore(new JWTAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);
         // 关闭CSRF跨域
         http.csrf().disable();
 

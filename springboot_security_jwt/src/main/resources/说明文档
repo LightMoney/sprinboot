@@ -1,0 +1,8 @@
+1.使用jwt需现将session配置为无状态
+ //无状态 没有session
+  http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+  2.创建jwtutil操作工具类
+  3.定义消息对象Jwt
+  4.用户登录成功后，不再把session发给用户，而是把jwt发送给用户，因此修改登录成功处理器
+  5.带着token访问接口的时候，需要把token转回登录用户对象，因此我们的用户实体类和token中带的字段名字一致，来修改一下(sysrole.sysUser)
+  6.创建并添加JWTAuthenticationFilter，我们把security的session改为无状态后，虽然不再传递session，但是security的过滤器并没有失效，因此造成的效果就是登录成功后，访问接口显示未登录。现在我们使用token就要在登录前加一个验证token的过滤器，验证通过后直接把信息放到SecurityContextHolder中。
