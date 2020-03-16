@@ -23,3 +23,4 @@ mybatis:
   configuration:
     map-underscore-to-camel-case: true
 #admin  123456
+# $2a$10$YRFsgeeI/SbWb913V6qJvOQLJbl8KL87z1SgYOiUT01hgOkGHzIT6

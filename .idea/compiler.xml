@@ -11,16 +11,16 @@
         <module name="springboot_easyexcle" />
         <module name="springboot_aop" />
         <module name="springboot_webservice" />
+        <module name="springboot_security_jwt" />
         <module name="swagger2" />
         <module name="websocket" />
         <module name="redis_publish_subscriber" />
-        <module name="springboot_security_jwt" />
+        <module name="springboot_redis" />
         <module name="springboot_rabbitmq" />
         <module name="springboot_security" />
         <module name="springboot_security_oauth2" />
         <module name="springboot_mybatis_reverse" />
         <module name="test_mongdb" />
-        <module name="springboot_redis" />
         <module name="springboot_fastdfs" />
       </profile>
     </annotationProcessing>

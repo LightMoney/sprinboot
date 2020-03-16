@@ -5,10 +5,10 @@
 <!-- 第二种mybatis逆向生成xml配置 -->
 <generatorConfiguration>
     <!-- 需要指明数据库连接器的绝对路径 -->
-<!--    <classPathEntry-->
-<!--            location="E:\repository\mysql\mysql-connector-java\5.1.6\mysql-connector-java-5.1.6.jar"/>-->
     <classPathEntry
-            location="E:\repository\com\microsoft\sqlserver\mssql-jdbc\6.2.0.jre8\mssql-jdbc-6.2.0.jre8.jar"/>
+            location="E:\repository\mysql\mysql-connector-java\5.1.6\mysql-connector-java-5.1.6.jar"/>
+<!--    <classPathEntry-->
+<!--            location="E:\repository\com\microsoft\sqlserver\mssql-jdbc\6.2.0.jre8\mssql-jdbc-6.2.0.jre8.jar"/>-->
 
     <context id="sqlserverTables" targetRuntime="MyBatis3">
         <!-- 生成的pojo，将implements Serializable-->
@@ -18,17 +18,22 @@
             <property name="suppressAllComments" value="true" />
         </commentGenerator>
 
-        <!-- 数据库链接URL、用户名、密码 -->
+<!--        &lt;!&ndash; 数据库链接URL、用户名、密码 &ndash;&gt;-->
 <!--         <jdbcConnection driverClass="com.mysql.jdbc.Driver"-->
 <!--                         connectionURL="jdbc:mysql://localhost:3306/cps"-->
 <!--                         userId="root"-->
 <!--                         password="root">-->
 <!--         </jdbcConnection>-->
-        <jdbcConnection driverClass="com.microsoft.sqlserver.jdbc.SQLServerDriver"
-                        connectionURL="jdbc:sqlserver://10.3.1.3:1433;DatabaseName=htgtshop"
-                        userId="sa"
-                        password="Hthl@2018">
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://10.3.0.253:3306/component"
+                        userId="hthl"
+                        password="Hthl2018">
         </jdbcConnection>
+<!--        <jdbcConnection driverClass="com.microsoft.sqlserver.jdbc.SQLServerDriver"-->
+<!--                        connectionURL="jdbc:sqlserver://10.3.1.3:1433;DatabaseName=htgtshop"-->
+<!--                        userId="sa"-->
+<!--                        password="Hthl@2018">-->
+<!--        </jdbcConnection>-->
         <!--<jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver"
                         connectionURL="jdbc:oracle:thin:@10.1.103.250:1521:orcl"
                         userId="fis"
@@ -69,14 +74,65 @@
 <!--               enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"-->
 <!--               enableSelectByExample="false" selectByExampleQueryId="false" >-->
 <!--            <property name="useActualColumnNames" value="false"/>-->
-        <table tableName="Product" domainObjectName="Product"
-               enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
-               enableSelectByExample="false" selectByExampleQueryId="false" >
-            <property name="useActualColumnNames" value="false"/>
-        </table>
-        <!--这是通用配置-->
-        <!--<table tableName="%">-->
-            <!--<generatedKey column="id" sqlStatement="Mysql"/>-->
-        <!--</table>-->
-    </context>
-</generatorConfiguration>
+<!--        <table tableName="Product" domainObjectName="Product"-->
+<!--               enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"-->
+<!--               enableSelectByExample="false" selectByExampleQueryId="false" >-->
+<!--            <property name="useActualColumnNames" value="false"/>-->
+
+<!--        <table tableName="t_cp_activity_code" domainObjectName="ActivityCode"-->
+<!--               enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"-->
+<!--               enableSelectByExample="false" selectByExampleQueryId="false" >-->
+<!--            <property name="useActualColumnNames" value="false"/>-->
+<!--        </table>-->
+<!--        <table tableName="t_cp_abc_code" domainObjectName="AbcCode"-->
+<!--               enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"-->
+<!--               enableSelectByExample="false" selectByExampleQueryId="false" >-->
+<!--            <property name="useActualColumnNames" value="false"/>-->
+<!--        </table>-->
+<!--        <table tableName="t_cp_alloy_code" domainObjectName="AlloyCode"-->
+<!--               enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"-->
+<!--               enableSelectByExample="false" selectByExampleQueryId="false" >-->
+<!--            <property name="useActualColumnNames" value="false"/>-->
+<!--        </table>-->
+<!--        <table tableName="t_cp_combination_code" domainObjectName="CombinationCode"-->
+<!--               enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"-->
+<!--               enableSelectByExample="false" selectByExampleQueryId="false" >-->
+<!--            <property name="useActualColumnNames" value="false"/>-->
+<!--        </table>-->
+<!--        <table tableName="t_cp_component_code" domainObjectName="ComponentCode"-->
+<!--               enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"-->
+<!--               enableSelectByExample="false" selectByExampleQueryId="false" >-->
+<!--            <property name="useActualColumnNames" value="false"/>-->
+<!--        </table>-->
+<!--        <table tableName="t_cp_goods_type" domainObjectName="GoodsType"-->
+<!--               enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"-->
+<!--               enableSelectByExample="false" selectByExampleQueryId="false" >-->
+<!--            <property name="useActualColumnNames" value="false"/>-->
+<!--        </table>-->
+<!--        <table tableName="t_cp_material_status" domainObjectName="MaterialStatus"-->
+<!--               enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"-->
+<!--               enableSelectByExample="false" selectByExampleQueryId="false" >-->
+<!--            <property name="useActualColumnNames" value="false"/>-->
+<!--        </table>-->
+<!--        <table tableName="t_cp_other_type" domainObjectName="OtherType"-->
+<!--               enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"-->
+<!--               enableSelectByExample="false" selectByExampleQueryId="false" >-->
+<!--            <property name="useActualColumnNames" value="false"/>-->
+<!--        </table>-->
+<!--        <table tableName="t_cp_pack_type" domainObjectName="PackType"-->
+<!--               enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"-->
+<!--               enableSelectByExample="false" selectByExampleQueryId="false" >-->
+<!--            <property name="useActualColumnNames" value="false"/>-->
+<!--        </table>-->
+<!--        <table tableName="t_cp_unit" domainObjectName="Unit"-->
+<!--               enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"-->
+<!--               enableSelectByExample="false" selectByExampleQueryId="false" >-->
+<!--            <property name="useActualColumnNames" value="false"/>-->
+<!--        </table>-->
+<!--        这是通用配置-->
+        <table tableName="%"  enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+                    enableSelectByExample="false" selectByExampleQueryId="false">
+                    <generatedKey column="id" sqlStatement="Mysql"/>
+                </table>
+            </context>
+        </generatorConfiguration>
