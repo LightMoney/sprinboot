@@ -130,9 +130,14 @@
 <!--            <property name="useActualColumnNames" value="false"/>-->
 <!--        </table>-->
 <!--        这是通用配置-->
-        <table tableName="%"  enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
-                    enableSelectByExample="false" selectByExampleQueryId="false">
-                    <generatedKey column="id" sqlStatement="Mysql"/>
+<!--        <table tableName="%"  enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"-->
+<!--                    enableSelectByExample="false" selectByExampleQueryId="false">-->
+<!--                    <generatedKey column="id" sqlStatement="Mysql"/>-->
+<!--                </table>-->
+        <table tableName="t_cp_material_type" domainObjectName="TCpMaterialType"
+                       enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+                       enableSelectByExample="false" selectByExampleQueryId="false" >
+                    <property name="useActualColumnNames" value="false"/>
                 </table>
             </context>
         </generatorConfiguration>

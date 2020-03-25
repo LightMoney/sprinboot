@@ -29,7 +29,7 @@
         <module>springboot_aop</module>
         <module>springboot_easyexcle</module>
         <module>redis_publish_subscriber</module>
-
+        <module>mybatis-plus</module>
     </modules>
 
 

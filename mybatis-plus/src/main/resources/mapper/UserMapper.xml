@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.fan.mybatisplus.dao.UserMapper" >
+  <select id="selectByPage" resultType="cn.fan.mybatisplus.entity.UserVo">
+    select
+        u.uid,
+        u.uname,
+        u.rid,
+        r.rname
+    from tb_user u
+    left join tb_role r on u.rid=r.rid
+
+  </select>
+</mapper>

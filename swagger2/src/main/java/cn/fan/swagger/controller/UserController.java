@@ -1,7 +1,9 @@
 
 package cn.fan.swagger.controller;
 
+import cn.fan.swagger.ano.ApiVersion;
 import cn.fan.swagger.bean.User;
+import cn.fan.swagger.interf.ApiVersionConstant;
 import cn.fan.swagger.service.UserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
@@ -9,7 +11,6 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import springfox.documentation.annotations.ApiIgnore;
 
 import javax.validation.Valid;
 import java.util.HashMap;
@@ -99,9 +100,10 @@ public class UserController {
      * ApiIgnore 使用该注解忽略这个API，不会生成接口文档。可注解在类和方法上
      * @return
      */
-    @ApiIgnore
+//    @ApiIgnore
     @RequestMapping(value = "/getAll", method = RequestMethod.GET, produces = "application/json")
     @ApiOperation(value = "获取用户列表", notes = "获取用户列表")
+    @ApiVersion(group = ApiVersionConstant.FAP_APP100)
     public Map<String, Object> getAll() {
         Map<String, Object> ret = new HashMap<>();
         ret.put("msg", "获取成功");
