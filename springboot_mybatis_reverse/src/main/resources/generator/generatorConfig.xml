@@ -13,11 +13,17 @@
     <context id="sqlserverTables" targetRuntime="MyBatis3">
         <!-- 生成的pojo，将implements Serializable-->
         <plugin type="org.mybatis.generator.plugins.SerializablePlugin"></plugin>
-        <commentGenerator>
+<!--        <commentGenerator>-->
+<!--            &lt;!&ndash; 是否去除自动生成的注释 true：是 ： false:否 &ndash;&gt;-->
+<!--            <property name="suppressAllComments" value="true" />-->
+<!--        </commentGenerator>-->
+        <!--可以自定义生成model的代码注释-->
+        <commentGenerator type="cn.fan.config.CommentGenerator">
             <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
-            <property name="suppressAllComments" value="true" />
+            <property name="suppressAllComments" value="true"/>
+            <property name="suppressDate" value="true"/>
+            <property name="addRemarkComments" value="true"/>
         </commentGenerator>
-
 <!--        &lt;!&ndash; 数据库链接URL、用户名、密码 &ndash;&gt;-->
 <!--         <jdbcConnection driverClass="com.mysql.jdbc.Driver"-->
 <!--                         connectionURL="jdbc:mysql://localhost:3306/cps"-->
@@ -25,7 +31,7 @@
 <!--                         password="root">-->
 <!--         </jdbcConnection>-->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://10.3.0.253:3306/component"
+                        connectionURL="jdbc:mysql://10.3.0.253:3306/basic"
                         userId="hthl"
                         password="Hthl2018">
         </jdbcConnection>
@@ -52,92 +58,61 @@
         也可以使用“MAVEN”来自动生成，这样生成的代码会在target/generatord-source目录下
         -->
         <!--<javaModelGenerator targetPackage="com.forezp.entity" targetProject="MAVEN">-->
-        <javaModelGenerator targetPackage="cn.fan.entity" targetProject="./src/main/java">
+<!--        <javaModelGenerator targetPackage="cn.fan.entity" targetProject="./src/main/java">-->
+<!--            <property name="enableSubPackages" value="true"/>-->
+<!--            &lt;!&ndash; 从数据库返回的值被清理前后的空格  &ndash;&gt;-->
+<!--            <property name="trimStrings" value="true" />-->
+<!--        </javaModelGenerator>-->
+        <javaModelGenerator targetPackage="cn.fan.entity" targetProject="springboot_mybatis_reverse\src\main\java">
             <property name="enableSubPackages" value="true"/>
             <!-- 从数据库返回的值被清理前后的空格  -->
             <property name="trimStrings" value="true" />
         </javaModelGenerator>
-
         <!--对应的mapper.xml文件  -->
-        <sqlMapGenerator targetPackage="/mybatis/mapper" targetProject="./src/main/resources">
+<!--        <sqlMapGenerator targetPackage="/mybatis/mapper" targetProject="./src/main/resources">-->
+<!--            <property name="enableSubPackages" value="true"/>-->
+<!--        </sqlMapGenerator>-->
+        <sqlMapGenerator targetPackage="/mybatis/mapper" targetProject="springboot_mybatis_reverse\src\main\resources">
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
-
         <!-- 对应的Mapper接口类文件 -->
-        <javaClientGenerator type="XMLMAPPER" targetPackage="cn.fan.dao" targetProject="./src/main/java">
+<!--        <javaClientGenerator type="XMLMAPPER" targetPackage="cn.fan.dao" targetProject="./src/main/java">-->
+<!--            <property name="enableSubPackages" value="true"/>-->
+<!--        </javaClientGenerator>-->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="cn.fan.dao" targetProject="springboot_mybatis_reverse\src\main\java">
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
-
 
         <!-- 要生成的表tableName是数据库中的表名或视图名 domainObjectName是实体类名-->
 <!--        <table tableName="dept" domainObjectName="Dept"-->
 <!--               enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"-->
 <!--               enableSelectByExample="false" selectByExampleQueryId="false" >-->
 <!--            <property name="useActualColumnNames" value="false"/>-->
-<!--        <table tableName="Product" domainObjectName="Product"-->
-<!--               enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"-->
-<!--               enableSelectByExample="false" selectByExampleQueryId="false" >-->
-<!--            <property name="useActualColumnNames" value="false"/>-->
 
-<!--        <table tableName="t_cp_activity_code" domainObjectName="ActivityCode"-->
-<!--               enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"-->
-<!--               enableSelectByExample="false" selectByExampleQueryId="false" >-->
-<!--            <property name="useActualColumnNames" value="false"/>-->
-<!--        </table>-->
-<!--        <table tableName="t_cp_abc_code" domainObjectName="AbcCode"-->
-<!--               enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"-->
-<!--               enableSelectByExample="false" selectByExampleQueryId="false" >-->
-<!--            <property name="useActualColumnNames" value="false"/>-->
-<!--        </table>-->
-<!--        <table tableName="t_cp_alloy_code" domainObjectName="AlloyCode"-->
-<!--               enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"-->
-<!--               enableSelectByExample="false" selectByExampleQueryId="false" >-->
-<!--            <property name="useActualColumnNames" value="false"/>-->
-<!--        </table>-->
-<!--        <table tableName="t_cp_combination_code" domainObjectName="CombinationCode"-->
-<!--               enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"-->
-<!--               enableSelectByExample="false" selectByExampleQueryId="false" >-->
-<!--            <property name="useActualColumnNames" value="false"/>-->
-<!--        </table>-->
-<!--        <table tableName="t_cp_component_code" domainObjectName="ComponentCode"-->
-<!--               enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"-->
-<!--               enableSelectByExample="false" selectByExampleQueryId="false" >-->
-<!--            <property name="useActualColumnNames" value="false"/>-->
-<!--        </table>-->
-<!--        <table tableName="t_cp_goods_type" domainObjectName="GoodsType"-->
-<!--               enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"-->
-<!--               enableSelectByExample="false" selectByExampleQueryId="false" >-->
-<!--            <property name="useActualColumnNames" value="false"/>-->
-<!--        </table>-->
-<!--        <table tableName="t_cp_material_status" domainObjectName="MaterialStatus"-->
-<!--               enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"-->
-<!--               enableSelectByExample="false" selectByExampleQueryId="false" >-->
-<!--            <property name="useActualColumnNames" value="false"/>-->
-<!--        </table>-->
-<!--        <table tableName="t_cp_other_type" domainObjectName="OtherType"-->
-<!--               enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"-->
-<!--               enableSelectByExample="false" selectByExampleQueryId="false" >-->
-<!--            <property name="useActualColumnNames" value="false"/>-->
-<!--        </table>-->
-<!--        <table tableName="t_cp_pack_type" domainObjectName="PackType"-->
-<!--               enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"-->
-<!--               enableSelectByExample="false" selectByExampleQueryId="false" >-->
-<!--            <property name="useActualColumnNames" value="false"/>-->
-<!--        </table>-->
-<!--        <table tableName="t_cp_unit" domainObjectName="Unit"-->
-<!--               enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"-->
-<!--               enableSelectByExample="false" selectByExampleQueryId="false" >-->
-<!--            <property name="useActualColumnNames" value="false"/>-->
-<!--        </table>-->
 <!--        这是通用配置-->
 <!--        <table tableName="%"  enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"-->
 <!--                    enableSelectByExample="false" selectByExampleQueryId="false">-->
 <!--                    <generatedKey column="id" sqlStatement="Mysql"/>-->
 <!--                </table>-->
-        <table tableName="t_cp_material_type" domainObjectName="TCpMaterialType"
-                       enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
-                       enableSelectByExample="false" selectByExampleQueryId="false" >
-                    <property name="useActualColumnNames" value="false"/>
-                </table>
+<!--        <table tableName="t_cp_material_type" domainObjectName="TCpMaterialType"-->
+<!--                       enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"-->
+<!--                       enableSelectByExample="false" selectByExampleQueryId="false" >-->
+<!--                    <property name="useActualColumnNames" value="false"/>-->
+<!--                </table>-->
+        <table tableName="t_ba_currency_type" domainObjectName="CurrencyType"
+               enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="false" selectByExampleQueryId="false" >
+            <property name="useActualColumnNames" value="false"/>
+        </table>
+        <table tableName="t_ba_exchange_rate_type" domainObjectName="EXchangeRateType"
+               enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="false" selectByExampleQueryId="false" >
+            <property name="useActualColumnNames" value="false"/>
+        </table>
+        <table tableName="t_ba_price_type" domainObjectName="PriceType"
+               enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="false" selectByExampleQueryId="false" >
+            <property name="useActualColumnNames" value="false"/>
+        </table>
             </context>
         </generatorConfiguration>
