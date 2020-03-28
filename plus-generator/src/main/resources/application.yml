@@ -1,0 +1,15 @@
+# datasource config
+spring:
+  datasource:
+    url: jdbc:mysql://10.3.0.253:3306/basic?serverTimezone=UTC&useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: root
+    driver-class-name:  com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+# mybatis config
+mybatis-plus:
+  mapper-locations: classpath:mappers/*.xml
+  type-aliases-package: cn.fan.plusgenerator.entity
+  global-config:
+    db-config:
+      id-type: auto

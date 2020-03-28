@@ -22,6 +22,7 @@
         <module name="springboot_mybatis_reverse" />
         <module name="test_mongdb" />
         <module name="springboot_redis" />
+        <module name="plus-generator" />
         <module name="springboot_fastdfs" />
       </profile>
     </annotationProcessing>
@@ -34,6 +35,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="authorization_server" options="-parameters" />
       <module name="mybatis-plus" options="-parameters" />
+      <module name="plus-generator" options="-parameters" />
       <module name="rabbitmq_consumer" options="-parameters" />
       <module name="redis_publish_subscriber" options="-parameters" />
       <module name="springboot_aop" options="-parameters" />

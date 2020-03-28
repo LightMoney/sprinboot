@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7231175b-37c5-4bf4-ab95-5e745b4b514d" name="Default" comment="添加项目实体类">
-      <change afterPath="$PROJECT_DIR$/springboot_mybatis_reverse/src/main/java/cn/fan/StartU.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/springboot_mybatis_reverse/src/main/java/cn/fan/config/CommentGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plus-generator/src/main/java/cn/fan/plusgenerator/CodeGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plus-generator/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mybatis-plus/src/main/java/cn/fan/mybatisplus/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis-plus/src/main/java/cn/fan/mybatisplus/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_mybatis_reverse/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_mybatis_reverse/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_mybatis_reverse/src/main/resources/generator/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_mybatis_reverse/src/main/resources/generator/generatorConfig.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,12 +89,12 @@
     <option name="notificationShown" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\springboot_study\mybatis-plus\src\main\resources\mapper" />
-      <recent name="E:\springboot_study\swagger2\src\main\java\cn\fan\swagger\bean" />
-      <recent name="E:\springboot_study\springboot_security_jwt\src\main\java\cn\fan\handler" />
-      <recent name="E:\springboot_study\springboot_security_jwt\src\main\java\cn\fan\filter" />
-      <recent name="E:\springboot_study" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\workspace\springboot_study\springboot_fastdfs\src\main\resources" />
+      <recent name="E:\workspace\springboot_study\springboot_fastdfs\src\main\java\cn\fan\web" />
+      <recent name="E:\workspace\springboot_study\springboot_fastdfs\src\main\java\cn\fan\fastdfs" />
+      <recent name="E:\workspace\springboot_study\springboot_security_oauth2\src\main\resources\templates" />
+      <recent name="E:\workspace\springboot_study\springboot_security_oauth2\src\main\resources\static" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="cn.fan.handler" />
@@ -104,12 +103,12 @@
       <recent name="cn.fan.redis_publish_subscriber.config" />
       <recent name="cn.fan.config" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\workspace\springboot_study\springboot_fastdfs\src\main\resources" />
-      <recent name="E:\workspace\springboot_study\springboot_fastdfs\src\main\java\cn\fan\web" />
-      <recent name="E:\workspace\springboot_study\springboot_fastdfs\src\main\java\cn\fan\fastdfs" />
-      <recent name="E:\workspace\springboot_study\springboot_security_oauth2\src\main\resources\templates" />
-      <recent name="E:\workspace\springboot_study\springboot_security_oauth2\src\main\resources\static" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\springboot_study\mybatis-plus\src\main\resources\mapper" />
+      <recent name="E:\springboot_study\swagger2\src\main\java\cn\fan\swagger\bean" />
+      <recent name="E:\springboot_study\springboot_security_jwt\src\main\java\cn\fan\handler" />
+      <recent name="E:\springboot_study\springboot_security_jwt\src\main\java\cn\fan\filter" />
+      <recent name="E:\springboot_study" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -119,7 +118,21 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Application.StartU">
+  <component name="RunManager" selected="Application.CodeGenerator">
+    <configuration name="CodeGenerator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cn.fan.plusgenerator.CodeGenerator" />
+      <module name="plus-generator" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.fan.plusgenerator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="StartU" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="cn.fan.StartU" />
       <module name="springboot_mybatis_reverse" />
@@ -150,23 +163,6 @@
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MybatisPlusApplicationTests.test01" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="mybatis-plus" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="cn.fan.mybatisplus.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="cn.fan.mybatisplus" />
-      <option name="MAIN_CLASS_NAME" value="cn.fan.mybatisplus.MybatisPlusApplicationTests" />
-      <option name="METHOD_NAME" value="test01" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -215,6 +211,13 @@
     <configuration name="MybatisPlusApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="mybatis-plus" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="cn.fan.mybatisplus.MybatisPlusApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PlusGeneratorApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="plus-generator" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="cn.fan.plusgenerator.PlusGeneratorApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -271,7 +274,8 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.MybatisPlusApplicationTests.test01" />
+      <item itemvalue="Application.StartUp" />
+      <item itemvalue="Application.StartU" />
       <item itemvalue="JUnit.MybatisPlusApplicationTests.test05" />
       <item itemvalue="JUnit.MybatisPlusApplicationTests.test06" />
       <item itemvalue="Spring Boot.SpringbootRabbitmqApplication" />
@@ -281,16 +285,16 @@
       <item itemvalue="Spring Boot.RedisPublishSubscriberApplication" />
       <item itemvalue="Spring Boot.SpringbootEasyexcleApplication" />
       <item itemvalue="Spring Boot.MybatisPlusApplication" />
-      <item itemvalue="Application.StartUp" />
-      <item itemvalue="Application.StartU" />
+      <item itemvalue="Spring Boot.PlusGeneratorApplication" />
+      <item itemvalue="Application.CodeGenerator" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.CodeGenerator" />
         <item itemvalue="Application.StartU" />
         <item itemvalue="Application.StartUp" />
         <item itemvalue="JUnit.MybatisPlusApplicationTests.test06" />
         <item itemvalue="JUnit.MybatisPlusApplicationTests.test05" />
-        <item itemvalue="JUnit.MybatisPlusApplicationTests.test01" />
       </list>
     </recent_temporary>
   </component>
@@ -400,7 +404,8 @@
       <workItem from="1584697203818" duration="884000" />
       <workItem from="1585100154656" duration="23507000" />
       <workItem from="1585184066021" duration="6097000" />
-      <workItem from="1585280951877" duration="9091000" />
+      <workItem from="1585280951877" duration="9315000" />
+      <workItem from="1585355709348" duration="6817000" />
     </task>
     <task id="LOCAL-00001" summary="修复结构，添加websocket项目">
       <created>1582858651857</created>
@@ -520,38 +525,38 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="580" y="185" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1585292835094" />
-    <state width="1557" height="314" key="GridCell.Tab.0.bottom" timestamp="1585300774485">
+    <state width="1557" height="314" key="GridCell.Tab.0.bottom" timestamp="1585360208606">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="314" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1585300774485" />
-    <state width="1557" height="314" key="GridCell.Tab.0.center" timestamp="1585300774485">
+    <state width="1557" height="314" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1585360208606" />
+    <state width="1557" height="314" key="GridCell.Tab.0.center" timestamp="1585360208606">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="314" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1585300774485" />
-    <state width="1557" height="314" key="GridCell.Tab.0.left" timestamp="1585300774485">
+    <state width="1557" height="314" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1585360208606" />
+    <state width="1557" height="314" key="GridCell.Tab.0.left" timestamp="1585360208606">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="314" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1585300774485" />
-    <state width="1557" height="314" key="GridCell.Tab.0.right" timestamp="1585300774485">
+    <state width="1557" height="314" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1585360208606" />
+    <state width="1557" height="314" key="GridCell.Tab.0.right" timestamp="1585360208606">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="314" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1585300774485" />
-    <state width="1557" height="135" key="GridCell.Tab.1.bottom" timestamp="1585282904740">
+    <state width="1557" height="314" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1585360208606" />
+    <state width="1557" height="135" key="GridCell.Tab.1.bottom" timestamp="1585303374747">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="135" key="GridCell.Tab.1.bottom/0.0.1600.860@0.0.1600.860" timestamp="1585282904740" />
-    <state width="1557" height="135" key="GridCell.Tab.1.center" timestamp="1585282904740">
+    <state width="1557" height="135" key="GridCell.Tab.1.bottom/0.0.1600.860@0.0.1600.860" timestamp="1585303374747" />
+    <state width="1557" height="135" key="GridCell.Tab.1.center" timestamp="1585303374747">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="135" key="GridCell.Tab.1.center/0.0.1600.860@0.0.1600.860" timestamp="1585282904740" />
-    <state width="1557" height="135" key="GridCell.Tab.1.left" timestamp="1585282904740">
+    <state width="1557" height="135" key="GridCell.Tab.1.center/0.0.1600.860@0.0.1600.860" timestamp="1585303374747" />
+    <state width="1557" height="135" key="GridCell.Tab.1.left" timestamp="1585303374747">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="135" key="GridCell.Tab.1.left/0.0.1600.860@0.0.1600.860" timestamp="1585282904740" />
-    <state width="1557" height="135" key="GridCell.Tab.1.right" timestamp="1585282904740">
+    <state width="1557" height="135" key="GridCell.Tab.1.left/0.0.1600.860@0.0.1600.860" timestamp="1585303374747" />
+    <state width="1557" height="135" key="GridCell.Tab.1.right" timestamp="1585303374747">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="135" key="GridCell.Tab.1.right/0.0.1600.860@0.0.1600.860" timestamp="1585282904740" />
+    <state width="1557" height="135" key="GridCell.Tab.1.right/0.0.1600.860@0.0.1600.860" timestamp="1585303374747" />
     <state width="1069" height="188" key="GridCell.Tab.2.bottom" timestamp="1585130047224">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -588,10 +593,10 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state width="700" height="378" key="XDebugger.FullValuePopup/0.0.1600.860@0.0.1600.860" timestamp="1582686422932" />
-    <state x="480" y="254" key="com.intellij.ide.util.TipDialog" timestamp="1584320093966">
+    <state x="480" y="254" key="com.intellij.ide.util.TipDialog" timestamp="1585355777576">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="480" y="254" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1584320093966" />
+    <state x="480" y="254" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1585355777576" />
     <state x="498" y="323" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1582599654397">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -604,10 +609,10 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="476" y="163" width="1033" height="534" key="find.popup/0.0.1600.860@0.0.1600.860" timestamp="1584517420962" />
-    <state x="349" y="116" key="new project wizard" timestamp="1585100957241">
+    <state x="349" y="116" key="new project wizard" timestamp="1585358481308">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="349" y="116" key="new project wizard/0.0.1600.860@0.0.1600.860" timestamp="1585100957241" />
+    <state x="349" y="116" key="new project wizard/0.0.1600.860@0.0.1600.860" timestamp="1585358481308" />
     <state x="891" y="181" key="search.everywhere.popup" timestamp="1582526875711">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
