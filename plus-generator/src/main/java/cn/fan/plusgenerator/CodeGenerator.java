@@ -35,6 +35,10 @@ public class CodeGenerator {
         dsc.setDriverName("com.mysql.jdbc.Driver");
         dsc.setUsername("hthl");
         dsc.setPassword("Hthl2018");
+//        dsc.setUrl("jdbc:mysql://localhost:3306/plus?useUnicode=true&characterEncoding=UTF8&allowMultiQueries=true");
+//        dsc.setDriverName("com.mysql.jdbc.Driver");
+//        dsc.setUsername("root");
+//        dsc.setPassword("root");
         mpg.setDataSource(dsc);
 
         //包配置
