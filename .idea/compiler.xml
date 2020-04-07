@@ -10,6 +10,7 @@
         <module name="rabbitmq_consumer" />
         <module name="springboot_easyexcle" />
         <module name="springboot_aop" />
+        <module name="shiro-auth" />
         <module name="springboot_webservice" />
         <module name="mybatis-plus" />
         <module name="websocket" />
@@ -39,6 +40,7 @@
       <module name="plus-generator" options="-parameters" />
       <module name="rabbitmq_consumer" options="-parameters" />
       <module name="redis_publish_subscriber" options="-parameters" />
+      <module name="shiro-auth" options="-parameters" />
       <module name="springboot-logback" options="-parameters" />
       <module name="springboot_aop" options="-parameters" />
       <module name="springboot_easyexcle" options="-parameters" />

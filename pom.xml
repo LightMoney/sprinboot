@@ -31,6 +31,7 @@
         <module>redis_publish_subscriber</module>
         <module>mybatis-plus</module>
         <module>springboot-logback</module>
+        <module>shiro-auth</module>
     </modules>
 
 
