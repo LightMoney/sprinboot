@@ -1,7 +1,3 @@
-logging:
-     level:
-        org:
-          springframework:debug
 
 server:
   port: 8080
@@ -10,7 +6,7 @@ spring:
   datasource:
     druid:
       driver-class-name: com.mysql.jdbc.Driver
-      url: jdbc:mysql://localhost:3306/cps?useUnicode=true&characterEncoding=UTF8&allowMultiQueries=true
+      url: jdbc:mysql://localhost:3306/cps?serverTimezone=UTC&useUnicode=true&characterEncoding=UTF8&allowMultiQueries=true
       username: root
       password: root
       initialSize: 5  #初始建立连接数量
@@ -34,3 +30,8 @@ spring:
 #  profiles:
 #    active:
 #    include:
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+#admin  123456
+# $2a$10$YRFsgeeI/SbWb913V6qJvOQLJbl8KL87z1SgYOiUT01hgOkGHzIT6
