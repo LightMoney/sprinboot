@@ -14,11 +14,11 @@ spring:
 #        min-idle: 0
 #    timeout: 2000
   datasource:
-    url: jdbc:mysql://localhost:3306/cps?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
-    username: root
-    password: root
-    driver-class-name: com.mysql.jdbc.Driver
-    type: com.alibaba.druid.pool.DruidDataSource
+            url: jdbc:mysql://localhost:3306/cps?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+            username: root
+            password: root
+            driver-class-name: com.mysql.jdbc.Driver
+            type: com.alibaba.druid.pool.DruidDataSource
 mybatis:
   configuration:
     map-underscore-to-camel-case: true

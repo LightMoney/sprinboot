@@ -2,10 +2,38 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7231175b-37c5-4bf4-ab95-5e745b4b514d" name="Default" comment="logback 日志使用">
+      <change afterPath="$PROJECT_DIR$/oauth2-password/src/main/java/cn/fan/oauth2password/config/AuthServerConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/oauth2-password/src/main/java/cn/fan/oauth2password/config/ResourceServerConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/oauth2-password/src/main/java/cn/fan/oauth2password/config/SecurityConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/oauth2-password/src/main/java/cn/fan/oauth2password/handler/JwtTokenEnhancer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/oauth2-password/src/main/java/cn/fan/oauth2password/handler/MyAuthenticationFailureHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/oauth2-password/src/main/java/cn/fan/oauth2password/handler/MyAuthenticationSuccessHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/oauth2-password/src/main/java/cn/fan/oauth2password/service/MyUserDetailsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/oauth2-password/src/main/java/cn/fan/oauth2password/web/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/oauth2-password/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springboot_security/src/main/java/cn/fan/handler/AuthenticationStatusHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springboot_security_jwt/src/main/resources/dept.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shiro-auth/target/classes/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shiro-auth/target/classes/com/boot/shiro/ShiroApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shiro-auth/target/classes/com/boot/shiro/config/DruidConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shiro-auth/target/classes/com/boot/shiro/config/ShiroConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shiro-auth/target/classes/com/boot/shiro/config/ShiroException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shiro-auth/target/classes/com/boot/shiro/config/UserRealm.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shiro-auth/target/classes/com/boot/shiro/controller/ShiroController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shiro-auth/target/classes/com/boot/shiro/entity/SysMenuEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shiro-auth/target/classes/com/boot/shiro/entity/SysUserEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shiro-auth/target/classes/com/boot/shiro/mapper/SysMenuMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shiro-auth/target/classes/com/boot/shiro/mapper/SysUserMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shiro-auth/target/classes/com/boot/shiro/util/ShiroUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shiro-auth/target/classes/mapper/SysMenuMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shiro-auth/target/classes/mapper/SysUserMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shiro-auth/target/classes/shiro.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot_security/src/main/java/cn/fan/security/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_security/src/main/java/cn/fan/security/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot_security_jwt/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_security_jwt/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +103,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../workspace/OAuth2-server-master" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/springboot_security/src/main/java/cn/fan/handler" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -88,11 +116,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\springboot_study\springboot_security\src\main\java\cn\fan\handler" />
       <recent name="E:\springboot_study\mybatis-plus\src\main\resources\mapper" />
       <recent name="E:\springboot_study\swagger2\src\main\java\cn\fan\swagger\bean" />
       <recent name="E:\springboot_study\springboot_security_jwt\src\main\java\cn\fan\handler" />
       <recent name="E:\springboot_study\springboot_security_jwt\src\main\java\cn\fan\filter" />
-      <recent name="E:\springboot_study" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="cn.fan.handler" />
@@ -102,11 +130,11 @@
       <recent name="cn.fan.config" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\springboot_study\springboot_security_jwt\src\main\resources" />
       <recent name="E:\workspace\springboot_study\springboot_fastdfs\src\main\resources" />
       <recent name="E:\workspace\springboot_study\springboot_fastdfs\src\main\java\cn\fan\web" />
       <recent name="E:\workspace\springboot_study\springboot_fastdfs\src\main\java\cn\fan\fastdfs" />
       <recent name="E:\workspace\springboot_study\springboot_security_oauth2\src\main\resources\templates" />
-      <recent name="E:\workspace\springboot_study\springboot_security_oauth2\src\main\resources\static" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -116,7 +144,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.ShiroApplication">
+  <component name="RunManager" selected="Spring Boot.Oauth2PasswordApplication">
     <configuration name="CodeGenerator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="cn.fan.plusgenerator.CodeGenerator" />
       <module name="plus-generator" />
@@ -199,6 +227,13 @@
     <configuration name="MybatisPlusApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="mybatis-plus" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="cn.fan.mybatisplus.MybatisPlusApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Oauth2PasswordApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="oauth2-password" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="cn.fan.oauth2password.Oauth2PasswordApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -289,6 +324,7 @@
       <item itemvalue="Spring Boot.PlusGeneratorApplication" />
       <item itemvalue="Spring Boot.LogbackDemoApplication" />
       <item itemvalue="Spring Boot.ShiroApplication" />
+      <item itemvalue="Spring Boot.Oauth2PasswordApplication" />
     </list>
     <recent_temporary>
       <list>
@@ -414,7 +450,11 @@
       <workItem from="1585903484684" duration="911000" />
       <workItem from="1586134864919" duration="6364000" />
       <workItem from="1586152276859" duration="4259000" />
-      <workItem from="1586243278024" duration="5814000" />
+      <workItem from="1586243278024" duration="6694000" />
+      <workItem from="1586315573221" duration="2737000" />
+      <workItem from="1586332480640" duration="1835000" />
+      <workItem from="1586394708172" duration="2623000" />
+      <workItem from="1586403218871" duration="14493000" />
     </task>
     <task id="LOCAL-00001" summary="修复结构，添加websocket项目">
       <created>1582858651857</created>
@@ -502,30 +542,30 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="392" y="97" key="#HTTP_Proxy/0.0.1600.860@0.0.1600.860" timestamp="1582262672916" />
-    <state x="218" y="100" key="#Project_Structure" timestamp="1586137941049">
+    <state x="218" y="100" key="#Project_Structure" timestamp="1586403863510">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="218" y="100" key="#Project_Structure/0.0.1600.860@0.0.1600.860" timestamp="1586137941049" />
+    <state x="218" y="100" key="#Project_Structure/0.0.1600.860@0.0.1600.860" timestamp="1586403863510" />
     <state x="797" y="296" key="#com.intellij.codeInsight.template.impl.EditVariableDialog" timestamp="1582596742297">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="797" y="296" key="#com.intellij.codeInsight.template.impl.EditVariableDialog/0.0.1600.860@0.0.1600.860" timestamp="1582596742297" />
-    <state x="539" y="232" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1584070739958">
+    <state x="539" y="232" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1586403887768">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="539" y="232" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1600.860@0.0.1600.860" timestamp="1584070739958" />
-    <state x="615" y="138" key="#com.intellij.ide.util.MemberChooser" timestamp="1585103868448">
+    <state x="539" y="232" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1600.860@0.0.1600.860" timestamp="1586403887768" />
+    <state x="997" y="221" key="#com.intellij.ide.util.MemberChooser" timestamp="1586418084246">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="615" y="138" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860@0.0.1600.860" timestamp="1585103868448" />
+    <state x="997" y="221" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860@0.0.1600.860" timestamp="1586418084246" />
     <state x="530" y="176" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1586134925991">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="530" y="176" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1600.860@0.0.1600.860" timestamp="1586134925991" />
-    <state x="935" y="264" key="#xdebugger.evaluate" timestamp="1582697321761">
+    <state x="910" y="264" key="#xdebugger.evaluate" timestamp="1586418915398">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="935" y="264" key="#xdebugger.evaluate/0.0.1600.860@0.0.1600.860" timestamp="1582697321761" />
+    <state x="910" y="264" key="#xdebugger.evaluate/0.0.1600.860@0.0.1600.860" timestamp="1586418915398" />
     <state x="255" y="47" key="CommitChangelistDialog2" timestamp="1586139459769">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -542,78 +582,82 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="580" y="185" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1586150428194" />
-    <state width="1069" height="188" key="GridCell.Tab.0.bottom" timestamp="1586246875295">
+    <state width="1557" height="314" key="GridCell.Tab.0.bottom" timestamp="1586423475933">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1069" height="188" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1586246875295" />
-    <state width="1069" height="188" key="GridCell.Tab.0.center" timestamp="1586246875295">
+    <state width="1557" height="314" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1586423475933" />
+    <state width="1557" height="314" key="GridCell.Tab.0.center" timestamp="1586423475932">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1069" height="188" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1586246875295" />
-    <state width="1069" height="188" key="GridCell.Tab.0.left" timestamp="1586246875295">
+    <state width="1557" height="314" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1586423475932" />
+    <state width="1557" height="314" key="GridCell.Tab.0.left" timestamp="1586423475932">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1069" height="188" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1586246875295" />
-    <state width="1069" height="188" key="GridCell.Tab.0.right" timestamp="1586246875295">
+    <state width="1557" height="314" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1586423475932" />
+    <state width="1557" height="314" key="GridCell.Tab.0.right" timestamp="1586423475933">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1069" height="188" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1586246875295" />
-    <state width="1069" height="188" key="GridCell.Tab.1.bottom" timestamp="1586246875295">
+    <state width="1557" height="314" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1586423475933" />
+    <state width="1069" height="188" key="GridCell.Tab.1.bottom" timestamp="1586423101650">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1069" height="188" key="GridCell.Tab.1.bottom/0.0.1600.860@0.0.1600.860" timestamp="1586246875295" />
-    <state width="1069" height="188" key="GridCell.Tab.1.center" timestamp="1586246875295">
+    <state width="1069" height="188" key="GridCell.Tab.1.bottom/0.0.1600.860@0.0.1600.860" timestamp="1586423101650" />
+    <state width="1069" height="188" key="GridCell.Tab.1.center" timestamp="1586423101650">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1069" height="188" key="GridCell.Tab.1.center/0.0.1600.860@0.0.1600.860" timestamp="1586246875295" />
-    <state width="1069" height="188" key="GridCell.Tab.1.left" timestamp="1586246875295">
+    <state width="1069" height="188" key="GridCell.Tab.1.center/0.0.1600.860@0.0.1600.860" timestamp="1586423101650" />
+    <state width="1069" height="188" key="GridCell.Tab.1.left" timestamp="1586423101650">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1069" height="188" key="GridCell.Tab.1.left/0.0.1600.860@0.0.1600.860" timestamp="1586246875295" />
-    <state width="1069" height="188" key="GridCell.Tab.1.right" timestamp="1586246875295">
+    <state width="1069" height="188" key="GridCell.Tab.1.left/0.0.1600.860@0.0.1600.860" timestamp="1586423101650" />
+    <state width="1069" height="188" key="GridCell.Tab.1.right" timestamp="1586423101650">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1069" height="188" key="GridCell.Tab.1.right/0.0.1600.860@0.0.1600.860" timestamp="1586246875295" />
-    <state width="1069" height="188" key="GridCell.Tab.2.bottom" timestamp="1586246875296">
+    <state width="1069" height="188" key="GridCell.Tab.1.right/0.0.1600.860@0.0.1600.860" timestamp="1586423101650" />
+    <state width="1069" height="188" key="GridCell.Tab.2.bottom" timestamp="1586423101650">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1069" height="188" key="GridCell.Tab.2.bottom/0.0.1600.860@0.0.1600.860" timestamp="1586246875296" />
-    <state width="1069" height="188" key="GridCell.Tab.2.center" timestamp="1586246875296">
+    <state width="1069" height="188" key="GridCell.Tab.2.bottom/0.0.1600.860@0.0.1600.860" timestamp="1586423101650" />
+    <state width="1069" height="188" key="GridCell.Tab.2.center" timestamp="1586423101650">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1069" height="188" key="GridCell.Tab.2.center/0.0.1600.860@0.0.1600.860" timestamp="1586246875296" />
-    <state width="1069" height="188" key="GridCell.Tab.2.left" timestamp="1586246875296">
+    <state width="1069" height="188" key="GridCell.Tab.2.center/0.0.1600.860@0.0.1600.860" timestamp="1586423101650" />
+    <state width="1069" height="188" key="GridCell.Tab.2.left" timestamp="1586423101650">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1069" height="188" key="GridCell.Tab.2.left/0.0.1600.860@0.0.1600.860" timestamp="1586246875296" />
-    <state width="1069" height="188" key="GridCell.Tab.2.right" timestamp="1586246875296">
+    <state width="1069" height="188" key="GridCell.Tab.2.left/0.0.1600.860@0.0.1600.860" timestamp="1586423101650" />
+    <state width="1069" height="188" key="GridCell.Tab.2.right" timestamp="1586423101650">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1069" height="188" key="GridCell.Tab.2.right/0.0.1600.860@0.0.1600.860" timestamp="1586246875296" />
+    <state width="1069" height="188" key="GridCell.Tab.2.right/0.0.1600.860@0.0.1600.860" timestamp="1586423101650" />
     <state x="407" y="210" key="IDE.errors.dialog" timestamp="1582784075036">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="407" y="210" key="IDE.errors.dialog/0.0.1600.860@0.0.1600.860" timestamp="1582784075036" />
-    <state x="134" y="170" key="Maven.ArtifactSearchDialog" timestamp="1585281639689">
+    <state x="134" y="170" key="Maven.ArtifactSearchDialog" timestamp="1586415800522">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="134" y="170" key="Maven.ArtifactSearchDialog/0.0.1600.860@0.0.1600.860" timestamp="1585281639689" />
-    <state x="332" y="144" key="SettingsEditor" timestamp="1585293389571">
+    <state x="134" y="170" key="Maven.ArtifactSearchDialog/0.0.1600.860@0.0.1600.860" timestamp="1586415800522" />
+    <state x="332" y="144" key="SettingsEditor" timestamp="1586423394331">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="332" y="144" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1585293389571" />
+    <state x="332" y="144" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1586423394331" />
     <state x="314" y="138" key="SpringBootCustomization" timestamp="1582784663944">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="314" y="138" key="SpringBootCustomization/0.0.1600.860@0.0.1600.860" timestamp="1582784663944" />
+    <state x="521" y="171" width="582" height="524" key="StructurePopup" timestamp="1586417994912">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="521" y="171" width="582" height="524" key="StructurePopup/0.0.1600.860@0.0.1600.860" timestamp="1586417994912" />
     <state x="392" y="163" key="Vcs.Push.Dialog.v2" timestamp="1586139485434">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="392" y="163" key="Vcs.Push.Dialog.v2/0.0.1600.860@0.0.1600.860" timestamp="1586139485434" />
-    <state width="700" height="378" key="XDebugger.FullValuePopup" timestamp="1582686422932">
+    <state width="700" height="378" key="XDebugger.FullValuePopup" timestamp="1586418608131">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="700" height="378" key="XDebugger.FullValuePopup/0.0.1600.860@0.0.1600.860" timestamp="1582686422932" />
+    <state width="700" height="378" key="XDebugger.FullValuePopup/0.0.1600.860@0.0.1600.860" timestamp="1586418608131" />
     <state x="480" y="254" key="com.intellij.ide.util.TipDialog" timestamp="1585528709406">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -626,14 +670,18 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="592" y="347" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1600.860@0.0.1600.860" timestamp="1583216353623" />
+    <state x="332" y="166" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1586321672644">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="332" y="166" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1600.860@0.0.1600.860" timestamp="1586321672644" />
     <state x="476" y="163" width="1033" height="534" key="find.popup" timestamp="1586249807570">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="476" y="163" width="1033" height="534" key="find.popup/0.0.1600.860@0.0.1600.860" timestamp="1586249807570" />
-    <state x="349" y="116" key="new project wizard" timestamp="1585358481308">
+    <state x="349" y="116" key="new project wizard" timestamp="1586403673820">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="349" y="116" key="new project wizard/0.0.1600.860@0.0.1600.860" timestamp="1585358481308" />
+    <state x="349" y="116" key="new project wizard/0.0.1600.860@0.0.1600.860" timestamp="1586403673820" />
     <state x="891" y="181" key="search.everywhere.popup" timestamp="1582526875711">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -672,6 +720,21 @@
           <url>file://$PROJECT_DIR$/shiro-auth/src/main/java/com/boot/shiro/config/UserRealm.java</url>
           <line>72</line>
           <option name="timeStamp" value="37" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/oauth2-password/src/main/java/cn/fan/oauth2password/handler/MyAuthenticationFailureHandler.java</url>
+          <line>18</line>
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/oauth2-password/src/main/java/cn/fan/oauth2password/handler/MyAuthenticationSuccessHandler.java</url>
+          <line>70</line>
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/oauth2-password/src/main/java/cn/fan/oauth2password/web/UserController.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="45" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

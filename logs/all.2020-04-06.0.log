@@ -1,0 +1,54 @@
+2020-04-06 09:55:19.819 [main] INFO  com.example.logbackdemo.LogbackDemoApplication - Starting LogbackDemoApplication on DESKTOP-OKJHPCL with PID 7372 (E:\springboot_study\springboot-logback\target\classes started by HTHLKJ in E:\springboot_study) 
+2020-04-06 09:55:19.828 [main] INFO  com.example.logbackdemo.LogbackDemoApplication - The following profiles are active: local 
+2020-04-06 09:55:19.994 [main] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@6399551e: startup date [Mon Apr 06 09:55:19 CST 2020]; root of context hierarchy 
+2020-04-06 09:55:22.431 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8011 (http) 
+2020-04-06 09:55:22.475 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8011"] 
+2020-04-06 09:55:22.523 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat] 
+2020-04-06 09:55:22.523 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.31 
+2020-04-06 09:55:22.538 [localhost-startStop-1] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\SoftWare\SystemSoft\jdk1.8.0_51\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\SoftWare\SystemSoft\jdk1.8.0_51\bin;D:\SoftWare\SystemSoft\apache-maven-3.5.4\bin;D:\SoftWare\SystemSoft\hadoop-3.1.0\bin;D:\SoftWare\SystemSoft\phpstudy\PHPTutorial\php\php-7.2.1-nts;D:\SoftWare\SystemSoft\apache-hive-3.1.0-bin\bin;D:\SoftWare\SystemSoft\elasticsearch-5.2.0\bin;D:\SoftWare\SystemSoft\kibana-5.2.0-windows-x86\bin;D:\SoftWare\SystemSoft\swoole_4.2.12_60cd1eec_x86-64\bin;C:\Program Files\Git\cmd;C:\Program Files\TortoiseGit\bin;C:\Program Files\MySQL\MySQL Utilities 1.6\;C:\Program Files\erl10.4\bin;C:\Program Files\nodejs\;C:\Users\HTHLKJ\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Bandizip\;C:\Users\HTHLKJ\AppData\Roaming\npm;.] 
+2020-04-06 09:55:22.665 [localhost-startStop-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext 
+2020-04-06 09:55:22.665 [localhost-startStop-1] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2671 ms 
+2020-04-06 09:55:22.847 [localhost-startStop-1] INFO  o.s.boot.web.servlet.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/] 
+2020-04-06 09:55:22.853 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*] 
+2020-04-06 09:55:22.853 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*] 
+2020-04-06 09:55:22.853 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*] 
+2020-04-06 09:55:22.853 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*] 
+2020-04-06 09:55:23.064 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler] 
+2020-04-06 09:55:23.442 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@6399551e: startup date [Mon Apr 06 09:55:19 CST 2020]; root of context hierarchy 
+2020-04-06 09:55:23.537 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/log],methods=[GET]}" onto public java.lang.String com.example.logbackdemo.IndexAction.testLoggerTag() 
+2020-04-06 09:55:23.543 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest) 
+2020-04-06 09:55:23.544 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) 
+2020-04-06 09:55:23.580 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler] 
+2020-04-06 09:55:23.580 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler] 
+2020-04-06 09:55:23.859 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup 
+2020-04-06 09:55:23.875 [main] INFO  o.s.s.a.ScheduledAnnotationBeanPostProcessor - No TaskScheduler/ScheduledExecutorService bean found for scheduled processing 
+2020-04-06 09:55:23.918 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8011"] 
+2020-04-06 09:55:23.935 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read 
+2020-04-06 09:55:23.961 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8011 (http) with context path '' 
+2020-04-06 09:55:23.967 [main] INFO  com.example.logbackdemo.LogbackDemoApplication - Started LogbackDemoApplication in 5.805 seconds (JVM running for 11.647) 
+2020-04-06 09:55:23.989 [main] INFO  com.example.logbackdemo.LogbackDemoApplication - 项目启动完毕... 
+2020-04-06 09:55:23.989 [main] WARN  com.example.logbackdemo.LogbackDemoApplication - 项目启动完毕... 
+2020-04-06 09:55:23.989 [main] ERROR com.example.logbackdemo.LogbackDemoApplication - 项目启动完毕... 
+2020-04-06 09:56:00.014 [pool-1-thread-1] INFO  com.example.logbackdemo.LogTimer - 本次定时器启动时间：2020-4-6 9:56:00 
+2020-04-06 09:56:00.015 [pool-1-thread-1] WARN  com.example.logbackdemo.LogTimer - 定时器怎么一直在启动呢？ 
+2020-04-06 09:56:00.015 [pool-1-thread-1] ERROR com.example.logbackdemo.LogTimer - 定时器关闭失败了！！！ 
+2020-04-06 09:56:53.704 [http-nio-8011-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet' 
+2020-04-06 09:56:53.705 [http-nio-8011-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started 
+2020-04-06 09:56:53.736 [http-nio-8011-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 31 ms 
+2020-04-06 09:57:04.862 [http-nio-8011-exec-4] INFO  com.example.logbackdemo.IndexAction - 测试logger标签 
+2020-04-06 09:57:04.862 [http-nio-8011-exec-4] WARN  com.example.logbackdemo.IndexAction - 测试logger标签 
+2020-04-06 09:57:04.862 [http-nio-8011-exec-4] ERROR com.example.logbackdemo.IndexAction - 测试logger标签 
+2020-04-06 09:58:00.001 [pool-1-thread-1] INFO  com.example.logbackdemo.LogTimer - 本次定时器启动时间：2020-4-6 9:58:00 
+2020-04-06 09:58:00.001 [pool-1-thread-1] WARN  com.example.logbackdemo.LogTimer - 定时器怎么一直在启动呢？ 
+2020-04-06 09:58:00.002 [pool-1-thread-1] ERROR com.example.logbackdemo.LogTimer - 定时器关闭失败了！！！ 
+2020-04-06 10:00:00.002 [pool-1-thread-1] INFO  com.example.logbackdemo.LogTimer - 本次定时器启动时间：2020-4-6 10:00:00 
+2020-04-06 10:00:00.003 [pool-1-thread-1] WARN  com.example.logbackdemo.LogTimer - 定时器怎么一直在启动呢？ 
+2020-04-06 10:00:00.004 [pool-1-thread-1] ERROR com.example.logbackdemo.LogTimer - 定时器关闭失败了！！！ 
+2020-04-06 10:02:00.002 [pool-1-thread-1] INFO  com.example.logbackdemo.LogTimer - 本次定时器启动时间：2020-4-6 10:02:00 
+2020-04-06 10:02:00.002 [pool-1-thread-1] WARN  com.example.logbackdemo.LogTimer - 定时器怎么一直在启动呢？ 
+2020-04-06 10:02:00.002 [pool-1-thread-1] ERROR com.example.logbackdemo.LogTimer - 定时器关闭失败了！！！ 
+2020-04-06 10:04:00.002 [pool-1-thread-1] INFO  com.example.logbackdemo.LogTimer - 本次定时器启动时间：2020-4-6 10:04:00 
+2020-04-06 10:04:00.003 [pool-1-thread-1] WARN  com.example.logbackdemo.LogTimer - 定时器怎么一直在启动呢？ 
+2020-04-06 10:04:00.003 [pool-1-thread-1] ERROR com.example.logbackdemo.LogTimer - 定时器关闭失败了！！！ 
+2020-04-06 10:04:42.366 [Thread-14] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@6399551e: startup date [Mon Apr 06 09:55:19 CST 2020]; root of context hierarchy 
+2020-04-06 10:04:42.373 [Thread-14] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown 

@@ -18,6 +18,7 @@
         <option value="$PROJECT_DIR$/springboot_easyexcle/pom.xml" />
         <option value="$PROJECT_DIR$/mybatis-plus/pom.xml" />
         <option value="$PROJECT_DIR$/plus-generator/pom.xml" />
+        <option value="$PROJECT_DIR$/oauth2-password/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

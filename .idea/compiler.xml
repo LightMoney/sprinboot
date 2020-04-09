@@ -13,6 +13,7 @@
         <module name="shiro-auth" />
         <module name="springboot_webservice" />
         <module name="mybatis-plus" />
+        <module name="oauth2-password" />
         <module name="websocket" />
         <module name="swagger2" />
         <module name="redis_publish_subscriber" />
@@ -37,6 +38,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="authorization_server" options="-parameters" />
       <module name="mybatis-plus" options="-parameters" />
+      <module name="oauth2-password" options="-parameters" />
       <module name="plus-generator" options="-parameters" />
       <module name="rabbitmq_consumer" options="-parameters" />
       <module name="redis_publish_subscriber" options="-parameters" />
