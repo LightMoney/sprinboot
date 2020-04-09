@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< Updated upstream
     <list default="true" id="7231175b-37c5-4bf4-ab95-5e745b4b514d" name="Default" comment="logback 日志使用">
       <change afterPath="$PROJECT_DIR$/oauth2-password/src/main/java/cn/fan/oauth2password/config/AuthServerConfiguration.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/oauth2-password/src/main/java/cn/fan/oauth2password/config/ResourceServerConfiguration.java" afterDir="false" />
@@ -17,6 +18,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/shiro-auth/target/classes/application.yml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/shiro-auth/target/classes/com/boot/shiro/ShiroApplication.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/shiro-auth/target/classes/com/boot/shiro/config/DruidConfig.class" beforeDir="false" />
@@ -34,6 +36,18 @@
       <change beforePath="$PROJECT_DIR$/shiro-auth/target/classes/shiro.sql" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/springboot_security/src/main/java/cn/fan/security/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_security/src/main/java/cn/fan/security/WebSecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/springboot_security_jwt/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_security_jwt/src/main/resources/application.yml" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+=======
+    <list default="true" id="7231175b-37c5-4bf4-ab95-5e745b4b514d" name="Default" comment="添加项目实体类">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot_redis/src/main/java/cn/fan/result/ResponseResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_redis/src/main/java/cn/fan/result/ResponseResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot_redis/src/main/java/cn/fan/result/ResultCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_redis/src/main/java/cn/fan/result/ResultCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot_security_jwt/springboot_security_jwt.iml" beforeDir="false" />
+>>>>>>> Stashed changes
+>>>>>>> 8b05d26ab737f440d8a4bc179201fd97db8bfd9f
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +62,20 @@
   </component>
   <component name="CoverageViewManager">
     <option name="myElementSize" value="191" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="FavoritesManager">
     <favorites_list name="springboot_study" />
@@ -70,8 +98,8 @@
     <option name="generalSettings">
       <MavenGeneralSettings>
         <option name="localRepository" value="E:\repository" />
-        <option name="mavenHome" value="D:/SoftWare/SystemSoft/apache-maven-3.5.4" />
-        <option name="userSettingsFile" value="D:\SoftWare\SystemSoft\apache-maven-3.5.4\conf\settings.xml" />
+        <option name="mavenHome" value="D:/apache-maven-3.6.3" />
+        <option name="userSettingsFile" value="D:\apache-maven-3.6.3\conf\settings.xml" />
       </MavenGeneralSettings>
     </option>
     <option name="importingSettings">
@@ -103,13 +131,21 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+<<<<<<< HEAD
     <property name="last_opened_file_path" value="$PROJECT_DIR$/springboot_security/src/main/java/cn/fan/handler" />
+=======
+<<<<<<< Updated upstream
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../workspace/OAuth2-server-master" />
+=======
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../firstCloud" />
+>>>>>>> Stashed changes
+>>>>>>> 8b05d26ab737f440d8a4bc179201fd97db8bfd9f
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.35787922" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
@@ -313,6 +349,10 @@
       <item itemvalue="Application.StartUp" />
       <item itemvalue="Application.StartU" />
       <item itemvalue="Application.CodeGenerator" />
+<<<<<<< Updated upstream
+=======
+      <item itemvalue="JUnit.MybatisPlusApplicationTests.test05" />
+>>>>>>> Stashed changes
       <item itemvalue="JUnit.MybatisPlusApplicationTests.test06" />
       <item itemvalue="Spring Boot.SpringbootRabbitmqApplication" />
       <item itemvalue="Spring Boot.SwaggerApplication" />
@@ -322,9 +362,15 @@
       <item itemvalue="Spring Boot.SpringbootEasyexcleApplication" />
       <item itemvalue="Spring Boot.MybatisPlusApplication" />
       <item itemvalue="Spring Boot.PlusGeneratorApplication" />
+<<<<<<< Updated upstream
       <item itemvalue="Spring Boot.LogbackDemoApplication" />
       <item itemvalue="Spring Boot.ShiroApplication" />
+<<<<<<< HEAD
       <item itemvalue="Spring Boot.Oauth2PasswordApplication" />
+=======
+=======
+>>>>>>> Stashed changes
+>>>>>>> 8b05d26ab737f440d8a4bc179201fd97db8bfd9f
     </list>
     <recent_temporary>
       <list>
@@ -443,6 +489,7 @@
       <workItem from="1585100154656" duration="23507000" />
       <workItem from="1585184066021" duration="6097000" />
       <workItem from="1585280951877" duration="9315000" />
+<<<<<<< Updated upstream
       <workItem from="1585355709348" duration="6818000" />
       <workItem from="1585528705168" duration="5299000" />
       <workItem from="1585614981541" duration="9892000" />
@@ -450,11 +497,20 @@
       <workItem from="1585903484684" duration="911000" />
       <workItem from="1586134864919" duration="6364000" />
       <workItem from="1586152276859" duration="4259000" />
+<<<<<<< HEAD
       <workItem from="1586243278024" duration="6694000" />
       <workItem from="1586315573221" duration="2737000" />
       <workItem from="1586332480640" duration="1835000" />
       <workItem from="1586394708172" duration="2623000" />
       <workItem from="1586403218871" duration="14493000" />
+=======
+      <workItem from="1586243278024" duration="5814000" />
+=======
+      <workItem from="1585355709348" duration="6817000" />
+      <workItem from="1585570906770" duration="1004000" />
+      <workItem from="1586069221704" duration="965000" />
+>>>>>>> Stashed changes
+>>>>>>> 8b05d26ab737f440d8a4bc179201fd97db8bfd9f
     </task>
     <task id="LOCAL-00001" summary="修复结构，添加websocket项目">
       <created>1582858651857</created>
@@ -577,12 +633,26 @@
     <state x="37" y="97" key="DiffContextDialog" timestamp="1586139433595">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
+<<<<<<< Updated upstream
     <state x="37" y="97" key="DiffContextDialog/0.0.1600.860@0.0.1600.860" timestamp="1586139433595" />
     <state x="580" y="185" key="FileChooserDialogImpl" timestamp="1586150428194">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="580" y="185" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1586150428194" />
+<<<<<<< HEAD
     <state width="1557" height="314" key="GridCell.Tab.0.bottom" timestamp="1586423475933">
+=======
+    <state width="1069" height="188" key="GridCell.Tab.0.bottom" timestamp="1586246875295">
+=======
+    <state x="37" y="97" key="DiffContextDialog/0.0.1600.860@0.0.1600.860" timestamp="1583216480640" />
+    <state x="696" y="224" key="FileChooserDialogImpl" timestamp="1586070190911">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="580" y="185" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1585292835094" />
+    <state x="696" y="224" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1586070190911" />
+    <state width="1557" height="314" key="GridCell.Tab.0.bottom" timestamp="1585360208606">
+>>>>>>> Stashed changes
+>>>>>>> 8b05d26ab737f440d8a4bc179201fd97db8bfd9f
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state width="1557" height="314" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1586423475933" />
@@ -637,11 +707,20 @@
     <state x="134" y="170" key="Maven.ArtifactSearchDialog" timestamp="1586415800522">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
+<<<<<<< HEAD
     <state x="134" y="170" key="Maven.ArtifactSearchDialog/0.0.1600.860@0.0.1600.860" timestamp="1586415800522" />
     <state x="332" y="144" key="SettingsEditor" timestamp="1586423394331">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="332" y="144" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1586423394331" />
+=======
+    <state x="134" y="170" key="Maven.ArtifactSearchDialog/0.0.1600.860@0.0.1600.860" timestamp="1585281639689" />
+    <state x="398" y="174" key="SettingsEditor" timestamp="1586069697164">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="332" y="144" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1585293389571" />
+    <state x="398" y="174" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1586069697164" />
+>>>>>>> 8b05d26ab737f440d8a4bc179201fd97db8bfd9f
     <state x="314" y="138" key="SpringBootCustomization" timestamp="1582784663944">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -657,11 +736,23 @@
     <state width="700" height="378" key="XDebugger.FullValuePopup" timestamp="1586418608131">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
+<<<<<<< HEAD
     <state width="700" height="378" key="XDebugger.FullValuePopup/0.0.1600.860@0.0.1600.860" timestamp="1586418608131" />
+=======
+    <state width="700" height="378" key="XDebugger.FullValuePopup/0.0.1600.860@0.0.1600.860" timestamp="1582686422932" />
+<<<<<<< Updated upstream
+>>>>>>> 8b05d26ab737f440d8a4bc179201fd97db8bfd9f
     <state x="480" y="254" key="com.intellij.ide.util.TipDialog" timestamp="1585528709406">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="480" y="254" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1585528709406" />
+=======
+    <state x="576" y="307" key="com.intellij.ide.util.TipDialog" timestamp="1586069221692">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="480" y="254" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1585355777576" />
+    <state x="576" y="307" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586069221692" />
+>>>>>>> Stashed changes
     <state x="498" y="323" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1582599654397">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -692,7 +783,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/springboot_security_oauth2/src/main/java/cn/fan/service/CustomUserDetailsService.java</url>
-          <line>57</line>
+          <line>56</line>
           <option name="timeStamp" value="20" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -740,12 +831,12 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/springboot_study$RedisPublishSubscriberApplication.ic" NAME="RedisPublishSubscriberApplication Coverage Results" MODIFIED="1582873696433" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/springboot_study$ApplicationSecurity.ic" NAME="ApplicationSecurity Coverage Results" MODIFIED="1583981438697" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>cn.fan.*</FILTER>
-    </SUITE>
     <SUITE FILE_PATH="coverage/springboot_study$StartUp.ic" NAME="StartUp Coverage Results" MODIFIED="1585282993277" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>cn.fan.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/springboot_study$ApplicationSecurity.ic" NAME="ApplicationSecurity Coverage Results" MODIFIED="1583981438697" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>cn.fan.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/springboot_study$RedisPublishSubscriberApplication.ic" NAME="RedisPublishSubscriberApplication Coverage Results" MODIFIED="1582873696433" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
