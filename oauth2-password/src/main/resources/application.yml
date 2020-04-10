@@ -35,3 +35,8 @@ mybatis:
     map-underscore-to-camel-case: true
 #admin  123456
 # $2a$10$YRFsgeeI/SbWb913V6qJvOQLJbl8KL87z1SgYOiUT01hgOkGHzIT6
+
+#  ".*druid.*"  这个才是正确的匹配，
+
+#root user
+#$2a$10$GHawVDt9/OIXydWwUyFfTOTPMP1tNqlafsSVVY6xZLVWWqNUkYvL2

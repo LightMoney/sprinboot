@@ -25,7 +25,7 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
                 .failureHandler(myAuthenticationFailureHandler);
 
         http.authorizeRequests()
-                .antMatchers("/login", "/authentication/form").permitAll()
+                .antMatchers("/login", "/authentication/form",".*druid.*").permitAll()
                 .anyRequest().authenticated()
                 .and().csrf().disable();
     }
