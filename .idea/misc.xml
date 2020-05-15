@@ -19,6 +19,7 @@
         <option value="$PROJECT_DIR$/mybatis-plus/pom.xml" />
         <option value="$PROJECT_DIR$/plus-generator/pom.xml" />
         <option value="$PROJECT_DIR$/oauth2-password/pom.xml" />
+        <option value="$PROJECT_DIR$/test-function/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

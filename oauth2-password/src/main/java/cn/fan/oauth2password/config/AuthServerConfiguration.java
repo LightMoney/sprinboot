@@ -61,7 +61,7 @@ public class AuthServerConfiguration extends AuthorizationServerConfigurerAdapte
         security
                 .tokenKeyAccess("permitAll()")
 //                .checkTokenAccess("permitAll()")
-                .checkTokenAccess("isAuthenticated()")
+                .checkTokenAccess("isAuthenticated()") //需要已验证的
                 .allowFormAuthenticationForClients();
     }
 

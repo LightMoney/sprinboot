@@ -13,11 +13,14 @@ public class DirectRabbitConfig {
     //队列 起名
     @Bean
     public Queue TestDirectQueue(){
+//        QueueBuilder.durable("TestDirectQueue").build();
         return new Queue("TestDirectQueue",true);//true 是否持久
     }
     //交换机 取名
     @Bean
     DirectExchange TestDirectExchange(){
+//        ExchangeBuilder.directExchange("test").durable(true).build();
+
         return  new DirectExchange("TestDirectExchange");
     }
 //

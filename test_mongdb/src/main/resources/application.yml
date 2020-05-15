@@ -3,7 +3,14 @@ server:
 spring:
   data:
     mongodb:
-      database: test1
-      host: 127.0.0.1
-      port: 27017
+      uri: mongodb://root:root@39.108.10.101:27017/test1?authSource=admin
+#      database: test1
+#      host: 39.108.10.101
+#      port: 27017
+#      username: admin
+#      password: 123456
+#      host: 127.0.0.1
+#      port: 27017
+#      authentication-database: admin
 #      uri: mongodb://账户:密码IP:27017,10.3.0.21:27017,10.3.0.9:27017/cps_view?replicaSet=foobar&authSource=admin
+ # replicaSet=foobar这个用于副本集的 单个就不要添加了

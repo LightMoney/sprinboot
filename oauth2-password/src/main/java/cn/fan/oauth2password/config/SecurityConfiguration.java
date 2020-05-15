@@ -37,7 +37,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .failureHandler(myAuthenticationFailureHandler);
 
         http.authorizeRequests()
-                .antMatchers("/login", "/authentication/form",".*druid.*").permitAll()
+                .antMatchers("/login", "/authentication/form", ".*druid.*").permitAll()
                 .anyRequest().authenticated()
                 .and().csrf().disable();
     }
@@ -53,13 +53,16 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     }
 
 
-    /** 授权服务配置需要用到这个 bean  */
+    /**
+     * 授权服务配置需要用到这个 bean
+     */
     @Bean
     @Override
     public AuthenticationManager authenticationManagerBean() throws Exception {
         return super.authenticationManagerBean();
     }
 
+    //忽略静态资源
     @Override
     public void configure(WebSecurity web) throws Exception {
         web.ignoring().antMatchers("/druid/*");

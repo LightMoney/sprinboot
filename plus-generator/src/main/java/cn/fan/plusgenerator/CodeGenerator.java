@@ -31,16 +31,21 @@ public class CodeGenerator {
 
         //数据源配置
         DataSourceConfig dsc = new DataSourceConfig();
-        dsc.setUrl("jdbc:mysql://10.3.0.253:3306/basic?useUnicode=true&characterEncoding=UTF8&allowMultiQueries=true");
+//        dsc.setUrl("jdbc:mysql://10.3.0.253:3306/product?useUnicode=true&characterEncoding=UTF8&allowMultiQueries=true");
+//        dsc.setDriverName("com.mysql.jdbc.Driver");
+//        dsc.setUsername("hthl");
+//        dsc.setPassword("Hthl2018");
+
+        dsc.setUrl("jdbc:mysql://localhost:3306/product?useUnicode=true&characterEncoding=UTF8&allowMultiQueries=true");
         dsc.setDriverName("com.mysql.jdbc.Driver");
-        dsc.setUsername("hthl");
-        dsc.setPassword("Hthl2018");
-//        dsc.setUrl("jdbc:mysql://localhost:3306/plus?useUnicode=true&characterEncoding=UTF8&allowMultiQueries=true");
+        dsc.setUsername("root");
+        dsc.setPassword("root");
+        mpg.setDataSource(dsc);
+//        dsc.setUrl("jdbc:mysql://172.18.105.33:3306/sales?useUnicode=true&characterEncoding=UTF8&allowMultiQueries=true");
 //        dsc.setDriverName("com.mysql.jdbc.Driver");
 //        dsc.setUsername("root");
-//        dsc.setPassword("root");
-        mpg.setDataSource(dsc);
-
+//        dsc.setPassword("hthl@2018");
+//        mpg.setDataSource(dsc);
         //包配置
         PackageConfig pc = new PackageConfig();
         pc.setParent("cn.fan.plusgenerator")

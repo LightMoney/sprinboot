@@ -2,12 +2,22 @@ package cn.fan.service;
 
 import cn.fan.model.Book;
 import lombok.extern.slf4j.Slf4j;
+import org.junit.internal.requests.ClassRequest;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.aggregation.Aggregation;
+import org.springframework.data.mongodb.core.aggregation.AggregationResults;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;
+import org.springframework.data.repository.support.PageableExecutionUtils;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.Date;
 import java.util.List;
@@ -64,6 +74,55 @@ public class MongoDbService {
     }
 
     /**
+     * 多条件查询
+     * @return
+     */
+    public List<Book> manyCase(){
+        Query query = new Query();
+        query.addCriteria(Criteria.where("name").is(20));
+        query.addCriteria(Criteria.where("price").gte(1200));
+        return mongoTemplate.find(query,Book.class);
+
+    }
+
+
+    //查询多条数据: 属于分级查询,limit不指定就查所有，skip表示跳过的行数，不指定就不跳过
+    //mongoTemplate.find(new Query().limit(rows).skip((page-1)*rows),Emps.class)
+    //pageindex显示的当前页，pageSize，显示的记录数
+    public PageImpl<Book> getPagedUser(int page, int rows) {
+        System.out.println("查询多条数据: 属于分级查询");
+        Query query=new Query();
+        //每页五个
+        Pageable pageable=new PageRequest(page,rows);
+        query.with(pageable);
+        //按sal排序
+        query.with(new Sort(Sort.Direction.DESC,"price"));
+        //查询总数
+        Long count=mongoTemplate.count(query,Book.class,"book");
+        List<Book> emps=mongoTemplate.find(query,Book.class);
+        return (PageImpl<Book>) PageableExecutionUtils.getPage(emps,pageable,()->count);
+    }
+
+
+
+
+    public List<ClassRequest> calculate() {
+        //Aggregation.match为条件筛选操作
+        //Aggregation.group为分组操作
+        //Aggregation.project为选择结果字段操作
+        Aggregation aggregation = Aggregation.newAggregation(Aggregation.match(Criteria.where("college").is("计算机学院")),
+                Aggregation.group("className","college").count().as("count")
+                        .max("age").as("max")
+                        .min("age").as("min")
+                ,Aggregation.project().and("className").as("name").andInclude("college","count","max","min")
+        );
+        AggregationResults<ClassRequest> aggregationResults =
+                mongoTemplate.aggregate(aggregation, Book.class, ClassRequest.class);
+
+        return aggregationResults.getMappedResults();
+    }
+
+    /**
      * 更新对象
      *
      * @param book
@@ -79,6 +138,7 @@ public class MongoDbService {
         // mongoTemplate.updateMulti(query,update,Book.class);
         // upsert 更新对象不存在则去添加
         // mongoTemplate.upsert(query,update,Book.class);
+
         return "success";
     }
 
@@ -89,6 +149,7 @@ public class MongoDbService {
      */
     public String deleteBook(Book book) {
         mongoTemplate.remove(book);
+
         return "success";
     }
 
@@ -113,10 +174,10 @@ public class MongoDbService {
      */
     public List<Book> findByLikes(String search){
         Query query = new Query();
-        Criteria criteria = new Criteria();
+       // Criteria criteria = new Criteria();
         //criteria.where("name").regex(search);
         Pattern pattern = Pattern.compile("^.*" + search + ".*$" , Pattern.CASE_INSENSITIVE);
-        criteria.where("name").regex(pattern);
+        Criteria.where("name").regex(pattern);
         List<Book> lists = mongoTemplate.findAllAndRemove(query, Book.class);
         return lists;
     }

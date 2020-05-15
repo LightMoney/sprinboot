@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mybatis-plus/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/oauth2-password/src/main/java" charset="UTF-8" />
@@ -29,10 +29,12 @@
     <file url="file://$PROJECT_DIR$/springboot_webservice" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot_webservice/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/swagger2/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/test-function/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/test_mongdb" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/test_mongdb/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/w_client/src/first/SayHello.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/w_client/src/first/SayHelloResponse.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/websocket/src/main/java" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

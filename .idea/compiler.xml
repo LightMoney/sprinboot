@@ -12,6 +12,7 @@
         <module name="springboot_aop" />
         <module name="shiro-auth" />
         <module name="springboot_webservice" />
+        <module name="springboot_redis" />
         <module name="mybatis-plus" />
         <module name="oauth2-password" />
         <module name="websocket" />
@@ -23,11 +24,11 @@
         <module name="springboot_security" />
         <module name="springboot_security_oauth2" />
         <module name="springboot_mybatis_reverse" />
-        <module name="test_mongdb" />
+        <module name="test-function" />
         <module name="swagger" />
         <module name="plus-generator" />
         <module name="springboot_fastdfs" />
-        <module name="springboot_redis" />
+        <module name="test_mongdb" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -57,6 +58,7 @@
       <module name="springboot_webservice" options="-parameters" />
       <module name="swagger" options="-parameters" />
       <module name="swagger2" options="-parameters" />
+      <module name="test-function" options="-parameters" />
       <module name="test_mongdb" options="-parameters" />
       <module name="websocket" options="-parameters" />
     </option>
