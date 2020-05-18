@@ -12,7 +12,6 @@
         <module name="springboot_aop" />
         <module name="shiro-auth" />
         <module name="springboot_webservice" />
-        <module name="springboot_redis" />
         <module name="mybatis-plus" />
         <module name="oauth2-password" />
         <module name="websocket" />
@@ -25,8 +24,9 @@
         <module name="springboot_security_oauth2" />
         <module name="springboot_mybatis_reverse" />
         <module name="test-function" />
-        <module name="swagger" />
+        <module name="springboot_redis" />
         <module name="plus-generator" />
+        <module name="swagger" />
         <module name="springboot_fastdfs" />
         <module name="test_mongdb" />
       </profile>
