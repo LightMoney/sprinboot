@@ -4,3 +4,6 @@
 
 /springboot_redis/target/classes/
 /springboot_redis/target/classes/cn/fan/
+/rabbitmq_consumer/target/classes/
+/springboot_mybatis_reverse/target/classes/
+/test_mongdb/target/
