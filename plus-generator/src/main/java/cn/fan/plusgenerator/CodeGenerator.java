@@ -36,16 +36,16 @@ public class CodeGenerator {
 //        dsc.setUsername("hthl");
 //        dsc.setPassword("Hthl2018");
 
-        dsc.setUrl("jdbc:mysql://localhost:3306/product?useUnicode=true&characterEncoding=UTF8&allowMultiQueries=true");
-        dsc.setDriverName("com.mysql.jdbc.Driver");
-        dsc.setUsername("root");
-        dsc.setPassword("root");
-        mpg.setDataSource(dsc);
-//        dsc.setUrl("jdbc:mysql://172.18.105.33:3306/sales?useUnicode=true&characterEncoding=UTF8&allowMultiQueries=true");
+//        dsc.setUrl("jdbc:mysql://localhost:3306/product?useUnicode=true&characterEncoding=UTF8&allowMultiQueries=true");
 //        dsc.setDriverName("com.mysql.jdbc.Driver");
 //        dsc.setUsername("root");
-//        dsc.setPassword("hthl@2018");
+//        dsc.setPassword("root");
 //        mpg.setDataSource(dsc);
+        dsc.setUrl("jdbc:mysql://172.18.105.33:3306/equip?useUnicode=true&characterEncoding=UTF8&allowMultiQueries=true");
+        dsc.setDriverName("com.mysql.jdbc.Driver");
+        dsc.setUsername("root");
+        dsc.setPassword("hthl@2018");
+        mpg.setDataSource(dsc);
         //包配置
         PackageConfig pc = new PackageConfig();
         pc.setParent("cn.fan.plusgenerator")
@@ -100,7 +100,7 @@ public class CodeGenerator {
         //strategy.setSuperEntityColumns("id");
 //        strategy.setInclude("tb_account");
         strategy.setControllerMappingHyphenStyle(true);
-        strategy.setTablePrefix("t_ba_");
+        strategy.setTablePrefix("t_e_");
         mpg.setStrategy(strategy);
         mpg.setTemplateEngine(new FreemarkerTemplateEngine());
         mpg.execute();
