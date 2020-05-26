@@ -50,6 +50,7 @@ public class MessageListenerConfig {
 //    max-concurrency:1
 //    retry:
 //    enabled:true
+//    max-attempts: 5  #默认三次
 //    这里只是消费者监听的一种写法，也可如ReceiverListener 一样写，
 //    就不用实现ChannelAwareMessageListener，也不用写MessageListenerConfig这个配置类，yml中配置文件如上
 
