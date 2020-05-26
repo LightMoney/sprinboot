@@ -4,6 +4,7 @@ import cn.fan.model.Book;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
+import org.junit.internal.requests.ClassRequest;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -12,6 +13,9 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.aggregation.Aggregation;
+import org.springframework.data.mongodb.core.aggregation.AggregationResults;
+import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.repository.support.PageableExecutionUtils;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -42,6 +46,19 @@ import java.util.List;
         List<Book> emps=mongoTemplate.find(query,Book.class);
         PageImpl<Book> page=  (PageImpl<Book>) PageableExecutionUtils.getPage(emps,pageable,()->count);
         log.info(""+ page);
+    }
+    @Test
+    public  List<ClassRequest> list(){
+        Aggregation aggregation = Aggregation.newAggregation(Aggregation.match(Criteria.where("college").is("计算机学院")),
+                Aggregation.group("className","college").count().as("count")
+                        .max("age").as("max")
+                        .min("age").as("min")
+                ,Aggregation.project().and("className").as("name").andInclude("college","count","max","min")
+        );
+        AggregationResults<ClassRequest> aggregationResults =
+                mongoTemplate.aggregate(aggregation, Book.class, ClassRequest.class);
+
+        return aggregationResults.getMappedResults();
     }
 
 
