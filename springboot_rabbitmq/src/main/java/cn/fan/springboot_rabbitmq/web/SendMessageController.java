@@ -17,7 +17,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
-/**
+/**使用convertAndSend方式发送消息，消息默认就是持久化的.
  * Auth Mr.fan
  * Date 2020/1/7 14:19
  *
