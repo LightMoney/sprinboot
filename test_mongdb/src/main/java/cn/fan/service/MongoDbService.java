@@ -80,7 +80,7 @@ public class MongoDbService {
     public List<Book> manyCase(){
         Query query = new Query();
         query.addCriteria(Criteria.where("name").is(20));
-        query.addCriteria(Criteria.where("price").gte(1200));
+        query.addCriteria(Criteria.where("price").gte(1200));//大于等于
         return mongoTemplate.find(query,Book.class);
 
     }
