@@ -2,6 +2,10 @@ package cn.fan.config;
 
 import cn.fan.receiver.DirectReceiver;
 import org.springframework.amqp.core.AcknowledgeMode;
+import org.springframework.amqp.rabbit.annotation.Exchange;
+import org.springframework.amqp.rabbit.annotation.Queue;
+import org.springframework.amqp.rabbit.annotation.QueueBinding;
+import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
 import org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,5 +57,16 @@ public class MessageListenerConfig {
 //    max-attempts: 5  #默认三次
 //    这里只是消费者监听的一种写法，也可如ReceiverListener 一样写，
 //    就不用实现ChannelAwareMessageListener，也不用写MessageListenerConfig这个配置类，yml中配置文件如上
+
+
+//    @RabbitListener(
+//            bindings = @QueueBinding(
+//                    value = @Queue(value = "myQueue1"),
+//                    exchange = @Exchange(value = "myExchange1"),
+//                    key = "routingKey1"
+//            ),
+//            concurrency =  "10"
+//    )
+
 
 }
