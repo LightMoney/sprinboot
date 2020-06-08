@@ -38,6 +38,7 @@ public class MongoDbService {
      * @return
      */
     public String saveObj(Book book) {
+        book.setId("123456789");
         book.setCreateTime(new Date());
         book.setUpdateTime(new Date());
         mongoTemplate.save(book);
