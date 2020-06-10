@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="rabbitmq_consumer" />
+        <module name="springboot_mail" />
         <module name="springboot_easyexcle" />
         <module name="springboot_aop" />
         <module name="shiro-auth" />
@@ -49,6 +50,7 @@
       <module name="springboot_aop" options="-parameters" />
       <module name="springboot_easyexcle" options="-parameters" />
       <module name="springboot_fastdfs" options="-parameters" />
+      <module name="springboot_mail" options="-parameters" />
       <module name="springboot_mybatis_reverse" options="-parameters" />
       <module name="springboot_rabbitmq" options="-parameters" />
       <module name="springboot_redis" options="-parameters" />
