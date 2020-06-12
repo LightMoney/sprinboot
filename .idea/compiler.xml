@@ -26,6 +26,7 @@
         <module name="springboot_mybatis_reverse" />
         <module name="test-function" />
         <module name="springboot_redis" />
+        <module name="poi-tl" />
         <module name="plus-generator" />
         <module name="swagger" />
         <module name="springboot_fastdfs" />
@@ -43,6 +44,7 @@
       <module name="mybatis-plus" options="-parameters" />
       <module name="oauth2-password" options="-parameters" />
       <module name="plus-generator" options="-parameters" />
+      <module name="poi-tl" options="-parameters" />
       <module name="rabbitmq_consumer" options="-parameters" />
       <module name="redis_publish_subscriber" options="-parameters" />
       <module name="shiro-auth" options="-parameters" />
