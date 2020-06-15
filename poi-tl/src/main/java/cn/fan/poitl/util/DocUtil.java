@@ -12,10 +12,12 @@ import java.util.Map;
 
 public class DocUtil {
 
-    public static void download(HttpServletRequest request, HttpServletResponse response, String newWordName, Map dataMap)  {
-
+    public static void download(HttpServletRequest request, HttpServletResponse response, String newWordName, Map dataMap) {
+        //注释的方式解决线上jar运行无法找到文件问题
+//        InputStream is = new DocUtil().getClass().getResourceAsStream("/static/templates/fixOrder.docx");
+//        XWPFTemplate template = XWPFTemplate.compile(is).render(dataMap);
         String path = ClassUtils.getDefaultClassLoader().getResource("").getPath();
-        XWPFTemplate template = XWPFTemplate.compile(path+"static/templates/word.docx").render(dataMap);
+        XWPFTemplate template = XWPFTemplate.compile(path + "static/templates/word.docx").render(dataMap);
         OutputStream out = null;
         try {
             out = new FileOutputStream("out_template.docx");
@@ -40,7 +42,7 @@ public class DocUtil {
             response.reset();
             // 设置response的Header
             newWordName = URLEncoder.encode(newWordName, "utf-8"); //这里要用URLEncoder转下才能正确显示中文名称
-            response.addHeader("Content-Disposition", "attachment;filename=" + newWordName+"");
+            response.addHeader("Content-Disposition", "attachment;filename=" + newWordName + "");
             response.addHeader("Content-Length", "" + file.length());
             toClient = new BufferedOutputStream(response.getOutputStream());
             response.setContentType("application/octet-stream");
@@ -48,16 +50,16 @@ public class DocUtil {
             toClient.flush();
         } catch (Exception e) {
             e.printStackTrace();
-        } finally{
+        } finally {
             try {
-                if(fis!=null){
+                if (fis != null) {
                     fis.close();
                 }
             } catch (IOException e) {
                 e.printStackTrace();
             }
             try {
-                if(toClient!=null){
+                if (toClient != null) {
                     toClient.close();
                 }
             } catch (Exception e) {

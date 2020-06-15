@@ -32,7 +32,10 @@ public class wordcontroller {
 //    HttpServletResponse response = servletRequestAttributes.getResponse();
 
     @RequestMapping("getDoc")
-    public void getDoc(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public void getDoc(){//HttpServletRequest request, HttpServletResponse response) throws IOException {
+        ServletRequestAttributes servletRequestAttributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
+        HttpServletRequest request = servletRequestAttributes.getRequest();
+        HttpServletResponse response = servletRequestAttributes.getResponse();
         Map<String, Object> dataMap = new HashMap<String, Object>();
         dataMap.put("workname", "单位名称");
         String newWordName = "信息.docx";
