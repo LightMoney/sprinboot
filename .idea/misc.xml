@@ -22,6 +22,7 @@
         <option value="$PROJECT_DIR$/test-function/pom.xml" />
         <option value="$PROJECT_DIR$/springboot_mail/pom.xml" />
         <option value="$PROJECT_DIR$/poi-tl/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot_es/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
