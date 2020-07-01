@@ -21,7 +21,6 @@
         <module name="springboot-logback" />
         <module name="springboot_security_jwt" />
         <module name="springboot_rabbitmq" />
-        <module name="springboot_es" />
         <module name="springboot_security" />
         <module name="springboot_security_oauth2" />
         <module name="springboot_mybatis_reverse" />
@@ -30,8 +29,9 @@
         <module name="poi-tl" />
         <module name="plus-generator" />
         <module name="swagger" />
-        <module name="springboot_fastdfs" />
+        <module name="springboot_es" />
         <module name="test_mongdb" />
+        <module name="springboot_fastdfs" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

@@ -7,3 +7,5 @@
 /rabbitmq_consumer/target/classes/
 /springboot_mybatis_reverse/target/classes/
 /test_mongdb/target/
+/springboot_mail/.mvn/
+/springboot_es/.mvn/
