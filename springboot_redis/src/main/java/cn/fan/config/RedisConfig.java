@@ -19,7 +19,7 @@
 //import java.lang.reflect.Method;
 //import java.util.HashSet;
 //import java.util.Set;
-//lettuce 单数据源
+//lettuce 单数据源  其中@EnableCaching注解是为了使@Cacheable、@CacheEvict、@CachePut、@Caching注解生效
 //@Configuration
 //@EnableCaching
 //public class RedisConfig {

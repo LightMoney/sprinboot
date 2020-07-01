@@ -8,6 +8,9 @@ import org.springframework.data.redis.listener.PatternTopic;
 import org.springframework.data.redis.listener.RedisMessageListenerContainer;
 import org.springframework.data.redis.listener.adapter.MessageListenerAdapter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Configuration
 public class SubcriberConfig {
     /**
@@ -24,8 +27,16 @@ public class SubcriberConfig {
 
         RedisMessageListenerContainer container = new RedisMessageListenerContainer();
         container.setConnectionFactory(connectionFactory);
-        //订阅了一个叫chat 的通道
-        container.addMessageListener(listenerAdapter, new PatternTopic("chat"));
+
+//        //订阅了一个叫chat 的通道
+//        container.addMessageListener(listenerAdapter, new PatternTopic("chat"));
+
+//        订阅多个通道
+        List<PatternTopic> topics=new ArrayList<>();
+        topics.add(new PatternTopic("chat"));
+        topics.add(new PatternTopic("test"));
+        container.addMessageListener(listenerAdapter,topics);
+
         //这个container 可以添加多个 messageListener
         return container;
     }

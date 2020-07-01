@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.concurrent.TimeUnit;
+
 @RestController
 @RequestMapping("/test")
 @Api(value = "测试")
@@ -40,7 +42,7 @@ private RedisConfig2 redisConfig;
     @RequestMapping("/set")
     public ResponseResult set(@ApiParam(value = "值", required = true) @RequestParam String value) {
 //        redisTemplate.opsForValue().set("key", value);
-        redisConfig.getRedisTemplateByDb(0).opsForValue().set("key", value);
+        redisConfig.getRedisTemplateByDb(0).opsForValue().set("key", value,100, TimeUnit.SECONDS);
 //        redisTemplate.opsForValue().set("key", value);
         return new ResponseResult(true,true);
     }

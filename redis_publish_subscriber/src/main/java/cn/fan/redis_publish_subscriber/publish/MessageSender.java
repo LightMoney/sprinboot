@@ -17,4 +17,9 @@ public class MessageSender {
     public void sendMessage(){
         stringRedisTemplate.convertAndSend("chat",String.valueOf(Math.random()));
     }
+
+    @Scheduled(fixedRate = 3000) //间隔2s 通过StringRedisTemplate对象向redis消息队列chat频道发布消息
+    public void sendMessage2(){
+        stringRedisTemplate.convertAndSend("test","test");
+    }
 }
