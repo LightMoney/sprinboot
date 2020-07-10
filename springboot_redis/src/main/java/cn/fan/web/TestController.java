@@ -43,6 +43,7 @@ private RedisConfig2 redisConfig;
     public ResponseResult set(@ApiParam(value = "值", required = true) @RequestParam String value) {
 //        redisTemplate.opsForValue().set("key", value);
         redisConfig.getRedisTemplateByDb(0).opsForValue().set("key", value,100, TimeUnit.SECONDS);
+
 //        redisTemplate.opsForValue().set("key", value);
         return new ResponseResult(true,true);
     }

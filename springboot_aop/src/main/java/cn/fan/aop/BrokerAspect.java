@@ -17,6 +17,7 @@ public class BrokerAspect {
 //    @Before(value = "@annotation(com.hthl.annotation.Dept)")
 //@Pointcut("@within(org.springframework.web.bind.annotation.RestController)")
     /**
+     * execution的含义是匹配该包下任意类的任意方法名的任意入参的任意方法返回值
      * 定义切入点，切入点为com.example.demo.aop.AopController中的所有函数
      *通过@Pointcut注解声明频繁使用的切点表达式（如果想传参数进来，改为有参构造就行）
      */
