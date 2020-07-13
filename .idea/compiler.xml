@@ -21,6 +21,7 @@
         <module name="springboot-logback" />
         <module name="springboot_security_jwt" />
         <module name="springboot_rabbitmq" />
+        <module name="hbase" />
         <module name="springboot_security" />
         <module name="springboot_security_oauth2" />
         <module name="springboot_mybatis_reverse" />
@@ -42,6 +43,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="authorization_server" options="-parameters" />
+      <module name="hbase" options="-parameters" />
       <module name="mybatis-plus" options="-parameters" />
       <module name="oauth2-password" options="-parameters" />
       <module name="plus-generator" options="-parameters" />

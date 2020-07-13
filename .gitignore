@@ -9,3 +9,4 @@
 /test_mongdb/target/
 /springboot_mail/.mvn/
 /springboot_es/.mvn/
+/hbase/.mvn/

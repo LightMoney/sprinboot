@@ -69,8 +69,12 @@ public class CoderController {
     @PutMapping("/add")
     public void addIndex(){
         Coder coder=new Coder();
-        coder.setName("colin");
-        coder.setAge(11);
+        coder.setName("six");
+        coder.setAge(9);
+        SubCoder subCoder=new SubCoder();
+        subCoder.setAge(15);
+        subCoder.setName("前面的");
+        coder.setSubCoder(subCoder);
         coderEsRepository.save(coder);
         //批量添加
 //        List<Coder> list = new LinkedList<>();
