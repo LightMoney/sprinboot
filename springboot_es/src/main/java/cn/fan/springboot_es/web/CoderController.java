@@ -8,6 +8,8 @@ import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.search.sort.SortBuilders;
 import org.elasticsearch.search.sort.SortOrder;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.elasticsearch.core.ElasticsearchTemplate;
 import org.springframework.data.elasticsearch.core.query.NativeSearchQueryBuilder;
 import org.springframework.http.HttpStatus;
@@ -17,6 +19,20 @@ import org.springframework.web.bind.annotation.*;
 import java.util.LinkedList;
 import java.util.List;
 
+
+/**
+ * matchQuery：词条匹配，先分词然后在调用termQuery进行匹配
+ *
+ * TermQuery：词条匹配，不分词
+ *
+ * wildcardQuery：通配符匹配
+ *
+ * fuzzyQuery：模糊匹配
+ *
+ * rangeQuery：范围匹配
+ *
+ * booleanQuery：布尔查询
+ */
 @RestController
 @RequestMapping("/persons/coder")
 public class CoderController {
@@ -35,9 +51,9 @@ public class CoderController {
         //单个属性查询
 //        List<Coder> coderByName= coderEsRepository.findByName("lf666'");
         //单个属性分页查询
-//        Page<Coder> coderByPaging = coderEsRepository.findByName("lf666", PageRequest.of(0, 10));
+//        Page<Coder> coderByPaging = coderEsRepository.findByCodeName("lf666", PageRequest.of(0, 10));
 
-        List<Coder> byAgeDesc = coderEsRepository.findByNameIsLikeOrderByAgeDesc("l");
+        List<Coder> byAgeDesc = coderEsRepository.findByCodeNameIsLikeOrderByAgeDesc("l");
 
 
         //属性是对象时查询
@@ -59,8 +75,6 @@ public class CoderController {
 
         NativeSearchQueryBuilder nativeSearchQueryBuilder = new NativeSearchQueryBuilder().withFilter(builder)
                 .withSort(SortBuilders.fieldSort("age").order(SortOrder.ASC));
-
-
         Iterable<Coder> coders = coderEsRepository.search(nativeSearchQueryBuilder.build());
         BoolQueryBuilder builder1 = QueryBuilders.boolQuery().must(QueryBuilders.rangeQuery("age").from(10).to(200));
         return new ResponseEntity(coders, HttpStatus.OK);
@@ -69,13 +83,15 @@ public class CoderController {
     @PutMapping("/add")
     public void addIndex(){
         Coder coder=new Coder();
-        coder.setName("six");
+        coder.setCodeName("治理测试");
         coder.setAge(9);
         SubCoder subCoder=new SubCoder();
         subCoder.setAge(15);
-        subCoder.setName("前面的");
+        subCoder.setName("说我");
         coder.setSubCoder(subCoder);
-        coderEsRepository.save(coder);
+//        es没有修改，实质是先删除再添加
+//        coderEsRepository.save(coder);
+        coderEsRepository.index(coder);
         //批量添加
 //        List<Coder> list = new LinkedList<>();
 //        list.add(new Coder());
@@ -88,7 +104,7 @@ public class CoderController {
 //        List<Coder> byAgeDesc = coderEsRepository.findByNameIsLikeOrderByAgeDesc("co");
 //        return byAgeDesc;
 //        return coderEsRepository.findByName("co");
-        BoolQueryBuilder zsan = QueryBuilders.boolQuery().must(QueryBuilders.matchQuery("name", "c"));
+        BoolQueryBuilder zsan = QueryBuilders.boolQuery().must(QueryBuilders.matchQuery("codeName", "治"));
         Iterable<Coder> search1 = coderEsRepository.search(zsan);
         return search1;
     }

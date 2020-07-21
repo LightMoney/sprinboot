@@ -6,6 +6,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.elasticsearch.annotations.Query;
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
 
+
 import java.util.List;
 
 public interface CoderEsRepository extends ElasticsearchRepository<Coder, Long> {
@@ -28,7 +29,7 @@ public interface CoderEsRepository extends ElasticsearchRepository<Coder, Long> 
      * @return
      */
 
-    List<Coder> findByNameAndAge(String name, Integer age);
+    List<Coder> findByCodeNameAndAge(String name, Integer age);
 
     /**
      * 相当于ES查询语句
@@ -43,7 +44,7 @@ public interface CoderEsRepository extends ElasticsearchRepository<Coder, Long> 
      * @return
      */
 
-    List<Coder> findByNameOrAge(String name, Integer age);
+    List<Coder> findByCodeNameOrAge(String name, Integer age);
 
 
     /**
@@ -51,14 +52,14 @@ public interface CoderEsRepository extends ElasticsearchRepository<Coder, Long> 
      * @param name
      * @return
      */
-    List<Coder> findByName(String name);
+    List<Coder> findByCodeName(String name);
 
     /**
      * {"bool" : {"must_not" : {"field" : {"name" : "?"}}}}
      * @param name
      * @return
      */
-    List<Coder> findByNameNot(String name);
+    List<Coder> findByCodeNameNot(String name);
 
  /**
      * {"bool" : {"must" : {"range" : {"age" : {"from" : ?,"to" : ?,"include_lower" : true,"include_upper" : true}}}}}
@@ -82,7 +83,7 @@ public interface CoderEsRepository extends ElasticsearchRepository<Coder, Long> 
      * @param name
      * @return
      */
-    List<Coder> findByNameIsLikeOrderByAgeDesc(String name);
+    List<Coder> findByCodeNameIsLikeOrderByAgeDesc(String name);
 
 
     /**
@@ -91,7 +92,7 @@ public interface CoderEsRepository extends ElasticsearchRepository<Coder, Long> 
      * @param pageable
      * @return
      */
-    @Query("{\"bool\" : {\"must\" : {\"term\" : {\"name\" : \"?0\"}}}}")
-    Page<Coder> findByName(String name, Pageable pageable);
+    @Query("{\"bool\" : {\"must\" : {\"term\" : {\"name\" : \"?\"}}}}")
+    Page<Coder> findByCodeName(String name, Pageable pageable);
 
 }

@@ -13,6 +13,7 @@
     <file url="file://$PROJECT_DIR$/shiro-auth/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot-logback/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot-logback/src/main/resources/application-dev.yml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/springboot-rabbitmq-mqtt/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot_aop/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot_easyexcle/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot_es/src/main/java" charset="UTF-8" />

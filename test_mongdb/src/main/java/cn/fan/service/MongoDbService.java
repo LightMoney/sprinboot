@@ -150,7 +150,6 @@ public class MongoDbService {
      */
     public String deleteBook(Book book) {
         mongoTemplate.remove(book);
-
         return "success";
     }
 
@@ -179,7 +178,7 @@ public class MongoDbService {
         //criteria.where("name").regex(search);
         Pattern pattern = Pattern.compile("^.*" + search + ".*$" , Pattern.CASE_INSENSITIVE);
         Criteria.where("name").regex(pattern);
-        List<Book> lists = mongoTemplate.findAllAndRemove(query, Book.class);
+        List<Book> lists = mongoTemplate.find(query, Book.class);
         return lists;
     }
 
