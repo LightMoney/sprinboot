@@ -16,6 +16,7 @@ public class DocUtil {
         //注释的方式解决线上jar运行无法找到文件问题
 //        InputStream is = new DocUtil().getClass().getResourceAsStream("/static/templates/fixOrder.docx");
 //        XWPFTemplate template = XWPFTemplate.compile(is).render(dataMap);
+
         String path = ClassUtils.getDefaultClassLoader().getResource("").getPath();
         XWPFTemplate template = XWPFTemplate.compile(path + "static/templates/word.docx").render(dataMap);
         OutputStream out = null;

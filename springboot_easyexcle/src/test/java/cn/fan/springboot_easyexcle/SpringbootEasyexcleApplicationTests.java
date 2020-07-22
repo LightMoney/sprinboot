@@ -13,10 +13,15 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 
+import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -157,6 +162,37 @@ public class SpringbootEasyexcleApplicationTests {
         }
 
     }
-
-
+//下载
+//    @Override
+//    public void fileDownload(@RequestBody Map map) {
+//        HttpServletResponse response = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getResponse();
+//        OutputStream out = null;
+//        ExcelWriter writer = null;
+//
+//        List<ReportExcleModel> data = fixService.fileDownload(map);
+//        //拼接导出的文件名
+//        String fileName = "FaultReport";
+//        try {
+//            response.addHeader("Content-Disposition", "attachment;filename=" + new String((fileName + ".xls").getBytes(), "iso-8859-1"));
+//            //下载到浏览器默认地址
+//            out = response.getOutputStream();
+//            writer = new ExcelWriter(out, ExcelTypeEnum.XLSX);
+//            Sheet sheet1 = new Sheet(1, 0, ReportExcleModel.class);
+//            sheet1.setSheetName("sheet1");
+//            writer.write(data, sheet1);
+//        } catch (Exception e) {
+//            log.error("下载失败" + e.getMessage(), e);
+//        } finally {
+//            try {
+//                out.flush();
+//                writer.finish();
+//                out.close();
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//        }
+//
+//    }
+//
+//}
 }
