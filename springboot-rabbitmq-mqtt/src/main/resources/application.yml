@@ -1,5 +1,6 @@
 iot:
     mqtt:
+#        应该通过分发器来生成，否则集群下会有线程竞争问题
         clientId: client-1
         defaultTopic: mqtt_test_topic
         serverClientId: server-1

@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
  */
 @Data
 @Component
-@IntegrationComponentScan
+//@IntegrationComponentScan//感觉注释掉也没问题
 @ConfigurationProperties(prefix = "iot.mqtt")
 public class MqttConfig {
 
