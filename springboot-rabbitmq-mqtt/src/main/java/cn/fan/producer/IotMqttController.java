@@ -25,8 +25,9 @@ public class IotMqttController {
 
     @RequestMapping("/testMqtt")
     @ResponseBody
-    public String sendMqtt(@RequestParam(value = "topic") String topic, @RequestParam(value = "message") String message) {
+    public String sendMqtt(/*@RequestParam(value = "topic") String topic,*/ @RequestParam(value = "message") String message) {
         mqttGateway.sendMessage2Mqtt(message);
+        mqttGateway.sendMessage2Mqtt(message,"good_boy");
         return "SUCCESS";
     }
 

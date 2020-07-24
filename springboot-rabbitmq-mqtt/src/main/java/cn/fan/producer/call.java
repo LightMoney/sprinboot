@@ -12,12 +12,13 @@ public class call implements MqttCallback {
 
     @Override
     public void connectionLost(Throwable throwable) {
+
         System.out.println(throwable);
     }
 
     @Override
     public void messageArrived(String s, MqttMessage mqttMessage) throws Exception {
-        System.out.println("消息接收" + s + mqttMessage);
+        System.out.println("消息接收到达：" + s + mqttMessage);
     }
 
     @Override
