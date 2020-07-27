@@ -25,6 +25,7 @@
         <option value="$PROJECT_DIR$/springboot_es/pom.xml" />
         <option value="$PROJECT_DIR$/hbase/pom.xml" />
         <option value="$PROJECT_DIR$/springboot-rabbitmq-mqtt/pom.xml" />
+        <option value="$PROJECT_DIR$/elk/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
