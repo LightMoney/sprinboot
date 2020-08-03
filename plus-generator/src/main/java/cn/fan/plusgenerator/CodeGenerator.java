@@ -100,7 +100,7 @@ public class CodeGenerator {
         //strategy.setSuperEntityColumns("id");
 //        strategy.setInclude("tb_account");
         strategy.setControllerMappingHyphenStyle(true);
-        strategy.setTablePrefix("t_f_");
+        strategy.setTablePrefix("t_s_");
         mpg.setStrategy(strategy);
         mpg.setTemplateEngine(new FreemarkerTemplateEngine());
         mpg.execute();

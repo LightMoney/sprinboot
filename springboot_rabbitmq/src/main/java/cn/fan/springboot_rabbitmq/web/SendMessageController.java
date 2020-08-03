@@ -127,4 +127,10 @@ public class SendMessageController {
             }
         });
     }
+
+    @GetMapping("/dead")
+    public void  sendDead(){
+        rabbitTemplate.convertAndSend("exchange-rabbit-springboot-advance","product","good");
+        rabbitTemplate.convertAndSend("exchange-rabbit-springboot-advance","norProduct","good  bye");
+    }
 }

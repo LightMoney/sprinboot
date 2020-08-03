@@ -13,27 +13,28 @@
         <module name="springboot_aop" />
         <module name="shiro-auth" />
         <module name="springboot_webservice" />
-        <module name="elk" />
-        <module name="mybatis-plus" />
+        <module name="springboot_security_jwt" />
+        <module name="swagger2" />
         <module name="oauth2-password" />
         <module name="websocket" />
-        <module name="swagger" />
-        <module name="swagger2" />
+        <module name="elk" />
         <module name="redis_publish_subscriber" />
         <module name="springboot-logback" />
-        <module name="springboot_security_jwt" />
+        <module name="springboot_redis" />
         <module name="springboot_rabbitmq" />
+        <module name="untitled" />
         <module name="springboot_mail" />
         <module name="springboot_security" />
         <module name="springboot_security_oauth2" />
         <module name="springboot_mybatis_reverse" />
         <module name="test-function" />
-        <module name="springboot_redis" />
+        <module name="swagger" />
+        <module name="test_mongdb" />
         <module name="hbase" />
         <module name="plus-generator" />
         <module name="poi-tl" />
         <module name="springboot_es" />
-        <module name="test_mongdb" />
+        <module name="mybatis-plus" />
         <module name="springboot_fastdfs" />
       </profile>
     </annotationProcessing>
@@ -41,6 +42,7 @@
       <module name="authorization_server" target="1.8" />
       <module name="demo" target="1.8" />
       <module name="springboot_mongdb" target="1.5" />
+      <module name="untitled" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -74,6 +76,7 @@
       <module name="swagger2" options="-parameters" />
       <module name="test-function" options="-parameters" />
       <module name="test_mongdb" options="-parameters" />
+      <module name="untitled" options="-parameters" />
       <module name="websocket" options="-parameters" />
     </option>
   </component>
