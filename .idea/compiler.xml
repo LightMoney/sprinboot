@@ -7,35 +7,36 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="rabbitmq_consumer" />
-        <module name="springboot-rabbitmq-mqtt" />
-        <module name="springboot_easyexcle" />
-        <module name="springboot_aop" />
-        <module name="shiro-auth" />
-        <module name="springboot_webservice" />
-        <module name="springboot_security_jwt" />
-        <module name="swagger2" />
-        <module name="oauth2-password" />
-        <module name="websocket" />
-        <module name="elk" />
+        <module name="test_mongdb" />
         <module name="redis_publish_subscriber" />
+        <module name="mybatis-plus" />
+        <module name="test-function" />
+        <module name="kafka" />
+        <module name="springboot-rabbitmq-mqtt" />
+        <module name="springboot_security_jwt" />
+        <module name="springboot_fastdfs" />
+        <module name="springboot_es" />
+        <module name="hbase" />
+        <module name="oauth2-password" />
+        <module name="rabbitmq_consumer" />
         <module name="springboot-logback" />
+        <module name="shiro-auth" />
+        <module name="elk" />
+        <module name="untitled" />
+        <module name="springboot_mybatis_reverse" />
+        <module name="poi-tl" />
+        <module name="swagger" />
         <module name="springboot_redis" />
         <module name="springboot_rabbitmq" />
-        <module name="untitled" />
-        <module name="springboot_mail" />
-        <module name="springboot_security" />
         <module name="springboot_security_oauth2" />
-        <module name="springboot_mybatis_reverse" />
-        <module name="test-function" />
-        <module name="swagger" />
-        <module name="test_mongdb" />
-        <module name="hbase" />
+        <module name="springboot_aop" />
+        <module name="springboot_security" />
+        <module name="springboot_mail" />
         <module name="plus-generator" />
-        <module name="poi-tl" />
-        <module name="springboot_es" />
-        <module name="mybatis-plus" />
-        <module name="springboot_fastdfs" />
+        <module name="springboot_easyexcle" />
+        <module name="websocket" />
+        <module name="springboot_webservice" />
+        <module name="swagger2" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -51,6 +52,7 @@
       <module name="demo" options="-parameters" />
       <module name="elk" options="-parameters" />
       <module name="hbase" options="-parameters" />
+      <module name="kafka" options="-parameters" />
       <module name="mybatis-plus" options="-parameters" />
       <module name="oauth2-password" options="-parameters" />
       <module name="plus-generator" options="-parameters" />

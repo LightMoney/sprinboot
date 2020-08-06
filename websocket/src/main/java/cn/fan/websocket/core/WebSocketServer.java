@@ -20,8 +20,8 @@ import java.util.concurrent.ConcurrentHashMap;
 public class WebSocketServer {
     //静态变量记录连接数，设计成线程安全的
     private static int onlineCount=0;
-    //用来存放每个客户端对应的MyWebSocket对象
-    private static ConcurrentHashMap<String,WebSocketServer> webSocketMap=new ConcurrentHashMap<>();
+    //用来存放每个客户端对应的MyWebSocket对象, 指定初始化容量，大小为2的幂，以减少扩容产生的性能消耗(实质是缓存session)
+    private static ConcurrentHashMap<String,WebSocketServer> webSocketMap=new ConcurrentHashMap<>(256);
     //与客户的连接会话，使用它给用户发信息
     private Session session;
     //接收的用户id

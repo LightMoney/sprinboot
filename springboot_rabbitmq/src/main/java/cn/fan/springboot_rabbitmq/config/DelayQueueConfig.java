@@ -11,7 +11,7 @@
 //import java.util.Map;
 //
 ///**rabbitmq_delayed_message_exchange插件 rabbitmq需要安装 版本一定要一样
-// * 延时队列实现（使用的是插件 没安装会报错）  还可以采用死信队列实现
+// * 延时队列实现（使用的是插件 没安装会报错）  还可以采用死信队列实现（正常队列过期后进入死信，读取死信）
 // */
 //@Configuration
 //public class DelayQueueConfig {
