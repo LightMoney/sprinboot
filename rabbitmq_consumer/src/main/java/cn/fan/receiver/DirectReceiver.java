@@ -16,6 +16,8 @@ package cn.fan.receiver;
 //
 //    }
 //}
+
+//message也可用spring
 import com.rabbitmq.client.Channel;
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
