@@ -1,6 +1,7 @@
 package cn.fan.testfunction.service.impl;
 
 import cn.fan.testfunction.service.Fighter;
+
 import org.springframework.stereotype.Service;
 
 //@Service

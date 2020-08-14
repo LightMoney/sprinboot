@@ -10,14 +10,15 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class VanConfig {
+    //@bean交由spring管理 未指定名字 则默认使用方法名注入
     @Bean
-//    @ConditionalOnBean(Billy.class)
+    @ConditionalOnBean(Billy.class)
     public Fighter fighter(){
         return new Billy();
     }
 
     @Bean
-//    @ConditionalOnMissingBean
+    @ConditionalOnMissingBean
     public Fighter fighter2(){
         return new Babana();
     }
