@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>springboot_security</artifactId>
+    <artifactId>springboot_security_sms</artifactId>
 <dependencies>
     <dependency>
         <groupId>org.springframework.boot</groupId>
@@ -64,6 +64,5 @@
         <artifactId>spring-boot-starter-data-redis</artifactId>
     </dependency>
 </dependencies>
-
 
 </project>

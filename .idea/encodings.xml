@@ -33,6 +33,8 @@
     <file url="file://$PROJECT_DIR$/springboot_security_jwt/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot_security_oauth2" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot_security_oauth2/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot_security_sms/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot_security_sms/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot_webservice" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot_webservice/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/swagger2/src/main/java" charset="UTF-8" />

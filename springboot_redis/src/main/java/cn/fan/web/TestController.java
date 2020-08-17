@@ -44,7 +44,9 @@ private RedisConfig2 redisConfig;
     @RequestMapping("/set")
     public ResponseResult set(@ApiParam(value = "值", required = true) @RequestParam String value) {
 //        redisTemplate.opsForValue().set("key", value);
-        redisConfig.getRedisTemplateByDb(0).opsForValue().set("key", value,100, TimeUnit.SECONDS);
+//        redisConfig.getRedisTemplateByDb(0).opsForValue().set("key", value,100, TimeUnit.SECONDS);
+        redisConfig.getRedisTemplateByDb(0).opsForHash().put("t3","t4","tt");
+        redisConfig.getRedisTemplateByDb(0).expire("t3",180,TimeUnit.SECONDS);
 //        redisTemplate.opsForValue().set("key", value);
         return new ResponseResult(true,true);
     }

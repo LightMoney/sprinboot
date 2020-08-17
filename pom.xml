@@ -33,6 +33,7 @@
         <module>springboot-logback</module>
         <module>shiro-auth</module>
         <module>kafka</module>
+        <module>springboot_security_sms</module>
     </modules>
 
 

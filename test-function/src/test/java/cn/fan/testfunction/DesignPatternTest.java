@@ -2,6 +2,7 @@ package cn.fan.testfunction;
 
 import org.junit.Test;
 import org.springframework.beans.BeanUtils;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.util.Assert;
 
 import java.util.*;
@@ -58,6 +59,9 @@ Collections.unmodifiableCollection(new ArrayList<>());
         }else if (a==2 &&b==3){
             System.out.println(3);
         }
+
+        String encode = new BCryptPasswordEncoder().encode("123456");
+        boolean matches = new BCryptPasswordEncoder().matches("123456", encode);
 
 
     }
