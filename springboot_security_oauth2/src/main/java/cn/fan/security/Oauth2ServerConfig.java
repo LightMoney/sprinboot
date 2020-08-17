@@ -3,6 +3,7 @@ package cn.fan.security;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -16,6 +17,7 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Aut
 import org.springframework.security.oauth2.provider.ClientDetailsService;
 import org.springframework.security.oauth2.provider.approval.UserApprovalHandler;
 import org.springframework.security.oauth2.provider.client.JdbcClientDetailsService;
+import org.springframework.security.oauth2.provider.token.DefaultTokenServices;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 
 import javax.annotation.Resource;
@@ -41,7 +43,17 @@ public class Oauth2ServerConfig extends AuthorizationServerConfigurerAdapter {
     @Autowired
     private DataSource dataSource;
 
-
+    // 获取token(默认是12小时过期，刷新token是30天)
+//oauth2设置token过期时间，在配置中重写DefaultTokenServices中默认的12小时即可
+//    @Bean
+//    @Primary
+//    public DefaultTokenServices defaultTokenServices(){
+//        DefaultTokenServices services=new DefaultTokenServices();
+//        services.setAccessTokenValiditySeconds(20);//设置20秒过期
+//        services.setRefreshTokenValiditySeconds(666);//设置刷新token的过期时间
+//        services.setTokenStore(tokenStore);
+//        return services;
+//    }
 
     /**
      * 用来配置令牌端点(Token Endpoint)的安全约束.
