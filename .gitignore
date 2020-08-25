@@ -11,3 +11,13 @@
 /springboot_es/.mvn/
 /hbase/.mvn/
 /springboot_security_sms/target/classes/
+/elk/.mvn/wrapper/
+/hbase/.mvn/wrapper/
+/kafka/.mvn/wrapper/
+/springboot-rabbitmq-mqtt/.mvn/wrapper/
+/springboot_security_sms/target/classes/
+/elk/.mvn/wrapper/
+/hbase/.mvn/wrapper/
+/kafka/.mvn/wrapper/
+/springboot-rabbitmq-mqtt/.mvn/wrapper/
+/springboot_security_sms/target/classes/

@@ -10,6 +10,8 @@ import java.util.concurrent.BlockingDeque;
 import java.util.concurrent.Callable;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.locks.ReentrantLock;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class DesignPatternTest {
     @Test
@@ -64,5 +66,14 @@ Collections.unmodifiableCollection(new ArrayList<>());
         boolean matches = new BCryptPasswordEncoder().matches("123456", encode);
 
 
+    }
+    @Test
+    public  void test2(){
+        //电子邮件
+        String check = "^([a-z0-9A-Z]+[-|\\.]?)+[a-z0-9A-Z]@([a-z0-9A-Z]+(-[a-z0-9A-Z]+)?\\.)+[a-zA-Z]{2,}$";
+        Pattern regex = Pattern.compile(check);
+        Matcher matcher = regex.matcher("123456@4654.com");
+        boolean isMatched = matcher.matches();
+        System.out.println(isMatched);
     }
 }

@@ -1,0 +1,11 @@
+#热部署启动
+spring:
+  devtools:
+    restart:
+      enabled: true
+  #      mvc路径映射
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+

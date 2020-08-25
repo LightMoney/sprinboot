@@ -13,8 +13,6 @@ import java.io.File;
 
 /**
  * @描述 ： 邮件工具
- * @Author :  zlc
- * @Date : 2019/10/10 16:41
  **/
 @Component
 public class MailUtil {

@@ -18,6 +18,7 @@
         <module name="springboot_es" />
         <module name="hbase" />
         <module name="oauth2-password" />
+        <module name="alipay" />
         <module name="rabbitmq_consumer" />
         <module name="springboot-logback" />
         <module name="springboot_security_sms" />
@@ -49,6 +50,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="alipay" options="-parameters" />
       <module name="authorization_server" options="-parameters" />
       <module name="demo" options="-parameters" />
       <module name="elk" options="-parameters" />

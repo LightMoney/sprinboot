@@ -27,6 +27,7 @@
         <option value="$PROJECT_DIR$/springboot-rabbitmq-mqtt/pom.xml" />
         <option value="$PROJECT_DIR$/elk/pom.xml" />
         <option value="$PROJECT_DIR$/kafka/pom.xml" />
+        <option value="$PROJECT_DIR$/alipay/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
