@@ -25,13 +25,13 @@ public class AlipayConfig {
     public static String return_url = "http://localhost:8080/alipay.trade.page.pay-JAVA-UTF-8/return_url.jsp";
 
     // 签名方式
-    public static String sign_type = "RSA2";
+    public static String SIGN_TYPE = "RSA2";
 
     // 字符编码格式
     public static String CHARSET = "utf-8";
 
     // 支付宝网关，这是沙箱的网关
-    public static String gatewayUrl = "https://openapi.alipaydev.com/gateway.do";
+    public static String GATEWAYURL = "https://openapi.alipaydev.com/gateway.do";
 
     // 调试用，创建TXT日志文件夹路径 见AlipayCore.java类中logResult（string sWord） 打印方法
     public static String log_path = "C:\\";
