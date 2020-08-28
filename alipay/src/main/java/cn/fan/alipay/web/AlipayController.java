@@ -5,10 +5,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.alipay.api.AlipayApiException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -31,9 +28,9 @@ public class AlipayController {
     @GetMapping("getPagePay")
     public String getPagePay() throws Exception{
         /** 模仿数据库，从后台调数据*/
-        String outTradeNo = "19960310621211";
-        Integer totalAmount = 1;
-        String subject = "苹果28";
+        String outTradeNo = "9987821";
+        Integer totalAmount = 411;
+        String subject = "苹果1";
         
         String pay = alipayService.webPagePay(outTradeNo, totalAmount, subject);
         System.out.println(pay);
@@ -67,10 +64,10 @@ public class AlipayController {
      * 交易查询
      */
     @PostMapping("aipayQuery")
-    public String alipayQuery() throws Exception{
+    public String alipayQuery(@RequestBody Map map) throws Exception{
         /**调取支付订单号*/
-        String outTradeNo = "19960310621211";
-        
+//        String outTradeNo = "99603621";
+       String outTradeNo= map.get("outTradeNo").toString();
         String query = alipayService.query(outTradeNo);
         
         Object json = JSONObject.toJSON(query);
@@ -92,7 +89,7 @@ public class AlipayController {
             ) throws AlipayApiException {
         
         /** 调取数据*/
-        //String outTradeNo = "15382028806591197";
+        //String outTradeNo = "15382028806591197"; 订单号是必填的
         String refundReason = "用户不想购买";
         //refundAmount = 1;
         //outRequestNo = "22";

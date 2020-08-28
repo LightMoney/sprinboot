@@ -17,13 +17,13 @@ public class AlipayConfig {
 //    你自己的支付宝公钥，注意是支付宝公钥，不是应用公钥
     public static String ALIPAY_PUBLIC_KEY = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAgGXw2PPohWhQQA1t/qq+8E8axjwWY1KWU8YnUwc79J3QQ0pd2d0iEflD0OqrFdp9cda+H/OUjQjLtMksowmWPwsTkL6e6DQlVv1/kygWE50vu9ZCpuvT9djb5sXxYNEgSYz2MHlHSk+0nm2GrhdMX3TsnsrgirybVdZQ2RvE41A/TuuSxRzDpwz8oHRxSXeIal3BGooxFVaXAvMsc9xCFiUwos1qRsRgJtugpqWsldKgZ0Q0Jfz2qDOgG4L2GBZVL5pPb7Cx7nbwVUx9SPubW7bHGxPhSTpFf094Yp3EB+l2y474Xb5iin9PgUf/50jvJmWcw1w5YYFKAiq2JuTHSQIDAQAB";
 
-    // 服务器异步通知页面路径  需http://格式的完整路径，不能加?id=123这类自定义参数，必须外网可以正常访问
-    public static String notify_url = "http://localhost:8080/alipay.trade.page.pay-JAVA-UTF-8/notify_url.jsp";
-
+    // 服务器异步通知页面路径  需http://格式的完整路径，不能加?id=123这类自定义参数，必须外网可以正常访问(只有在支付成功后，支付宝会通过post来调用)
+//    public static String notify_url = "http://localhost:8080/alipay.trade.page.pay-JAVA-UTF-8/notify_url.jsp";
+    public static String notify_url = "http://fan.free.qydev.com/alipay_callback";
 //    扫码付款页面return_url
     // 页面跳转同步通知页面路径 需http://格式的完整路径，不能加?id=123这类自定义参数，必须外网可以正常访问(其实就是支付成功后返回的页面)
-    public static String return_url = "http://localhost:8080/alipay.trade.page.pay-JAVA-UTF-8/return_url.jsp";
-
+//    public static String return_url = "http://localhost:8080/alipay.trade.page.pay-JAVA-UTF-8/return_url.jsp";
+public static String return_url = "http://fan.free.qydev.com/alipay.trade.page.pay-JAVA-UTF-8/return_url.jsp";
     // 签名方式
     public static String SIGN_TYPE = "RSA2";
 
