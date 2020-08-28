@@ -1,5 +1,7 @@
 package cn.fan.testfunction;
 
+import cn.fan.testfunction.utils.OnlyIdUtils;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.springframework.beans.BeanUtils;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -12,7 +14,7 @@ import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.locks.ReentrantLock;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
+@Slf4j
 public class DesignPatternTest {
     @Test
     public void remove() {
@@ -75,5 +77,11 @@ Collections.unmodifiableCollection(new ArrayList<>());
         Matcher matcher = regex.matcher("123456@4654.com");
         boolean isMatched = matcher.matches();
         System.out.println(isMatched);
+    }
+
+    @Test
+    public  void test3(){
+        String xx = OnlyIdUtils.generate("xx");
+        log.info(xx);
     }
 }
