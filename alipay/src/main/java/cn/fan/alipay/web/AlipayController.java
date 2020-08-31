@@ -28,8 +28,8 @@ public class AlipayController {
     @GetMapping("getPagePay")
     public String getPagePay() throws Exception{
         /** 模仿数据库，从后台调数据*/
-        String outTradeNo = "9987821";
-        Integer totalAmount = 411;
+        String outTradeNo = "99878821";
+        Integer totalAmount = 4181;
         String subject = "苹果1";
         
         String pay = alipayService.webPagePay(outTradeNo, totalAmount, subject);

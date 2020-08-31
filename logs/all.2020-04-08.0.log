@@ -1,3 +1,0 @@
-2020-04-08 12:52:33.362 [main] INFO  com.example.logbackdemo.LogbackDemoApplication - Starting LogbackDemoApplication on DESKTOP-OKJHPCL with PID 14232 (E:\springboot_study\springboot-logback\target\classes started by HTHLKJ in E:\springboot_study) 
-2020-04-08 12:52:33.369 [main] INFO  com.example.logbackdemo.LogbackDemoApplication - The following profiles are active: local 
-2020-04-08 12:52:33.441 [main] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@22356acd: startup date [Wed Apr 08 12:52:33 CST 2020]; root of context hierarchy 
