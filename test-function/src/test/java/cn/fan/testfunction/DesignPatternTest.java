@@ -1,6 +1,9 @@
 package cn.fan.testfunction;
 
 import cn.fan.testfunction.utils.OnlyIdUtils;
+import cn.hutool.core.convert.Convert;
+import cn.hutool.core.lang.Snowflake;
+import cn.hutool.core.util.IdUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.springframework.beans.BeanUtils;
@@ -14,6 +17,7 @@ import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.locks.ReentrantLock;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
 @Slf4j
 public class DesignPatternTest {
     @Test
@@ -41,26 +45,26 @@ public class DesignPatternTest {
         objects1.add("test");
         objects1.add("test2");
         objects1.add("test3");
-        objects1.add(2,"good");
-objects.add(true);
+        objects1.add(2, "good");
+        objects.add(true);
         Assert.notNull(objects1);
 
         LinkedBlockingDeque<Object> objects2 = new LinkedBlockingDeque<>();
         objects2.add("1");
         objects2.add("2");
 //保证集合不可修改
-Collections.unmodifiableCollection(new ArrayList<>());
+        Collections.unmodifiableCollection(new ArrayList<>());
 
 
     }
 
     @Test
-    public void  test1(){
-        int  a=2;
-        int  b=3;
-        if (a==2){
+    public void test1() {
+        int a = 2;
+        int b = 3;
+        if (a == 2) {
             System.out.println(1);
-        }else if (a==2 &&b==3){
+        } else if (a == 2 && b == 3) {
             System.out.println(3);
         }
 
@@ -69,8 +73,9 @@ Collections.unmodifiableCollection(new ArrayList<>());
 
 
     }
+
     @Test
-    public  void test2(){
+    public void test2() {
         //电子邮件
         String check = "^([a-z0-9A-Z]+[-|\\.]?)+[a-z0-9A-Z]@([a-z0-9A-Z]+(-[a-z0-9A-Z]+)?\\.)+[a-zA-Z]{2,}$";
         Pattern regex = Pattern.compile(check);
@@ -80,8 +85,18 @@ Collections.unmodifiableCollection(new ArrayList<>());
     }
 
     @Test
-    public  void test3(){
+    public void test3() {
         String xx = OnlyIdUtils.generate("xx");
         log.info(xx);
     }
+//hutool工具类测试  https://www.hutool.cn/
+    @Test
+    public void test4() {
+//        唯一id生成测试
+        Snowflake snowflake = IdUtil.getSnowflake(1, 1);
+        long id = snowflake.nextId();
+        log.info("" + id);
+    }
+
+
 }
