@@ -16,6 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @RunWith(SpringRunner.class)
@@ -86,14 +87,34 @@ log.info("hjdsfh");
 
 //        System.out.println(result);
     }
+//乐观锁测试
+//
+//    乐观锁实现方式：
+//
+//    取出记录时，获取当前version
+//    更新时，带上这个version
+//    执行更新时， set version = newVersion where version = oldVersion
+//    如果version不对，就更新失败
+//    特别说明:
+//    支持的数据类型只有:int,Integer,long,Long,Date,Timestamp,LocalDateTime
+//    整数类型下 newVersion = oldVersion + 1
+//    newVersion 会回写到 entity 中
+//    仅支持 updateById(id) 与 update(entity, wrapper) 方法
+//    在 update(entity, wrapper) 方法下, wrapper 不能复用!!!
 
     @Test
     public void test06() {
         User user=new User();
+        User byId = userService.getById(1005);
+//        byId.setVersion(1);
 //        user.setUid(1006);
-//        user.setUname(null);
+//        user.setUname("和平");
+        user.setAge(20);
 //        int result= userMapper.insert(user);
-        userService.save(user);
+//        userService.save(user);
+//        userService.update()
+//        userService.updateById(byId);
+        userService.saveOrUpdate(byId);
 //        System.out.println(result);
     }
 }
