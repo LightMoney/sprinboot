@@ -96,6 +96,11 @@ public class DesignPatternTest {
         Snowflake snowflake = IdUtil.getSnowflake(1, 1);
         long id = snowflake.nextId();
         log.info("" + id);
+
+List<Integer> ids=new ArrayList<>();
+ids.add(1);
+ids.add(2);
+
     }
 
 

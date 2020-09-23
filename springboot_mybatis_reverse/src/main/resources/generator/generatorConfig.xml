@@ -26,7 +26,7 @@
         </commentGenerator>
         <!-- 数据库链接URL、用户名、密码 -->
          <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                         connectionURL="jdbc:mysql://localhost:3306/product"
+                         connectionURL="jdbc:mysql://localhost:3306/test"
                          userId="root"
                          password="root">
          </jdbcConnection>

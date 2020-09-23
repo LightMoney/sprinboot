@@ -27,16 +27,17 @@
         <module name="elk" />
         <module name="untitled" />
         <module name="springboot_mybatis_reverse" />
-        <module name="poi-tl" />
         <module name="swagger" />
         <module name="springboot_redis" />
         <module name="springboot_rabbitmq" />
+        <module name="springboot-netty" />
+        <module name="springboot_easyexcle" />
         <module name="springboot_security_oauth2" />
         <module name="springboot_aop" />
         <module name="springboot_security" />
         <module name="alipay" />
         <module name="plus-generator" />
-        <module name="springboot_easyexcle" />
+        <module name="poi-tl" />
         <module name="websocket" />
         <module name="springboot_webservice" />
         <module name="swagger2" />
@@ -65,6 +66,7 @@
       <module name="redis_publish_subscriber" options="-parameters" />
       <module name="shiro-auth" options="-parameters" />
       <module name="springboot-logback" options="-parameters" />
+      <module name="springboot-netty" options="-parameters" />
       <module name="springboot-rabbitmq-mqtt" options="-parameters" />
       <module name="springboot_aop" options="-parameters" />
       <module name="springboot_easyexcle" options="-parameters" />
