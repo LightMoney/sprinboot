@@ -10,6 +10,7 @@
         <module name="springboot_log4j2" />
         <module name="test_mongdb" />
         <module name="redis_publish_subscriber" />
+        <module name="unitionpay" />
         <module name="mybatis-plus" />
         <module name="test-function" />
         <module name="springboot_mail" />
@@ -86,6 +87,7 @@
       <module name="swagger2" options="-parameters" />
       <module name="test-function" options="-parameters" />
       <module name="test_mongdb" options="-parameters" />
+      <module name="unitionpay" options="-parameters" />
       <module name="untitled" options="-parameters" />
       <module name="websocket" options="-parameters" />
     </option>

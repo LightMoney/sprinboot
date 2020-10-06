@@ -30,14 +30,15 @@ public class HBaseController {
 
     /**
      * 通过表名，开始行键和结束行键获取数据
-     *通过列名，列族名过滤
+     * 通过列名，列族名过滤
+     *
      * @return
      */
     @GetMapping("/row")
     public List<Map<String, Object>> getRow() {
         Scan scan = new Scan();
-        String column="";
-        String qualifier="userId";
+        String column = "";
+        String qualifier = "userId";
         String startRow = "100036113_9223370445513586715";
         String stopRow = "100036113_9223370445513587922";
         FilterList filterList = new FilterList(FilterList.Operator.MUST_PASS_ALL);
@@ -51,7 +52,9 @@ public class HBaseController {
             //匹配列名相同的字段显示
             filterList.addFilter(new QualifierFilter(CompareFilter.CompareOp.EQUAL, new BinaryComparator(Bytes.toBytes(qualifier))));
         }
-
+        //显示的数据量，可以设置一个默认值，避免查询数据过多导致缓慢
+        PageFilter page = new PageFilter(1);
+        scan.setFilter(page);
         if (filterList.getFilters().size() > 0) {
             scan.setFilter(filterList);
         }
