@@ -1,10 +1,13 @@
 package cn.fan.testfunction;
 
+import cn.fan.testfunction.model.Student;
+import cn.fan.testfunction.model.User;
 import cn.fan.testfunction.utils.OnlyIdUtils;
 import cn.hutool.core.convert.Convert;
 import cn.hutool.core.lang.Snowflake;
 import cn.hutool.core.util.IdUtil;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.tomcat.util.threads.ThreadPoolExecutor;
 import org.junit.Test;
 import org.springframework.beans.BeanUtils;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -13,10 +16,13 @@ import org.springframework.util.Assert;
 import java.util.*;
 import java.util.concurrent.BlockingDeque;
 import java.util.concurrent.Callable;
+import java.util.concurrent.Executors;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.locks.ReentrantLock;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 @Slf4j
 public class DesignPatternTest {
@@ -89,7 +95,8 @@ public class DesignPatternTest {
         String xx = OnlyIdUtils.generate("xx");
         log.info(xx);
     }
-//hutool工具类测试  https://www.hutool.cn/
+
+    //hutool工具类测试  https://www.hutool.cn/
     @Test
     public void test4() {
 //        唯一id生成测试
@@ -97,11 +104,17 @@ public class DesignPatternTest {
         long id = snowflake.nextId();
         log.info("" + id);
 
-List<Integer> ids=new ArrayList<>();
-ids.add(1);
-ids.add(2);
+        List<Integer> ids = new ArrayList<>();
+        ids.add(1);
+        ids.add(2);
 
     }
 
+    //测试 Optional
+    @Test(expected = NoSuchElementException.class)
+    public void testOptional() {
+        Optional<User> emptyOpt = Optional.empty();
+        emptyOpt.get();
+    }
 
 }

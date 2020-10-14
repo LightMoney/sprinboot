@@ -36,7 +36,7 @@ public class CodeGenerator {
 //        dsc.setUsername("hthl");
 //        dsc.setPassword("Hthl2018");
 
-        dsc.setUrl("jdbc:mysql://localhost:3306/product?useUnicode=true&characterEncoding=UTF8&allowMultiQueries=true");
+        dsc.setUrl("jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=UTF8&allowMultiQueries=true");
         dsc.setDriverName("com.mysql.jdbc.Driver");
         dsc.setUsername("root");
         dsc.setPassword("root");
@@ -100,7 +100,7 @@ public class CodeGenerator {
         //strategy.setSuperEntityColumns("id");
 //        strategy.setInclude("tb_account");
         strategy.setControllerMappingHyphenStyle(true);
-        strategy.setTablePrefix("t_s_");
+        strategy.setTablePrefix("t_ba_");
         mpg.setStrategy(strategy);
         mpg.setTemplateEngine(new FreemarkerTemplateEngine());
         mpg.execute();

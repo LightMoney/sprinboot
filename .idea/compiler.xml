@@ -13,7 +13,6 @@
         <module name="unitionpay" />
         <module name="mybatis-plus" />
         <module name="test-function" />
-        <module name="springboot_mail" />
         <module name="kafka" />
         <module name="springboot-rabbitmq-mqtt" />
         <module name="springboot_security_jwt" />
@@ -28,6 +27,7 @@
         <module name="elk" />
         <module name="untitled" />
         <module name="springboot_mybatis_reverse" />
+        <module name="alipay" />
         <module name="swagger" />
         <module name="springboot_redis" />
         <module name="springboot_rabbitmq" />
@@ -36,7 +36,7 @@
         <module name="springboot_security_oauth2" />
         <module name="springboot_aop" />
         <module name="springboot_security" />
-        <module name="alipay" />
+        <module name="springboot_mail" />
         <module name="plus-generator" />
         <module name="poi-tl" />
         <module name="websocket" />

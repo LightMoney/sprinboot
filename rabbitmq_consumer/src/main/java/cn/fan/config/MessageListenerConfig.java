@@ -1,21 +1,26 @@
 package cn.fan.config;
 
 import cn.fan.receiver.DirectReceiver;
+import cn.fan.receiver.FanoutReceiverA;
+import cn.fan.receiver.ReceiverListener;
 import org.springframework.amqp.core.AcknowledgeMode;
 import org.springframework.amqp.rabbit.annotation.Exchange;
 import org.springframework.amqp.rabbit.annotation.Queue;
 import org.springframework.amqp.rabbit.annotation.QueueBinding;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
+import org.springframework.amqp.rabbit.config.SimpleRabbitListenerContainerFactory;
 import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
+import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
  * @Author : fgy
  * @CreateTime : 2019/9/4
- * @Description :这种写法可以定制个别为自动应答
+ * @Description :这种写法可以定制个别为自动应答 ，但需要就收类实现 ChannelAwareMessageListener 接口 否者报错
  **/
 @Configuration
 public class MessageListenerConfig {
@@ -25,13 +30,13 @@ public class MessageListenerConfig {
 
     @Autowired
     private DirectReceiver directReceiver;//Direct消息接收处理类
-    //    @Autowired
-//    FanoutReceiverA fanoutReceiverA;//Fanout消息接收处理类A
+
     @Autowired
     DirectRabbitConfig directRabbitConfig;
 
-    //    @Autowired
-//    FanoutRabbitConfig fanoutRabbitConfig;
+
+
+
     @Bean
     public SimpleMessageListenerContainer simpleMessageListenerContainer() {
         SimpleMessageListenerContainer container = new SimpleMessageListenerContainer(connectionFactory);
@@ -41,10 +46,29 @@ public class MessageListenerConfig {
         container.setQueues(directRabbitConfig.TestDirectQueue());
         container.setMessageListener(directReceiver);
 
-//        container.addQueues(fanoutRabbitConfig.queueA());
-//        container.setMessageListener(fanoutReceiverA);
+
         return container;
     }
+
+    /**
+     * 下面的配置会使所有都变为手动应答(因为默认的containerfacory就是这个名字rabbitListenerContainerFactory)
+     * 要部分手动要给bean 重新命名
+     */
+    @Bean("rabbitListenerContainerFactory1")
+    @ConditionalOnClass
+    public SimpleRabbitListenerContainerFactory rabbitListenerContainerFactory(CachingConnectionFactory connectionFactory) {
+        SimpleRabbitListenerContainerFactory factory = new SimpleRabbitListenerContainerFactory();
+        factory.setConnectionFactory(connectionFactory);
+        factory.setAcknowledgeMode(AcknowledgeMode.MANUAL);
+        return factory;
+    }
+//不指定则使用默认配置配置文件中的rabbitmq地址
+//    @Bean
+//    public ConnectionFactory connectionFactory(){
+//        CachingConnectionFactory factory = new CachingConnectionFactory();
+//        factory.setUri("amqp://zhihao.miao:123456@192.168.1.131:5672");
+//        return factory;
+//    }
 
 //    会有一些报错，在xml中添加如下配置
 //    listener:

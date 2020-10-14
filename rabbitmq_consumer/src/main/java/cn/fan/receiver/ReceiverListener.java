@@ -1,5 +1,6 @@
 package cn.fan.receiver;
 
+import com.rabbitmq.client.AMQP;
 import com.rabbitmq.client.Channel;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.core.Message;
@@ -12,17 +13,29 @@ import java.util.Random;
 /**
  * Auth Mr.fan
  * Date 2020/1/8 10:05
+ *
  **/
 @Slf4j
 @Component
 public class ReceiverListener {
-    @RabbitListener(queues = "topic.man")
-    public void topicManReceiver(Message message){
-        System.out.println("TopicManReceiver消费者收到消息  : " + message.toString());
-    }
+    //@RabbitListener该注解默认自动应答
+//    @RabbitListener(queues = "topic.man")
+//    public void topicManReceiver(Message message, Channel channel){
+//
+//        long deliveryTag = message.getMessageProperties().getDeliveryTag();
+//        System.out.println("TopicManReceiver消费者收到消息  : " + message.toString());
+//
+//        try {
+//            channel.basicAck(deliveryTag,false);
+////            channel.basicNack(deliveryTag,true,true);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//    }
     @RabbitListener(queues = "topic.woman")
     public void topicTotalReciver(Message message){
         System.out.println("TopicTotalReceiver消费者收到消息  : " + message.toString());
+        System.out.println("TopicTotalReceiver消费者收到消息  : " + message.getMessageProperties().getDeliveryTag());
     }
     @RabbitListener(queues = "queue-rabbit-springboot-advance")
     public  void  deadReceiver(String receiveMessage,Message message , Channel channel){
