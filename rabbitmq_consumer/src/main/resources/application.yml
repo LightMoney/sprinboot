@@ -12,10 +12,10 @@ spring:
     password: guest
     listener:
       simple:
-        acknowledge-mode: auto  # 自动ack  manual手动
+        acknowledge-mode: auto  # 不写默认也是自动ack  manual手动
         retry:
           enabled: true
-          max-attempts: 5  #重发是在消费端应用内处理的，不是rabbitqq重发
+          max-attempts: 5  #重发是在消费端应用内处理的，不是rabbitmq重发
           max-interval: 10000   # 重试最大间隔时间
           initial-interval: 2000  # 重试初始间隔时间
           multiplier: 2 # 间隔时间乘子，间隔时间*乘子=下一次的间隔时间，最大不能超过设置的最大间隔时间

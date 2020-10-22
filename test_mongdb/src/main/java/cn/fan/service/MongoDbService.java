@@ -2,7 +2,7 @@ package cn.fan.service;
 
 import cn.fan.model.Book;
 import lombok.extern.slf4j.Slf4j;
-import org.junit.internal.requests.ClassRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
@@ -107,21 +107,21 @@ public class MongoDbService {
 
 
 
-    public List<ClassRequest> calculate() {
-        //Aggregation.match为条件筛选操作
-        //Aggregation.group为分组操作
-        //Aggregation.project为选择结果字段操作
-        Aggregation aggregation = Aggregation.newAggregation(Aggregation.match(Criteria.where("college").is("计算机学院")),
-                Aggregation.group("className","college").count().as("count")
-                        .max("age").as("max")
-                        .min("age").as("min")
-                ,Aggregation.project().and("className").as("name").andInclude("college","count","max","min")
-        );
-        AggregationResults<ClassRequest> aggregationResults =
-                mongoTemplate.aggregate(aggregation, Book.class, ClassRequest.class);
-
-        return aggregationResults.getMappedResults();
-    }
+//    public List<ClassRequest> calculate() {
+//        //Aggregation.match为条件筛选操作
+//        //Aggregation.group为分组操作
+//        //Aggregation.project为选择结果字段操作
+//        Aggregation aggregation = Aggregation.newAggregation(Aggregation.match(Criteria.where("college").is("计算机学院")),
+//                Aggregation.group("className","college").count().as("count")
+//                        .max("age").as("max")
+//                        .min("age").as("min")
+//                ,Aggregation.project().and("className").as("name").andInclude("college","count","max","min")
+//        );
+//        AggregationResults<ClassRequest> aggregationResults =
+//                mongoTemplate.aggregate(aggregation, Book.class, ClassRequest.class);
+//
+//        return aggregationResults.getMappedResults();
+//    }
 
     /**
      * 更新对象

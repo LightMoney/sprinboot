@@ -18,25 +18,26 @@ import java.util.Random;
 @Slf4j
 @Component
 public class ReceiverListener {
-    //@RabbitListener该注解默认自动应答
-//    @RabbitListener(queues = "topic.man")
-//    public void topicManReceiver(Message message, Channel channel){
-//
-//        long deliveryTag = message.getMessageProperties().getDeliveryTag();
-//        System.out.println("TopicManReceiver消费者收到消息  : " + message.toString());
-//
-//        try {
-//            channel.basicAck(deliveryTag,false);
-////            channel.basicNack(deliveryTag,true,true);
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//    }
-    @RabbitListener(queues = "topic.woman")
-    public void topicTotalReciver(Message message){
-        System.out.println("TopicTotalReceiver消费者收到消息  : " + message.toString());
-        System.out.println("TopicTotalReceiver消费者收到消息  : " + message.getMessageProperties().getDeliveryTag());
+    //@RabbitListener该注解默认自动应答 可以通过添加自定义的containerFactory
+    @RabbitListener(queues = "topic.man",containerFactory = "rabbitListenerContainerFactory1")
+    public void topicManReceiver(Message message, Channel channel){
+
+        long deliveryTag = message.getMessageProperties().getDeliveryTag();
+        System.out.println("TopicManReceiver消费者收到消息  : " + message.toString());
+
+        try {
+            channel.basicAck(deliveryTag,false);
+//            channel.basicNack(deliveryTag,true,true);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
+//    @RabbitListener(queues = "topic.woman")
+//    public void topicTotalReciver(Message message){
+//        System.out.println("TopicTotalReceiver消费者收到消息  : " + message.toString());
+//        System.out.println("TopicTotalReceiver消费者收到消息  : " + message.getMessageProperties().getDeliveryTag());
+//    }
+
     @RabbitListener(queues = "queue-rabbit-springboot-advance")
     public  void  deadReceiver(String receiveMessage,Message message , Channel channel){
         try {

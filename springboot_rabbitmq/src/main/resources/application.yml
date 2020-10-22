@@ -8,6 +8,7 @@ spring:
     port: 5672
     username: guest
     password: guest
-    publisher-confirms: true
+#    publisher-confirms: true
+    publisher-confirm-type: correlated
     publisher-returns: true
 

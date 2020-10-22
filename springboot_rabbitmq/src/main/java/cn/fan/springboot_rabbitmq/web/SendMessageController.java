@@ -3,6 +3,7 @@ package cn.fan.springboot_rabbitmq.web;
 import org.springframework.amqp.AmqpException;
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.core.MessagePostProcessor;
+import org.springframework.amqp.rabbit.connection.CorrelationData;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -46,11 +47,14 @@ public class SendMessageController {
         String messageId = String.valueOf(UUID.randomUUID());
         String messageData = "message: M A N ";
         String createTime = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+        CorrelationData correlationData = new CorrelationData(UUID.randomUUID().toString());
         Map<String, Object> manMap = new HashMap<>();
-        manMap.put("messageId", messageId);
+        manMap.put("messageId", correlationData.getId());
         manMap.put("messageData", messageData);
         manMap.put("createTime", createTime);
         rabbitTemplate.convertAndSend("topicExchange", "topic.man", manMap);
+
+//        rabbitTemplate.convertAndSend("topic.man",manMap,correlationData);
         return "ok";
     }
 

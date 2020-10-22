@@ -19,6 +19,7 @@ package cn.fan.receiver;
 
 //message也可用spring
 import com.rabbitmq.client.Channel;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.amqp.rabbit.core.ChannelAwareMessageListener;
@@ -34,6 +35,7 @@ import java.util.Map;
  * @CreateTime : 2019/9/3
  * @Description :
  **/
+@Slf4j
 @Component
 @RabbitListener(queues = "TestDirectQueue")//监听的队列名称 TestDirectQueue
 public class DirectReceiver implements ChannelAwareMessageListener {
@@ -46,10 +48,11 @@ public class DirectReceiver implements ChannelAwareMessageListener {
             String msg = message.toString();
             String[] msgArray = msg.split("'");//可以点进Message里面看源码,单引号直接的数据就是我们的map消息数据
             Map<String, String> msgMap = mapStringToMap(msgArray[1].trim());
+            //也可以直接转成json或对象操作
             String messageId=msgMap.get("messageId");
             String messageData=msgMap.get("messageData");
             String createTime=msgMap.get("createTime");
-            System.out.println("messageId:"+messageId+"  messageData:"+messageData+"  createTime:"+createTime);
+           log.info("messageId:"+messageId+"  messageData:"+messageData+"  createTime:"+createTime);
             //channel.basicAck()
             //deliveryTag:该消息的index
             //multiple：是否批量.true:将一次性ack所有小于deliveryTag的消息。

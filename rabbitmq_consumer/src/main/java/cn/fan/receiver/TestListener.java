@@ -21,10 +21,12 @@ public class TestListener {
        log.info("1:===="+msg);
     }
 
-    @RabbitHandler
-    public void handler2(Map msg) {
-        log.info("2:===="+msg);
-    }
+//    @RabbitHandler
+//    public void handler2(Map msg,Message message) {
+//
+//        log.info("2:===="+msg);
+//        log.info(message.toString());
+//    }
 
     @RabbitHandler
     public void handler3(Message msg) {
