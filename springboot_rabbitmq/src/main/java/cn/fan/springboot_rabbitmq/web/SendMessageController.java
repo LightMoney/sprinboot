@@ -1,5 +1,6 @@
 package cn.fan.springboot_rabbitmq.web;
 
+import com.alibaba.fastjson.JSONObject;
 import org.springframework.amqp.AmqpException;
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.core.MessagePostProcessor;
@@ -94,7 +95,11 @@ public class SendMessageController {
         map.put("messageId", messageId);
         map.put("messageData", messageData);
         map.put("createTime", createTime);
-        rabbitTemplate.convertAndSend("non-existent-exchange", "TestDirectRouting", map);
+        map.put("testTime",new Date());
+        map.put("ll",System.currentTimeMillis());
+//        rabbitTemplate.convertAndSend("non-existent-exchange", "TestDirectRouting", map);
+        //这里数据不做json转换，那就需要接受方解析然后再转换
+        rabbitTemplate.convertAndSend("TestDirectExchange","TestDirectRouting", JSONObject.toJSONString(map) );
         return "ok";
     }
 
