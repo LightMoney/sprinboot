@@ -1,0 +1,7 @@
+#是否生成swagger文档设置 false不生成  true生成
+springfox:
+  documentation:
+    enabled: true
+spring:
+  profiles:
+    active:  dev

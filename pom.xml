@@ -24,6 +24,7 @@
         <module>springboot_mybatis_reverse</module>
         <module>springboot_fastdfs</module>
         <module>swagger2</module>
+        <module>swagger-new</module>
         <module>springboot_security_oauth2</module>
         <module>springboot_redis</module>
         <module>springboot_aop</module>
