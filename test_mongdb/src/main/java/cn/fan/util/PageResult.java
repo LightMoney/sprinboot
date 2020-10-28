@@ -10,7 +10,6 @@ import lombok.NoArgsConstructor;
 
 /**
  * 分页结果.
- * @author Ryan
  */
 @Data
 @AllArgsConstructor

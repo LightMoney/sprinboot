@@ -92,14 +92,35 @@ public class SendMessageController {
         String messageData = "message: non-existent-exchange test message ";
         String createTime = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
         Map<String, Object> map = new HashMap<>();
-        map.put("messageId", messageId);
-        map.put("messageData", messageData);
-        map.put("createTime", createTime);
-        map.put("testTime",new Date());
-        map.put("ll",System.currentTimeMillis());
+//        map.put("messageId", messageId);
+//        map.put("messageData", messageData);
+//        map.put("createTime", createTime);
+//        map.put("testTime",new Date());
+//        map.put("ll",System.currentTimeMillis());
+//        map.put("bigData",1234563.01);
 //        rabbitTemplate.convertAndSend("non-existent-exchange", "TestDirectRouting", map);
         //这里数据不做json转换，那就需要接受方解析然后再转换
-        rabbitTemplate.convertAndSend("TestDirectExchange","TestDirectRouting", JSONObject.toJSONString(map) );
+//        rabbitTemplate.convertAndSend("TestDirectExchange","TestDirectRouting", JSONObject.toJSONString(map) );
+//        private String taskId;
+//        @ApiModelProperty("当前时间")
+//        private Long createTime;
+//        @ApiModelProperty("格式化显示时间")
+//        private String showTime;
+//        @ApiModelProperty("企业id")
+//        private Integer enterpriseId;
+//        @ApiModelProperty("经度")
+//        private Double longitude;
+//        @ApiModelProperty("纬度")
+//        private Double latitude;
+//        @ApiModelProperty("mac值")
+//        private String macAddress;
+        map.put("taskId","tt123456789788");
+        map.put("createTime",System.currentTimeMillis());
+        map.put("enterpriseId",100032);
+        map.put("longitude",124.4568888);
+        map.put("latitude",124447.11111111111);
+        map.put("macAddress","adsf:45sf:sdfs:45se");
+        rabbitTemplate.convertAndSend("position_log_exchang","position_log_roukey",map);
         return "ok";
     }
 

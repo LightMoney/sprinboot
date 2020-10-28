@@ -23,6 +23,8 @@ import org.springframework.data.repository.support.PageableExecutionUtils;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.annotation.Resource;
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -47,18 +49,18 @@ public class MongoDbServiceTest {
         System.out.println("查询多条数据: 属于分级查询");
         Query query = new Query();
         //每页五个
-        Pageable pageable = new PageRequest(1, 2);
+        Pageable pageable = new PageRequest(3, 5);
         query.with(pageable);
 
         //按sal排序
 //        query.with(new Sort(Sort.Direction.DESC,"price"));
         //查询总数
-        long count = 0;//=mongoTemplate.count(query,Book.class,"book");
+        long count = 9;//=mongoTemplate.count(query,Book.class,"book");
         List<Book> emps = mongoTemplate.find(query, Book.class);
         log.info("" + emps);
         PageImpl<Book> page = (PageImpl<Book>) PageableExecutionUtils.getPage(emps, pageable, () -> count);
         log.info("" + page);
-        System.out.println("" + page);
+//        System.out.println("" + page);
     }
 
 
@@ -79,24 +81,29 @@ public class MongoDbServiceTest {
     @Test
     public void saveObj() {
         //没有设置@id的值时，会自动生成一个序列号  (_id)
-        Book book=new Book();
-        book.setId("122222");
-        book.setName("测试2244");
-        book.setCreateTime(new Date());
-        book.setTestTime(Long.valueOf("1603414701000"));
-
-//        当确定了id主键时似乎有更新效果
-        mongoTemplate.save(book);
-
-//        PageRequest of = PageRequest.of(1, 2);
+//        Book book = new Book();
+//        book.setId("12");
+//        book.setName("测试2244");
+//        book.setCreateTime(LocalDateTime.now());
+//        book.setTestTime(Long.valueOf("1603414701000"));
+//        book.setTt(new BigDecimal(1111.3351));
+////        当确定了id主键时似乎有更新效果
+//        mongoTemplate.save(book);
 //
-//        Query query = new Query();
+//        PageRequest of = PageRequest.of(2, 5);
+        Query query = new Query();
+        query.addCriteria(Criteria.where("_id").is("12"));
 //        query.with(of);
-//        List<Book> objects = mongoTemplate.find(query,Book.class);
-//        log.info(""+objects);
-
-//        PageResult<Object> objectPageResult = helper.pageQuery(query, Book.class, x -> x, 1,
-//                4, null);
+        List<Book> objects = mongoTemplate.find(query,Book.class);
+        log.info(""+objects);
+//        log.info(""+objects.get(0));
+//        log.info(""+objects.get(1));
+//        log.info(""+objects.get(2));
+//        log.info(""+objects.get(3));
+//        log.info(""+objects.get(4));
+//query.with(new Sort(Sort.Direction.ASC, "createTime"));
+//        PageResult<Book> objectPageResult = helper.pageQuery(query, Book.class, x -> x, 10,
+//                1, null);
 //        log.info("" + objectPageResult);
     }
 

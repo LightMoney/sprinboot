@@ -53,7 +53,7 @@ public class DirectReceiver implements ChannelAwareMessageListener {
             String msg = message.toString();
             String[] msgArray = msg.split("'");//可以点进Message里面看源码,单引号直接的数据就是我们的map消息数据
 //            Map<String, String> msgMap = mapStringToMap(msgArray[1].trim());
-            //msgArray中数据若不是json需要转换为json结构
+            //msgArray中数据若不是json需要转换为json结构（也可接收二进制流）
             ReModel reModel = JSONObject.parseObject(msgArray[1], new TypeReference<ReModel>(){});
 
 

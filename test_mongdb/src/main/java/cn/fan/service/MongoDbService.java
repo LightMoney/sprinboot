@@ -39,7 +39,7 @@ public class MongoDbService {
      */
     public String saveObj(Book book) {
         book.setId("123456789");
-        book.setCreateTime(new Date());
+//        book.setCreateTime(new Date());
         book.setUpdateTime(new Date());
         mongoTemplate.save(book);
         return "添加成功";
@@ -93,7 +93,7 @@ public class MongoDbService {
     public PageImpl<Book> getPagedUser(int page, int rows) {
         System.out.println("查询多条数据: 属于分级查询");
         Query query=new Query();
-        //每页五个
+        //每页五个可以使用of方法
         Pageable pageable=new PageRequest(page,rows);
         query.with(pageable);
         //按sal排序

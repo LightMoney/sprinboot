@@ -20,7 +20,6 @@ import org.springframework.stereotype.Component;
 /**
  * MongoDB分页查询工具类.
  *
- * @author Ryan Miao at 2018-06-07 14:46
  **/
 @Component
 public class MongoPageHelper {
@@ -88,9 +87,9 @@ public class MongoPageHelper {
         }
         final Criteria criteria = new Criteria();
         if (StringUtils.isNotBlank(lastId)) {
-            if (pageNum != FIRST_PAGE_NUM) {
+//            if (pageNum != FIRST_PAGE_NUM) {
                 criteria.and(ID).gt(new ObjectId(lastId));
-            }
+//            }
             query.limit(pageSize);
         } else {
             int skip = pageSize * (pageNum - 1);
@@ -98,8 +97,8 @@ public class MongoPageHelper {
         }
 
         final List<T> entityList = mongoTemplate
-                .find(query.addCriteria(criteria),
-//                                .with(new Sort(Lists.newArrayList(new Order(Direction.ASC, ID)))),
+                .find(query.addCriteria(criteria)
+                                .with(new Sort(Lists.newArrayList(new Order(Direction.ASC, ID)))),
                         entityClass);
 
         final PageResult<R> pageResult = new PageResult<>();
