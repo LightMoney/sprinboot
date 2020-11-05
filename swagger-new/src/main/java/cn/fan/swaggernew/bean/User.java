@@ -23,7 +23,7 @@ import java.io.Serializable;
 public class User implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @ApiModelProperty(hidden = true,example = "4564")
+    @ApiModelProperty(hidden = true)
     private Integer id;
 
     @ApiModelProperty(name = "userName", value = "用户名称", required = true, example = "张三")
@@ -41,7 +41,7 @@ public class User implements Serializable {
     @ApiModelProperty(hidden = true,example = "weqe")
     private String regTime;
 
-    @ApiModelProperty(name = "age", value = "年龄", required = true, example = "18")
+    @ApiModelProperty(name = "age", value = "年龄", example = "18")
     private Integer age;
 
 

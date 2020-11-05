@@ -25,6 +25,7 @@
         <module name="springboot-logback" />
         <module name="swagger-new" />
         <module name="springboot_security_sms" />
+        <module name="plus-generator" />
         <module name="shiro-auth" />
         <module name="elk" />
         <module name="untitled" />
@@ -38,7 +39,7 @@
         <module name="springboot_aop" />
         <module name="springboot_security" />
         <module name="alipay" />
-        <module name="plus-generator" />
+        <module name="devtool" />
         <module name="springboot_easyexcle" />
         <module name="websocket" />
         <module name="springboot_webservice" />
@@ -57,6 +58,7 @@
       <module name="alipay" options="-parameters" />
       <module name="authorization_server" options="-parameters" />
       <module name="demo" options="-parameters" />
+      <module name="devtool" options="-parameters" />
       <module name="elk" options="-parameters" />
       <module name="hbase" options="-parameters" />
       <module name="kafka" options="-parameters" />

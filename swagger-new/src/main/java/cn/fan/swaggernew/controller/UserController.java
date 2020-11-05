@@ -10,11 +10,17 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.HashMap;
 import java.util.Map;
+
+/**
+ *  java.lang.NumberFormatException: For input string: ""
+ *   @ApiImplicitParam或 @ApiModelProperty 未加examle
+ */
 
 @RestController
 @RequestMapping("user")
@@ -24,15 +30,16 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+
     /**
-     * java.lang.NumberFormatException: For input string: ""
+     *
      * @param user
      * @return
      */
     @RequestMapping(value = "/save", method = RequestMethod.POST)
-    @ApiImplicitParam(name = "user", value = "用户实体user", required = true, dataType = "User")//这会使参数为body体
+    @ApiImplicitParam(name = "user", value = "用户实体user",required = true, dataType = "User")//这会使参数为body体
     @ApiOperation(value = "创建用户", notes = "创建用户")
-    public Map<String, Object> saveUser( @RequestBody @Valid User user) {
+    public Map<String, Object> saveUser( @RequestBody User user) {
         Map<String, Object> ret = new HashMap<>();
         try {
             if (null == user) {
@@ -57,9 +64,9 @@ public class UserController {
      *
      */
     @RequestMapping(value = "/get/{id}", method = RequestMethod.GET, produces = "application/json")
-    @ApiImplicitParam(name = "id", value = "用户ID", required = true, dataType = "Long", paramType = "query")
+    @ApiImplicitParam(name = "id", value = "用户ID", required = true, dataType = "Long", paramType = "query",example = "1231")
     @ApiOperation(value = "获取用户详细信息", notes = "根据id来获取用户详细信息")
-    public Map<String, Object> getUser(@RequestParam Long id) {
+    public Map<String, Object> getUser(@PathVariable Long id) {
         Map<String, Object> ret = new HashMap<>();
         try {
             User user = userService.selectById(id);
@@ -84,7 +91,7 @@ public class UserController {
      * @return
      */
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
-    @ApiImplicitParam(name = "id", value = "用户ID", required = true, dataType = "Long", paramType = "path")
+    @ApiImplicitParam(name = "id", value = "用户ID", required = true, dataType = "Long", paramType = "path",example = "1231")
     @ApiOperation(value = "删除用户", notes = "删除用户")
     public Map<String, Object> deleteUser(@PathVariable Long id) {
         Map<String, Object> ret = new HashMap<>();

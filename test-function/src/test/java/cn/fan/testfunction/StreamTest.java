@@ -106,7 +106,7 @@ public class StreamTest {
     }
 
     /**
-     *   peek：如同于map，能得到流中的每一个元素。但map接收的是一个Function表达式，有返回值；而peek接收的是Consumer表达式，没有返回值。
+     * peek：如同于map，能得到流中的每一个元素。但map接收的是一个Function表达式，有返回值；而peek接收的是Consumer表达式，没有返回值。
      */
     @Test
     public void testStream4() {
@@ -152,5 +152,64 @@ public class StreamTest {
 //        Optional<Student> max = studentList.stream().max(Comparator.comparingInt(Student::getAge));
         Optional<Student> max = studentList.stream().min(Comparator.comparing(Student::getName));
         System.out.println(max);
+    }
+
+    /**
+     * reduce 操作可以实现从一组值中生成一个值
+     */
+    @Test
+    public void testStream6() {
+        Stream<Integer> integerStream = Stream.of(1, 2, 3, 4);
+        Integer reduce = integerStream.reduce(0, (acc, x) -> acc + x);
+        log.info("" + reduce);
+    }
+
+    /**
+     * 常用的流操作是将其分解成两个集合，Collectors.partitioningBy帮我们实现了，接收一个Predicate函数式接口。
+     */
+    @Test
+    public void testStream7() {
+        //省略List<student> students的初始化
+        Student s1 = new Student("aa", 30);
+        Student s2 = new Student("bb", 20);
+        Student s3 = new Student("aa", 10);
+        Student s4 = new Student("dd", 40);
+        List<Student> students = Arrays.asList(s1, s2, s3, s4);
+        Map<Boolean, List<Student>> listMap = students.stream().collect(
+                Collectors.partitioningBy(student -> student.getAge()>20));
+//                        student.getName().
+//                        contains("aa")));
+//将接收的list分为满足条件的true 和未满足条件的false 的两个部分
+        log.info(listMap.toString());
+    }
+
+    /**
+     * 根据类型分组 同sql中 group  by
+     */
+    @Test
+    public void testStream8(){
+        //省略List<student> students的初始化
+        Student s1 = new Student("aa", 30);
+        Student s2 = new Student("bb", 20);
+        Student s3 = new Student("aa", 10);
+        Student s4 = new Student("dd", 40);
+        List<Student> students = Arrays.asList(s1, s2, s3, s4);
+        Map<String, List<Student>> collect = students.stream().collect(Collectors.groupingBy(student -> student.getName()));
+        log.info(""+collect);
+    }
+
+    /**
+     *  字符串拼接
+     * Collectors.joining()和map（）匹配使用
+     * joining接收三个参数，第一个是分界符，第二个是前缀符，第三个是结束符。也可以不传入参数Collectors.joining()，这样就是直接拼接。
+     */
+    @Test
+    public void testStream9(){
+        Student s1 = new Student("aa", 30);
+        Student s2 = new Student("bb", 20);
+        Student s4 = new Student("dd", 40);
+        List<Student> students = Arrays.asList(s1, s2, s4);
+        String collect = students.stream().map(Student::getName).collect(Collectors.joining(",", "[", "]"));
+        log.info(""+collect);
     }
 }

@@ -2,10 +2,11 @@ server:
     port: 8080
 spring:
     redis:
-        host: localhost
+        host: 192.168.14.38
 #        host: 39.108.10.101
         port: 6379
         database: 0
+        password: hthl@2018
         lettuce:
             pool:
                 max-active: 8
@@ -13,7 +14,7 @@ spring:
                 max-idle: 8
                 min-idle: 0
     redis2:
-        host: localhost
+        host: 192.168.14.38
         #        host: 39.108.10.101
         port: 6379
-        database: 1
+        database: 2

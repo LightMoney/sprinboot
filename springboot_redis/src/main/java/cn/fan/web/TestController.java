@@ -42,7 +42,7 @@ private RedisConfig2 redisConfig;
 
     @ApiOperation(value = "set方法", notes = "redis测试")
     @RequestMapping("/set")
-    public ResponseResult set(@ApiParam(value = "值", required = true) @RequestParam String value) {
+    public ResponseResult set(@ApiParam(value = "值", required = false) @RequestParam String value) {
 //        redisTemplate.opsForValue().set("key", value);
 //        redisConfig.getRedisTemplateByDb(0).opsForValue().set("key", value,100, TimeUnit.SECONDS);
         redisConfig.getRedisTemplateByDb(0).opsForHash().put("t3","t4","tt");
@@ -53,7 +53,6 @@ private RedisConfig2 redisConfig;
     @ApiOperation(value = "get方法",notes = "redis测试")
     @RequestMapping("/get")
     public  ResponseResult get(@ApiParam(value = "键", required = true) @RequestParam String key){
-
 //        return new ResponseResult(true,redisTemplate.opsForValue().get(key));
         return ResponseResult.FAIL();
     }

@@ -36,8 +36,8 @@ public class RedisConfig2 {
     private String hostName;
     @Value("${spring.redis.port}")
     private int port;
-    //    @Value("${redis.password}")
-//    private String passWord;
+        @Value("${spring.redis.password}")
+    private String passWord;
     @Value("${spring.redis.lettuce.pool.max-idle}")
     private int maxIdl;
     @Value("${spring.redis.lettuce.pool.min-idle}")
@@ -100,7 +100,7 @@ public class RedisConfig2 {
         LettuceClientConfiguration clientConfiguration = LettucePoolingClientConfiguration.builder().poolConfig(lettucePoolConfig()).build();
         RedisStandaloneConfiguration config = new RedisStandaloneConfiguration();
         config.setHostName(hostName);
-//        config.setPassword(RedisPassword.of(password));
+        config.setPassword(RedisPassword.of(passWord));
         config.setPort(port);
         config.setDatabase(db);
         //设置连接工厂

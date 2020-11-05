@@ -2,6 +2,8 @@ package cn.fan.service;
 
 import cn.fan.model.Book;
 
+import cn.fan.model.PositionData;
+import cn.fan.util.DateUtil;
 import cn.fan.util.MongoPageHelper;
 import cn.fan.util.PageResult;
 import lombok.extern.slf4j.Slf4j;
@@ -94,8 +96,8 @@ public class MongoDbServiceTest {
         Query query = new Query();
         query.addCriteria(Criteria.where("_id").is("12"));
 //        query.with(of);
-        List<Book> objects = mongoTemplate.find(query,Book.class);
-        log.info(""+objects);
+        List<Book> objects = mongoTemplate.find(query, Book.class);
+        log.info("" + objects);
 //        log.info(""+objects.get(0));
 //        log.info(""+objects.get(1));
 //        log.info(""+objects.get(2));
@@ -107,5 +109,32 @@ public class MongoDbServiceTest {
 //        log.info("" + objectPageResult);
     }
 
+
+    @Test
+    public void delete(){
+        Query query=new Query();
+        query.addCriteria(Criteria.where("taskId").is("CR1321623433278029824"));
+        mongoTemplate.remove(query,PositionData.class);
+    }
+    @Test
+    public void saveTem() {
+        PositionData data = new PositionData();
+
+        data.setEnterpriseId(100032);
+        String taskId = "CR1321623433278029824";
+        data.setTaskId(taskId);
+        for (int i = 0; i < 20; i++) {
+            Double dd=Double.valueOf("0.00"+i);
+            long tt = System.currentTimeMillis() + i * 1000;
+            data.setId(tt + taskId);
+            data.setCreateTime(tt);
+            data.setLatitude(30.577273681794704 +dd );
+            data.setLongitude(104.06320216406249  + dd);
+            data.setShowTime(DateUtil.getDateToString(tt));
+            mongoTemplate.save(data);
+            log.info("=======" + i);
+        }
+
+    }
 
 }

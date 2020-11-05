@@ -1,9 +1,17 @@
 server:
   port: 8089
 spring:
+#  data:
+#    mongodb:
+#      uri: mongodb://root:root@39.108.10.101:27017/test1?authSource=admin
+
   data:
     mongodb:
-      uri: mongodb://root:root@39.108.10.101:27017/test1?authSource=admin
+      host: 192.168.14.41
+      username: root
+      password: hthl@2018
+      database: cps_view
+      authentication-database: admin
 #      database: test1
 #      host: 39.108.10.101
 #      port: 27017
