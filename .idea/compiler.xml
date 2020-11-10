@@ -21,6 +21,7 @@
         <module name="springboot_es" />
         <module name="hbase" />
         <module name="oauth2-password" />
+        <module name="springboot-cache" />
         <module name="rabbitmq_consumer" />
         <module name="springboot-logback" />
         <module name="swagger-new" />
@@ -69,6 +70,7 @@
       <module name="rabbitmq_consumer" options="-parameters" />
       <module name="redis_publish_subscriber" options="-parameters" />
       <module name="shiro-auth" options="-parameters" />
+      <module name="springboot-cache" options="-parameters" />
       <module name="springboot-logback" options="-parameters" />
       <module name="springboot-netty" options="-parameters" />
       <module name="springboot-rabbitmq-mqtt" options="-parameters" />

@@ -1,0 +1,1 @@
+ String cacheKey = cacheBuilder.generateVerKey("goods778899");

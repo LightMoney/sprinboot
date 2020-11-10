@@ -18,3 +18,4 @@ spring:
         #        host: 39.108.10.101
         port: 6379
         database: 2
+        password: hthl@2018

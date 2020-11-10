@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.swagger.dao.UserMapper">
-    <resultMap id="BaseResultMap" type="com.example.swagger.bean.User">
+<mapper namespace="cn.fan.swagger2.dao.UserMapper">
+    <resultMap id="BaseResultMap" type="cn.fan.swagger2.bean.User">
         <id column="id" jdbcType="BIGINT" property="id"/>
         <result column="user_name" jdbcType="VARCHAR" property="userName"/>
         <result column="pass_word" jdbcType="VARCHAR" property="passWord"/>
@@ -26,7 +26,7 @@
         where id = #{id,jdbcType=BIGINT}
     </delete>
 
-    <insert id="createUser" parameterType="com.example.swagger.bean.User">
+    <insert id="createUser" parameterType="cn.fan.swagger2.bean.User">
         insert into user
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="id != null">
@@ -76,7 +76,7 @@
         </trim>
     </insert>
 
-    <update id="modifyUser" parameterType="com.example.swagger.bean.User">
+    <update id="modifyUser" parameterType="cn.fan.swagger2.bean.User">
         update user
         <set>
             <if test="userName != null">

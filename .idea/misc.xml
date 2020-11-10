@@ -32,6 +32,7 @@
         <option value="$PROJECT_DIR$/unitionpay/pom.xml" />
         <option value="$PROJECT_DIR$/swagger-new/pom.xml" />
         <option value="$PROJECT_DIR$/devtool/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-cache/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
