@@ -23,6 +23,7 @@ public class RedisCacheProviderImpl implements CacheProviderService {
     @Resource
     private RedisTemplate<Serializable, Object> redisTemplate;
 
+
     /**
      * 查询缓存
      *

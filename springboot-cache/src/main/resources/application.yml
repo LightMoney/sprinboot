@@ -3,7 +3,7 @@ spring:
     host:  127.0.0.1
     database: 0
     port: 6379
-###是否启用本地缓存
+###是否启用本地缓存 1为启用
 #  spring.power.isuselocalcache=1
 #  ##是否启用Redis缓存
 #  spring.power.isuserediscache=1

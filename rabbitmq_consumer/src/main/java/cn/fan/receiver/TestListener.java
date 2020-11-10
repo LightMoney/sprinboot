@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.Map;
 /**
+ * 可以直接接受对应参数，直接写在接受方法参数中，但要注意序列化问题（看下是否自己设置了containerFactory中有自定义序列化）
  * @@RabbitListener@RabbitListener 和 @RabbitHandler结合使用，不同类型的消息使用不同的方法来处理。
  * 实质是根据消息体的body类型来判断
  */

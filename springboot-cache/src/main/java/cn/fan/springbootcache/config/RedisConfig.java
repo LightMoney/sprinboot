@@ -1,5 +1,8 @@
 package cn.fan.springbootcache.config;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.annotation.PropertyAccessor;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.CachingConfigurerSupport;
 import org.springframework.cache.annotation.EnableCaching;
@@ -8,6 +11,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.cache.RedisCacheManager;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 /**
@@ -36,13 +40,13 @@ public class RedisConfig extends CachingConfigurerSupport {
         //使用Jackson序列化器的问题是，复杂对象可能序列化失败，比如JodaTime的DateTime类型
 
         //        //使用Jackson2，将对象序列化为JSON
-        //        Jackson2JsonRedisSerializer jackson2JsonRedisSerializer = new Jackson2JsonRedisSerializer(Object.class);
-        //        //json转对象类，不设置默认的会将json转成hashmap
-        //        ObjectMapper om = new ObjectMapper();
-        //        om.setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.ANY);
-        //        om.enableDefaultTyping(ObjectMapper.DefaultTyping.NON_FINAL);
-        //        jackson2JsonRedisSerializer.setObjectMapper(om);
-        //        template.setValueSerializer(jackson2JsonRedisSerializer);
+                Jackson2JsonRedisSerializer jackson2JsonRedisSerializer = new Jackson2JsonRedisSerializer(Object.class);
+                //json转对象类，不设置默认的会将json转成hashmap
+                ObjectMapper om = new ObjectMapper();
+                om.setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.ANY);
+                om.enableDefaultTyping(ObjectMapper.DefaultTyping.NON_FINAL);
+                jackson2JsonRedisSerializer.setObjectMapper(om);
+                template.setValueSerializer(jackson2JsonRedisSerializer);
 
         //将redis连接工厂设置到模板类中
         template.setConnectionFactory(factory);
