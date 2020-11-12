@@ -27,3 +27,7 @@
 /springboot_log4j2/.mvn/wrapper/
 /devtool/.mvn/wrapper/
 /springboot-cache/.mvn/wrapper/
+/devtool/.mvn
+/.idea
+/springboot-cache/.mvn
+/alipay/.mvn
