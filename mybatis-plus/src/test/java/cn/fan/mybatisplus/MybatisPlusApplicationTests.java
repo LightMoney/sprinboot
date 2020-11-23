@@ -117,4 +117,34 @@ log.info("hjdsfh");
         userService.saveOrUpdate(byId);
 //        System.out.println(result);
     }
+
+    @Test
+    public void test07() {
+        User user=new User();
+
+//        byId.setVersion(1);
+//        user.setUid(1006);
+        user.setUname("和平");
+        user.setAge(20);
+//        int result= userMapper.insert(user);
+//        userService.save(user);
+//        userService.update()
+//        userService.updateById(byId);
+        userService.saveOrUpdate(user);
+//        System.out.println(result);
+    }
+
+    /**
+     * 如果数据在and里就会用括号包起来，若单独or（），直接在or或and后面直接拼接
+     */
+    @Test
+    public void test8(){
+        QueryWrapper<User> wrapper=new QueryWrapper();
+        wrapper.lambda().like(User::getUname,"l").and(i->i.eq(User::getAge,12).or().eq(User::getAge,13));
+        List<User> list = userService.list(wrapper);
+        log.info("====="+list);
+    }
+
+
+//   3.0.7和以上版本已支持逻辑删除的扩展，可通过配置和注解实现
 }

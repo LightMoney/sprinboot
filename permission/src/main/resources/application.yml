@@ -1,0 +1,47 @@
+server:
+  port: 8084
+#  注意这个配置是1.1.10 druid生效
+spring:
+  datasource:
+    druid:
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/cps?useUnicode=true&characterEncoding=UTF8&allowMultiQueries=true
+      username: root
+      password: root
+      initialSize: 5  #初始建立连接数量
+      minIdle: 5  #最小连接数量
+      maxActive: 20 #最大连接数量
+      maxWait: 10000  #获取连接最大等待时间，毫秒
+      testOnBorrow: true #申请连接时检测连接是否有效
+      testOnReturn: false #归还连接时检测连接是否有效
+      timeBetweenEvictionRunsMillis: 60000 #配置间隔检测连接是否有效的时间（单位是毫秒）
+      minEvictableIdleTimeMillis: 300000  #连接在连接池的最小生存时间（毫秒）
+      stat-view-servlet:         #开启web监控页面
+        url-pattern: /druid/*  #web访问路径
+        allow: localhost       #允许访问的ip,不配置默认所有地址都可以访问
+        login-username: admin  #访问需要的用户名
+        login-password: 123654 #访问需要的密码
+      web-stat-filter:    #配置web过滤器
+        url-pattern: /*   #过滤url
+        exclusions: /druid/*  #排除过滤
+  application:
+    name: springboot-permission
+#      mybatis:
+#        #开启驼峰命名法
+#        configuration:
+#          map-underscore-to-camel-case: true
+mybatis-plus:
+  # xml地址
+  mapper-locations: classpath:mapper/*Mapper.xml
+  # 实体扫描，多个package用逗号或者分号分隔
+  type-aliases-package: cn.fan.permission.entity   #自己的实体类地址
+  configuration:
+    # 这个配置会将执行的sql打印出来，在开发或测试的时候可以用
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+#pagehelper:
+#  reasonable: true
+#  support-methods-arguments: true
+#  params: count=countSql
+#  row-bounds-with-count: true
+#  helper-dialect: mysql

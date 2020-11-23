@@ -3,3 +3,4 @@ server:
 spring:
   application:
     name: springboot_aop
+#    服务名称有下划线可能无法注册进

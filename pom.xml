@@ -36,6 +36,7 @@
         <module>kafka</module>
         <module>springboot_security_sms</module>
         <module>springboot-netty</module>
+        <module>permission</module>
     </modules>
 
 

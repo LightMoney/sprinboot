@@ -117,4 +117,8 @@ public class DesignPatternTest {
         emptyOpt.get();
     }
 
+    @Test
+    public void test(){
+        log.info( "123".compareTo("32")+"");
+    }
 }
