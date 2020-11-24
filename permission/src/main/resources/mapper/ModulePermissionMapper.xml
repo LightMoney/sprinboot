@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.fan.permission.dao.ModulePermissionMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.fan.permission.entity.ModulePermission">
+        <id column="N_MODULE_ID" property="nModuleId" />
+        <result column="N_PERMISSION_ID" property="nPermissionId" />
+    </resultMap>
+
+
+    <!--开启缓存 属于初始化数据，正常情况下不会变更，除非手动改库-->
+    <cache/>
+    <select id="getAllModulePermission" resultType="java.util.Map">
+        select N_MODULE_ID moduleId,N_PERMISSION_ID permissionId
+        from t_bd_module_permission
+    </select>
+
+    <select id="getAllPermissionUrl" resultType="java.util.Map">
+        select C_KEYWORD keyWord, C_URL url FROM t_bd_permission_url
+    </select>
+</mapper>

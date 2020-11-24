@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.fan.permission.dao.AdminMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.fan.permission.entity.Admin">
+        <id column="admin_id" property="adminId" />
+        <result column="enterprise_id" property="enterpriseId" />
+        <result column="admin_external_id" property="adminExternalId" />
+        <result column="relation_id" property="relationId" />
+        <result column="admin_origin_id" property="adminOriginId" />
+        <result column="admin_name" property="adminName" />
+        <result column="admin_code" property="adminCode" />
+        <result column="admin_password" property="adminPassword" />
+        <result column="telephone" property="telephone" />
+        <result column="email" property="email" />
+        <result column="create_time" property="createTime" />
+        <result column="create_user_id" property="createUserId" />
+        <result column="modify_time" property="modifyTime" />
+        <result column="modify_user_id" property="modifyUserId" />
+        <result column="figureurl" property="figureurl" />
+        <result column="figureurl_1" property="figureurl1" />
+        <result column="data_status" property="dataStatus" />
+        <result column="failure_describe" property="failureDescribe" />
+        <result column="delete_status" property="deleteStatus" />
+        <result column="enabled" property="enabled" />
+        <result column="remark" property="remark" />
+        <result column="user_define" property="userDefine" />
+        <result column="warrant" property="warrant" />
+    </resultMap>
+
+</mapper>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.fan.permission.dao.RoleMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.fan.permission.entity.Role">
+        <id column="role_id" property="roleId" />
+        <result column="enterprise_id" property="enterpriseId" />
+        <result column="role_name" property="roleName" />
+        <result column="role_code" property="roleCode" />
+        <result column="role_type" property="roleType" />
+        <result column="create_time" property="createTime" />
+        <result column="create_user_id" property="createUserId" />
+        <result column="modify_time" property="modifyTime" />
+        <result column="modify_user_id" property="modifyUserId" />
+        <result column="delete_status" property="deleteStatus" />
+        <result column="enabled" property="enabled" />
+        <result column="editable" property="editable" />
+        <result column="description" property="description" />
+        <result column="user_define" property="userDefine" />
+    </resultMap>
+
+    <!--查询角色信息通过用户id-->
+    <select id="queryRoleIdByAdminId" resultType="java.lang.Integer" parameterType="java.lang.Integer">
+    SELECT DISTINCT role.role_id FROM T_BD_ROLE role
+    INNER JOIN T_BD_ADMIN_ROLE admin_role ON admin_role.role_id = role.role_id
+    WHERE admin_role.admin_id=#{adminId,jdbcType=INTEGER}
+  </select>
+</mapper>
