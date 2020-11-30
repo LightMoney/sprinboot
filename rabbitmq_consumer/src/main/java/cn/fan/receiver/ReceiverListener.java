@@ -8,6 +8,7 @@ import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
+import java.util.Map;
 import java.util.Random;
 
 /**
@@ -19,9 +20,9 @@ import java.util.Random;
 @Slf4j
 @Component
 public class ReceiverListener {
-    //@RabbitListener该注解默认自动应答 可以通过添加自定义的containerFactory
+    //@RabbitListener该注解默认自动应答 可以通过添加自定义的containerFactory（如果设定了自定义序列化方式，要注意可能无法直接使用发送类型的参数接收消息）
     @RabbitListener(queues = "topic.man",containerFactory = "rabbitListenerContainerFactory1")
-    public void topicManReceiver(Message message, Channel channel){
+    public void topicManReceiver(Map map, Message message, Channel channel){
 
         long deliveryTag = message.getMessageProperties().getDeliveryTag();
         System.out.println("TopicManReceiver消费者收到消息  : " + message.toString());

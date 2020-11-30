@@ -19,6 +19,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.aggregation.Aggregation;
 import org.springframework.data.mongodb.core.aggregation.AggregationResults;
+import org.springframework.data.mongodb.core.mapreduce.GroupBy;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.repository.support.PageableExecutionUtils;
@@ -30,6 +31,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 
 @RunWith(SpringRunner.class)
@@ -65,20 +67,23 @@ public class MongoDbServiceTest {
 //        System.out.println("" + page);
     }
 
+//聚合类型条件是有先后顺序的  project 想要显示的字段
+    @Test
+    public void list(){
+        Aggregation aggregation = Aggregation.newAggregation(
+                Aggregation.match(Criteria.where("price").lt(40)),
+//                Aggregation.group("id").count().as("count")
+//                        .max("price").as("max")
+//                        .min("price").as("min"),
+                Aggregation.project("id","name","tt")
 
-//    @Test
-//    public  List<ClassRequest> list(){
-//        Aggregation aggregation = Aggregation.newAggregation(Aggregation.match(Criteria.where("college").is("计算机学院")),
-//                Aggregation.group("className","college").count().as("count")
-//                        .max("age").as("max")
-//                        .min("age").as("min")
-//                ,Aggregation.project().and("className").as("name").andInclude("college","count","max","min")
-//        );
-//        AggregationResults<ClassRequest> aggregationResults =
-//                mongoTemplate.aggregate(aggregation, Book.class, ClassRequest.class);
-//
-//        return aggregationResults.getMappedResults();
-//    }
+
+        );
+        AggregationResults<Map> aggregationResults =
+                mongoTemplate.aggregate(aggregation, Book.class, Map.class);
+
+       log.info(""+aggregationResults.getMappedResults());
+    }
 
     @Test
     public void saveObj() {
@@ -86,18 +91,24 @@ public class MongoDbServiceTest {
 //        Book book = new Book();
 //        book.setId("12");
 //        book.setName("测试2244");
+//        book.setPrice(50);
 //        book.setCreateTime(LocalDateTime.now());
 //        book.setTestTime(Long.valueOf("1603414701000"));
 //        book.setTt(new BigDecimal(1111.3351));
 ////        当确定了id主键时似乎有更新效果
 //        mongoTemplate.save(book);
 //
-//        PageRequest of = PageRequest.of(2, 5);
+        PageRequest of = PageRequest.of(0, 5);
         Query query = new Query();
-        query.addCriteria(Criteria.where("_id").is("12"));
-//        query.with(of);
+        //查询总数
+        long count1 = mongoTemplate.count(query, Book.class);
+
+//        query.addCriteria(Criteria.where("_id").is("12"));
+        query.addCriteria(Criteria.where("price").lt(40));
+        query.with(of);
+
         List<Book> objects = mongoTemplate.find(query, Book.class);
-        log.info("" + objects);
+        log.info("" +objects);
 //        log.info(""+objects.get(0));
 //        log.info(""+objects.get(1));
 //        log.info(""+objects.get(2));

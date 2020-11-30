@@ -34,4 +34,9 @@ public class TestListener {
         log.info("3:===="+msg);
     }
 
+
+    @RabbitHandler
+    public void handler4(Map msg) {
+        log.info("3:===="+msg);
+    }
 }
