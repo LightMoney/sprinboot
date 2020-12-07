@@ -24,4 +24,12 @@ public interface ModuleMapper extends BaseMapper<Module> {
      * @return
      */
     List<ModuleVo> queryChildModule(Map map);
+
+    /**
+     * 动态查询员工，岗位，组织的角色id（多岗位，多组织...）
+     *
+     * @param map
+     * @return
+     */
+    List<Integer> queryRoleIdDynamic0(Map map);
 }

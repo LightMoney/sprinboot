@@ -28,11 +28,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-
+<!--高版本的easyexcel才有easyExcle类，支持复杂导入，但2.2.5及以上版本会有null异常（暂时不知道原因）-->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>easyexcel</artifactId>
-            <version>1.1.2-beta5</version>
+<!--            <version>1.1.2-beta5</version>-->
+            <version>2.1.1</version>
         </dependency>
 
         <dependency>

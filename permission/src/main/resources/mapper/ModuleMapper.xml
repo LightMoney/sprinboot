@@ -39,4 +39,50 @@
         GROUP BY parent_id,order_no
         ORDER BY parent_id,order_no ASC
     </select>
+
+    <!--动态获取角色id-->
+    <select id="queryRoleIdDynamic0" parameterType="java.util.Map" resultType="java.lang.Integer"
+            statementType="STATEMENT">
+        SELECT role_id FROM ${tableName}
+        WHERE delete_status = 1
+        <if test="empIdList != null">
+            AND emp_id IN
+            <foreach collection="empIdList" item="empId" separator="," open="(" close=")">
+                ${empId}
+            </foreach>
+        </if>
+        -- 路由到用户默认角色关联表
+        <if test="adminIdList != null">
+            AND admin_id IN
+            <foreach collection="adminIdList" item="adminId" separator="," open="(" close=")">
+                ${adminId}
+            </foreach>
+        </if>
+        -- 岗位列表查询角色
+        <if test="postIdList != null">
+            AND post_id IN
+            <foreach collection="postIdList" item="postId" separator="," open="(" close=")">
+                ${postId}
+            </foreach>
+        </if>
+        <if test="postList != null">
+            AND post_id IN
+            <foreach collection="postList" item="post" separator="," open="(" close=")">
+                ${post.postId}
+            </foreach>
+        </if>
+        -- 组织列表查询角色
+        <if test="organizeIdList != null">
+            AND organize_id IN
+            <foreach collection="organizeIdList" item="organizeId" separator="," open="(" close=")">
+                ${organizeId}
+            </foreach>
+        </if>
+        <if test="organizeList != null">
+            AND organize_id IN
+            <foreach collection="organizeList" item="organize" separator="," open="(" close=")">
+                ${organize.organizeId}
+            </foreach>
+        </if>
+    </select>
 </mapper>

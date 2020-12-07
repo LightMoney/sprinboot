@@ -41,8 +41,8 @@ public class CoderController {
     CoderEsRepository coderEsRepository;
 
 
-    @Autowired
-    private ElasticsearchTemplate template;
+//    @Autowired
+//    private ElasticsearchTemplate template;
     /**
      * @return
      */

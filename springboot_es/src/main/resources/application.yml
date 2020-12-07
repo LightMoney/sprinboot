@@ -1,10 +1,10 @@
 
-spring:
-  data:
-    elasticsearch:
-#      容器中配置文件
-      cluster-name: docker-cluster
-      cluster-nodes: 39.108.10.101:9300
+#spring:
+#  data:
+#    elasticsearch:
+##      容器中配置文件
+#      cluster-name: docker-cluster
+#      cluster-nodes: 39.108.10.101:9300
 
 server:
   port: 8081
@@ -17,7 +17,9 @@ server:
 #          endpoints: http://39.108.10.101:9200
 ##          connection-timeout: 链接到es的超时时间，毫秒为单位，默认10秒（10000毫秒）
 ##          socket-timeout: 读取和写入的超时时间，单位为毫秒，默认5秒（5000毫秒）
-#  elasticsearch:
-#    rest:
-#      uris: http://39.108.10.101:9200
+#高版本用下面的方式也能连接
+spring:
+  elasticsearch:
+    rest:
+      uris:  http://172.18.106.22:9200
 

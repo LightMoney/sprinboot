@@ -52,7 +52,7 @@ public class PermissionServiceImpl extends ServiceImpl<PermissionMapper, Permiss
         List<Integer> roleIds = new ArrayList<>();
 //        获取一个角色并集
         //这里是默认角色
-//        roleIds.addAll(getAdminDefaultRoleId(adminId));
+        roleIds.addAll(getAdminDefaultRoleId(adminId));
 //        用户角色
         roleIds.addAll(roleMapper.queryRoleIdByAdminId(adminId));
 //        员工角色
@@ -239,5 +239,25 @@ public class PermissionServiceImpl extends ServiceImpl<PermissionMapper, Permiss
             return null;
         }
         return buildMoPerMap(modPers);
+    }
+
+    /**
+     * 通过用户id获取用户默认角色
+     * @param adminId 用户id
+     * @return 角色id
+     */
+    private List<Integer> getAdminDefaultRoleId(Integer adminId) {
+        List<Integer> adminIds = new ArrayList<>();
+        adminIds.add(adminId);
+        List<Integer> adminRoleIds = getRoleIdDynamic("t_bd_admin_default_role", "adminIdList", adminIds);
+        // 追加
+        return adminRoleIds;
+    }
+
+    private List<Integer> getRoleIdDynamic(String tableName, String key, List<Integer> value) {
+        Map<String, Object> map = new HashMap<>();
+        map.put(key, value);
+        map.put("tableName", tableName.trim());
+        return moduleMapper.queryRoleIdDynamic0(map);
     }
 }
