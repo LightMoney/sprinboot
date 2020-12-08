@@ -1,16 +1,18 @@
 package cn.fan.springboot_easyexcle;
 
+import cn.fan.springboot_easyexcle.listener.DemoDataListener;
 import cn.fan.springboot_easyexcle.model.ExcelPropertyIndexModel;
 import cn.fan.springboot_easyexcle.model.FillData;
 import cn.fan.springboot_easyexcle.model.MultiLineHeadExcelModel;
 //import cn.fan.springboot_easyexcle.util.EasyExcelUtil;
+import cn.fan.springboot_easyexcle.model.TestData;
 import cn.fan.springboot_easyexcle.util.TestFileUtil;
 import com.alibaba.excel.EasyExcel;
 import com.alibaba.excel.ExcelReader;
 import com.alibaba.excel.ExcelWriter;
+import com.alibaba.excel.context.AnalysisContext;
 import com.alibaba.excel.event.AnalysisEventListener;
 //import com.alibaba.excel.event.adapter.DefaultAnalysisEventListenerAdapter;
-import com.alibaba.excel.event.adapter.DefaultAnalysisEventListenerAdapter;
 import com.alibaba.excel.metadata.Sheet;
 import com.alibaba.excel.metadata.Table;
 import com.alibaba.excel.support.ExcelTypeEnum;
@@ -150,22 +152,11 @@ public class SpringbootEasyexcleApplicationTests {
     @Test
     public void read() throws Exception {
         try (InputStream in = new FileInputStream("withHead.xlsx");) {
-//            AnalysisEventListener<List<String>> listener = new AnalysisEventListener<List<String>>() {
-//
-//                @Override
-//                public void invoke(List<String> object, AnalysisContext context) {
-//                    System.err.println("Row:" + context.getCurrentRowNum() + " Data:" + object);
-//                }
-//
-//                @Override
-//                public void doAfterAllAnalysed(AnalysisContext context) {
-//                    System.err.println("doAfterAllAnalysed...");
-//                }
-//            };
-            AnalysisEventListener<List<String>> listener = new DefaultAnalysisEventListenerAdapter<>();
-            ExcelReader excelReader = new ExcelReader(in, null, listener);
-            excelReader.read();
-            System.err.println("data:" + listener.getData());
+            DemoDataListener demoDataListener = new DemoDataListener();
+//            List<Object> objects = EasyExcel.read(in,demoDataListener).sheet(0).doReadSync();
+            List<Object> objects1 = EasyExcel.read(in, TestData.class, demoDataListener).sheet().doReadSync();
+            System.err.println("data:" + demoDataListener.getHeadList());
+            System.out.println("listen:"+demoDataListener.getList());
         }
     }
 
@@ -175,27 +166,27 @@ public class SpringbootEasyexcleApplicationTests {
      * @throws Exception
      */
 //    @Test
-    public void readModel() throws Exception {
-        try (InputStream in = new FileInputStream("withHead.xlsx");) {
-//            AnalysisEventListener<ExcelPropertyIndexModel> listener = new AnalysisEventListener<ExcelPropertyIndexModel>() {
+//    public void readModel() throws Exception {
+//        try (InputStream in = new FileInputStream("withHead.xlsx");) {
+////            AnalysisEventListener<ExcelPropertyIndexModel> listener = new AnalysisEventListener<ExcelPropertyIndexModel>() {
+////
+////                @Override
+////                public void invoke(ExcelPropertyIndexModel object, AnalysisContext context) {
+////                    System.err.println("Row:" + context.getCurrentRowNum() + " Data:" + object);
+////                }
+////
+////                @Override
+////                public void doAfterAllAnalysed(AnalysisContext context) {
+////                    System.err.println("doAfterAllAnalysed...");
+////                }
+////            };
+//            AnalysisEventListener<ExcelPropertyIndexModel> listener = new DefaultAnalysisEventListenerAdapter<>();
+//            ExcelReader excelReader = new ExcelReader(in, null, listener);
+//            // 第二个参数为表头行数，按照实际设置
+//            excelReader.read(new Sheet(1, 1, ExcelPropertyIndexModel.class));
+//        }
 //
-//                @Override
-//                public void invoke(ExcelPropertyIndexModel object, AnalysisContext context) {
-//                    System.err.println("Row:" + context.getCurrentRowNum() + " Data:" + object);
-//                }
-//
-//                @Override
-//                public void doAfterAllAnalysed(AnalysisContext context) {
-//                    System.err.println("doAfterAllAnalysed...");
-//                }
-//            };
-            AnalysisEventListener<ExcelPropertyIndexModel> listener = new DefaultAnalysisEventListenerAdapter<>();
-            ExcelReader excelReader = new ExcelReader(in, null, listener);
-            // 第二个参数为表头行数，按照实际设置
-            excelReader.read(new Sheet(1, 1, ExcelPropertyIndexModel.class));
-        }
-
-    }
+//    }
 
     /**
      * 使用对应模板导出文档
