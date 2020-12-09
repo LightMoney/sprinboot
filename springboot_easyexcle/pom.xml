@@ -28,6 +28,18 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+
+<!--poi支持包，easypoi中有相关引用-->
+<!--        <dependency>-->
+<!--            <groupId>org.apache.poi</groupId>-->
+<!--            <artifactId>poi</artifactId>-->
+<!--            <version>3.17</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>org.apache.poi</groupId>-->
+<!--            <artifactId>poi-ooxml</artifactId>-->
+<!--            <version>3.17</version>-->
+<!--        </dependency>-->
 <!--高版本的easyexcel才有easyExcle类，支持复杂导入，但2.2.5及以上版本会有null异常（暂时不知道原因）-->
         <dependency>
             <groupId>com.alibaba</groupId>
