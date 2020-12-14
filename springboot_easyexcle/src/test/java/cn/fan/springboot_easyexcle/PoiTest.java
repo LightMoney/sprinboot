@@ -3,8 +3,7 @@ package cn.fan.springboot_easyexcle;
 import org.apache.poi.hpsf.DocumentSummaryInformation;
 import org.apache.poi.hssf.usermodel.*;
 import org.apache.poi.poifs.filesystem.POIFSFileSystem;
-import org.apache.poi.ss.usermodel.HorizontalAlignment;
-import org.apache.poi.ss.usermodel.VerticalAlignment;
+import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.ss.util.CellRangeAddress;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
@@ -13,6 +12,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.junit.Test;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
@@ -245,6 +245,25 @@ public class PoiTest {
         sheet.addMergedRegion(region);
 
         //文档输出
+        FileOutputStream out = new FileOutputStream( new SimpleDateFormat("yyyyMMddHHmmss").format(new Date()).toString() +".xls");
+        workbook.write(out);
+        out.close();
+    }
+
+
+    @Test
+    public void tets1()  throws IOException  {
+        //创建Excel工作薄对象
+        Workbook workbook=new HSSFWorkbook();
+        Sheet sheet = workbook.createSheet("Test");// 创建工作表(Sheet)
+       Row row = sheet.createRow(0);
+        Cell cell = row.createCell(0);
+        cell.setCellFormula("2+3*4");//设置公式
+        cell = row.createCell(1);
+        cell.setCellValue(10);
+        cell = row.createCell(2);
+        cell.setCellFormula("SUM(A1:B1)");//设置公式
+
         FileOutputStream out = new FileOutputStream( new SimpleDateFormat("yyyyMMddHHmmss").format(new Date()).toString() +".xls");
         workbook.write(out);
         out.close();

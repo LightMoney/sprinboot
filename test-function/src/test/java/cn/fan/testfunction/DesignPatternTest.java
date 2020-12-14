@@ -12,8 +12,11 @@ import org.junit.Test;
 import org.springframework.beans.BeanUtils;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.util.Assert;
+import sun.rmi.runtime.Log;
 
+import java.awt.*;
 import java.util.*;
+import java.util.List;
 import java.util.concurrent.BlockingDeque;
 import java.util.concurrent.Callable;
 import java.util.concurrent.Executors;
@@ -118,7 +121,109 @@ public class DesignPatternTest {
     }
 
     @Test
-    public void test(){
-        log.info( "123".compareTo("32")+"");
+    public void test() {
+        log.info("123".compareTo("32") + "");
+    }
+
+    /**
+     * 有一对兔子，从出生后第3个月起每个月都生一对兔子，小兔子长到第三个月后每个月又生一对兔子，假如兔子都不死，问每个月的兔子总数为多少？
+     * //这是一个菲波拉契数列问题
+     */
+    @Test
+    public void testS() {
+        log.info("" + f(7));
+
+    }
+
+    int f(int month) {
+        if (month == 1 || month == 2) {
+            return 1;
+        }
+        return f(month - 1) + f(month - 2);
+    }
+
+    /**
+     * 判断101-200之间有多少个素数，并输出所有素数
+     * 判断素数：除了一和本身外，不能被整除除
+     * 1.从2到当前数-1不整除
+     * 2从2到当前数开方 Math.sqrt() 不整除
+     */
+
+    @Test
+    public void testSS() {
+
+        HashSet set = new HashSet();
+        int count = 0;
+        for (int i = 101; i <= 200; i++) {
+            boolean flag = false;
+            for (int j = 2; j < Math.sqrt(i); j++) {
+                if ((i % j) == 0) {
+                    flag = true;
+                    break;
+                }
+            }
+            if (!flag) {
+                count++;
+                set.add(i);
+            }
+        }
+        log.info(set.toString());
+    }
+
+    /**
+     * 打印出所有的 "水仙花数 "，所谓 "水仙花数 "是指一个三位数，其各位数字立方和等于该数本身。
+     * 例如：153是一个 "水仙花数 "，因为153=1的三次方＋5的三次方＋3的三次方。
+     */
+    @Test
+    public void testSXH() {
+        List list=new ArrayList();
+        for (int i = 100; i < 1000; i++) {
+            int a = i / 100;
+            int b = (i % 100) / 10;
+            int c = i % 10;
+            int d=a*a*a+b*b*b+c*c*c;
+            if (i==d){
+                list.add(i);
+            }
+        }
+        log.info(list.toString());
+    }
+    /**
+     * 将一个正整数分解质因数。例如：输入90,打印出90=233*5。
+     */
+    @Test
+    public void testFJ(){
+         int n=37;
+         int k=2;
+         while (n>=k){
+             if (n==k){
+                 log.info(""+k);
+                 break;
+             }else if (n%k==0){
+                 log.info(""+k);
+                 n=n/k;
+             }else {
+                 k++;
+             }
+
+         }
+    }
+
+    /**
+     * 利用条件运算符的嵌套来完成此题：学习成绩> =90分的同学用A表示，60-89分之间的用B表示，60分以下的用C表示。
+     */
+    @Test
+    public void testC(){
+        int scot=50;
+        String cj=scot>=90?"A":scot>=60?"B":"C";
+        log.info(cj);
+    }
+
+    /**
+     * 输入两个正整数m和n，求其最大公约数和最小公倍数
+     */
+    @Test
+    public void testG(){
+
     }
 }

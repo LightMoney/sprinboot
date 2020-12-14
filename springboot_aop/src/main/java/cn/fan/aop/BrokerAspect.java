@@ -9,6 +9,8 @@ import org.springframework.stereotype.Component;
  * @Aspect 注解 使之成为切面类
  * @Component 注解 把切面类加入到IOC容器中
 * @author: CSH
+ *
+ * JoinPoint可给方法添加该参数 获取目标方法的对象名称
 **/
 @Aspect
 @Component
