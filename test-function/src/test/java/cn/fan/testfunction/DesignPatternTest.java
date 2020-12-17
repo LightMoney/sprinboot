@@ -176,46 +176,47 @@ public class DesignPatternTest {
      */
     @Test
     public void testSXH() {
-        List list=new ArrayList();
+        List list = new ArrayList();
         for (int i = 100; i < 1000; i++) {
             int a = i / 100;
             int b = (i % 100) / 10;
             int c = i % 10;
-            int d=a*a*a+b*b*b+c*c*c;
-            if (i==d){
+            int d = a * a * a + b * b * b + c * c * c;
+            if (i == d) {
                 list.add(i);
             }
         }
         log.info(list.toString());
     }
+
     /**
      * 将一个正整数分解质因数。例如：输入90,打印出90=233*5。
      */
     @Test
-    public void testFJ(){
-         int n=37;
-         int k=2;
-         while (n>=k){
-             if (n==k){
-                 log.info(""+k);
-                 break;
-             }else if (n%k==0){
-                 log.info(""+k);
-                 n=n/k;
-             }else {
-                 k++;
-             }
+    public void testFJ() {
+        int n = 37;
+        int k = 2;
+        while (n >= k) {
+            if (n == k) {
+                log.info("" + k);
+                break;
+            } else if (n % k == 0) {
+                log.info("" + k);
+                n = n / k;
+            } else {
+                k++;
+            }
 
-         }
+        }
     }
 
     /**
      * 利用条件运算符的嵌套来完成此题：学习成绩> =90分的同学用A表示，60-89分之间的用B表示，60分以下的用C表示。
      */
     @Test
-    public void testC(){
-        int scot=50;
-        String cj=scot>=90?"A":scot>=60?"B":"C";
+    public void testC() {
+        int scot = 50;
+        String cj = scot >= 90 ? "A" : scot >= 60 ? "B" : "C";
         log.info(cj);
     }
 
@@ -223,7 +224,9 @@ public class DesignPatternTest {
      * 输入两个正整数m和n，求其最大公约数和最小公倍数
      */
     @Test
-    public void testG(){
-
+    public void testG() {
+        List<Integer> list = new ArrayList<>();
+        list.add(-1);
+        log.info("" + list.contains(-1));
     }
 }
