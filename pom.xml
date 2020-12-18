@@ -37,6 +37,7 @@
         <module>springboot_security_sms</module>
         <module>springboot-netty</module>
         <module>permission</module>
+        <module>shiro-token</module>
     </modules>
 
 
