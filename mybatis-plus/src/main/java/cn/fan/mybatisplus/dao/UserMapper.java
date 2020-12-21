@@ -11,4 +11,6 @@ import java.util.List;
 @Repository
 public interface UserMapper extends BaseMapper<User> {
     List<UserVo>  selectByPage(Page<UserVo> page);
+    int  testDuplicate(List<User> users);
+
 }

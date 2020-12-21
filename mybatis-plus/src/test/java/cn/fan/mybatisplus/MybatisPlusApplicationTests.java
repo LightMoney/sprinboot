@@ -17,6 +17,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @RunWith(SpringRunner.class)
@@ -147,4 +148,25 @@ log.info("hjdsfh");
 
 
 //   3.0.7和以上版本已支持逻辑删除的扩展，可通过配置和注解实现
+
+    @Test
+    public void test9(){
+
+        List<User> list=new ArrayList<>();
+        User use1=new User();
+        use1.setUname("kissse");
+        use1.setAge(34);
+        User use2=new User();
+        use2.setUname("jissse");
+        use2.setAge(30);
+        User use3=new User();
+//        use3.setUid(3);
+        use3.setUname("duplicse");
+        use3.setAge(31);
+       list.add(use1);
+       list.add(use2);
+       list.add(use3);
+        //如果只有新增，返回值与输入值size一致，有更新则大于
+        userMapper.testDuplicate(list);
+    }
 }

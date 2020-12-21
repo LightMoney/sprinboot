@@ -11,4 +11,22 @@
     left join tb_role r on u.rid=r.rid
 
   </select>
+<!--固定值 uname='xxx'  动态值  uname = values（uname）-->
+    <insert id="testDuplicate" parameterType="java.util.List">
+        INSERT INTO tb_user ( uid, uname, age, rid,version)
+        VALUES
+        <foreach collection="list" item="item" separator=",">
+            (
+            #{item.uid,jdbcType=INTEGER},#{item.uname,jdbcType=VARCHAR},
+            #{item.age,jdbcType=INTEGER},#{item.rid,jdbcType=INTEGER},
+            #{item.version,jdbcType=INTEGER}
+            )
+        </foreach>
+        ON DUPLICATE KEY UPDATE
+        uname =   VALUES(uname),
+        age=  VALUES(age);
+
+
+
+    </insert>
 </mapper>
