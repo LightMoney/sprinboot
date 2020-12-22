@@ -156,6 +156,7 @@ log.info("hjdsfh");
         User use1=new User();
         use1.setUname("kissse");
         use1.setAge(34);
+        use1.setTtime(LocalDateTime.now());
         User use2=new User();
         use2.setUname("jissse");
         use2.setAge(30);
@@ -168,5 +169,13 @@ log.info("hjdsfh");
        list.add(use3);
         //如果只有新增，返回值与输入值size一致，有更新则大于
         userMapper.testDuplicate(list);
+    }
+
+    @Test
+    public  void test10(){
+        QueryWrapper<User> wrapper=new QueryWrapper<>();
+        wrapper.lambda().eq(User::getUid,18);
+        User user = userMapper.selectOne(wrapper);
+        log.info(""+user);
     }
 }

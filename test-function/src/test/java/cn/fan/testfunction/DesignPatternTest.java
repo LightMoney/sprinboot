@@ -229,4 +229,9 @@ public class DesignPatternTest {
         list.add(-1);
         log.info("" + list.contains(-1));
     }
+
+    @Test
+    public void testT() {
+
+    }
 }

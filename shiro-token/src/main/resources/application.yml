@@ -1,4 +1,10 @@
 spring:
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    database: mysql
   application:
     name:  shiro-token
   datasource:
@@ -25,3 +31,4 @@ spring:
         exclusions: /druid/*  #排除过滤
 server:
   port: 8088
+

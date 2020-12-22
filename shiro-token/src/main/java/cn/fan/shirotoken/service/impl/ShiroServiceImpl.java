@@ -77,17 +77,21 @@ public class ShiroServiceImpl implements ShiroService {
         result.put("expire", EXPIRE);
         return result;
     }
- 
+    /**
+     * 更新数据库的token，使前端拥有的token失效
+     * 防止黑客利用token搞事情
+     *
+     * @param token
+     */
     @Override
     public void logout(String token) {
         SysToken byToken = findByToken(token);
         //生成一个token
         token = TokenGenerator.generateValue();
         //修改token
-        SysToken tokenEntity = new SysToken();
-        tokenEntity.setUserId(byToken.getUserId());
-        tokenEntity.setToken(token);
-        sysTokenRepository.save(tokenEntity);
+        byToken.setToken(token);
+        //使前端获取到的token失效
+        sysTokenRepository.save(byToken);
     }
  
     @Override
