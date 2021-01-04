@@ -1,9 +1,27 @@
 server:
-  port: 8080
+  port: 8081
 spring:
   rabbitmq:
     host: 127.0.0.1
     port: 5672
     username: guest
     password: guest
+  redis:
+      host: 127.0.0.1
+      #        host: 39.108.10.101
+      port: 6379
+      database: 0
+#      password: hthl@2018
+      lettuce:
+        pool:
+          max-active: 8
+          max-wait: -1
+          max-idle: 8
+          min-idle: 0
+  redis2:
+      host: 127.0.0.1
+      #        host: 39.108.10.101
+      port: 6379
+      database: 2
+#      password: hthl@2018
 

@@ -5,22 +5,23 @@ import cn.fan.testfunction.model.User;
 import cn.fan.testfunction.utils.OnlyIdUtils;
 import cn.hutool.core.convert.Convert;
 import cn.hutool.core.lang.Snowflake;
+import cn.hutool.core.thread.RejectPolicy;
 import cn.hutool.core.util.IdUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.tomcat.util.threads.ThreadPoolExecutor;
 import org.junit.Test;
 import org.springframework.beans.BeanUtils;
+import org.springframework.scheduling.concurrent.ConcurrentTaskExecutor;
+import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.util.Assert;
+import sun.plugin.security.JDK11ClassFileTransformer;
 import sun.rmi.runtime.Log;
 
 import java.awt.*;
 import java.util.*;
 import java.util.List;
-import java.util.concurrent.BlockingDeque;
-import java.util.concurrent.Callable;
-import java.util.concurrent.Executors;
-import java.util.concurrent.LinkedBlockingDeque;
+import java.util.concurrent.*;
 import java.util.concurrent.locks.ReentrantLock;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -225,13 +226,50 @@ public class DesignPatternTest {
      */
     @Test
     public void testG() {
-        List<Integer> list = new ArrayList<>();
-        list.add(-1);
-        log.info("" + list.contains(-1));
+
     }
 
     @Test
     public void testT() {
+        ExecutorService threadPool = Executors.newFixedThreadPool(2);
+        ExecutorService executorService = Executors.newCachedThreadPool();
+        ScheduledExecutorService scheduledExecutorService = Executors.newScheduledThreadPool(2);
 
+        Executors.newSingleThreadScheduledExecutor();
+        Executors.newSingleThreadExecutor();
+        Executors.newWorkStealingPool();    //jdk 1.8才有
+//new ThreadPoolExecutor(1,1,9,TimeUnit.SECONDS,new LinkedBlockingDeque<>(), new java.util.concurrent.ThreadPoolExecutor.AbortPolicy());
+//        executorService.execute(()->{
+//            System.out.println("任务被执行,线程:" + Thread.currentThread().getName());
+//        });
+        System.out.println("开始执行");
+        // 创建任务
+//        Runnable runnable = new Runnable() {
+//            @Override
+//            public void run() {
+//                System.out.println("任务被执行,线程:" + Thread.currentThread().getName());
+//                try {
+//                    TimeUnit.SECONDS.sleep(2);
+//                } catch (InterruptedException e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//        };
+
+        scheduledExecutorService.schedule(() -> {
+            System.out.println("任务被执行,线程:" + Thread.currentThread().getName());
+            try {
+                TimeUnit.SECONDS.sleep(1);
+            } catch (InterruptedException e) {
+            }
+        }, 2, TimeUnit.SECONDS);
+
+        // 线程池执行任务(一次添加 4 个任务)
+        // 执行任务的方法有两种:submit 和 execute
+//         threadPool.submit(runnable);// 执行方式 1:submit
+//        threadPool.execute(runnable); // 执行方式 2:execute
+//        threadPool.execute(runnable);
+//        threadPool.execute(runnable);
+        System.out.println("结束");
     }
 }

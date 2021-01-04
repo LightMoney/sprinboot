@@ -1,9 +1,13 @@
 package cn.fan.websocket.core;
 
+import cn.fan.websocket.config.ApplicationContextProvider;
+import cn.fan.websocket.config.RedisConfig2;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Component;
 
 import javax.websocket.*;
@@ -26,7 +30,11 @@ public class WebSocketServer {
     private Session session;
     //接收的用户id
     private String userId;
-
+//直接使用注解注入无法获取bean对象
+    static RedisConfig2 redisConfig2;
+    static {
+        redisConfig2 = (RedisConfig2) ApplicationContextProvider.getBean("redisConfig2");
+    }
     /**
      * 连接建立成功调用的方法*/
     @OnOpen
@@ -73,6 +81,7 @@ public class WebSocketServer {
     @OnMessage
     public void onMessage(String message, Session session) {
         log.info("用户消息:"+userId+",报文:"+message);
+        redisConfig2.getRedisTemplateByDb(2).opsForValue().set("tets1",message);
         //可以群发消息
         //消息保存到数据库、redis
         if(StringUtils.isNotBlank(message)){
