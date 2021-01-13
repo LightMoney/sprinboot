@@ -4,14 +4,25 @@ spring:
 #  data:
 #    mongodb:
 #      uri: mongodb://root:root@39.108.10.101:27017/test1?authSource=admin
-
+#  多数据源配置
   data:
     mongodb:
-      host: 192.168.14.41
-      username: root
-      password: hthl@2018
-      database: cps_view
-      authentication-database: admin
+      primary:
+        uri: mongodb://root:hthl%402018@192.168.14.41:27017/cps_view?authSource=admin
+      secondary:
+        uri: mongodb://root:hthl%402018@192.168.14.41:27017/test1?authSource=admin
+
+#密码中含@使用%40代替
+
+
+#  data:
+#    mongodb:
+#      host: 192.168.14.41
+#      username: root
+#      password: hthl@2018
+#      database: cps_view
+#      authentication-database: admin
+
 #      database: test1
 #      host: 39.108.10.101
 #      port: 27017

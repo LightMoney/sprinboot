@@ -56,6 +56,7 @@ public class HBaseController {
         PageFilter page = new PageFilter(1);
         scan.setFilter(page);
         if (filterList.getFilters().size() > 0) {
+            filterList.addFilter(page);
             scan.setFilter(filterList);
         }
 
