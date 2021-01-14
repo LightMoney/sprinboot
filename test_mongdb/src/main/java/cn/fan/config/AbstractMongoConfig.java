@@ -1,5 +1,6 @@
 package cn.fan.config;
 
+import com.mongodb.MongoClient;
 import com.mongodb.MongoClientURI;
 import org.springframework.data.mongodb.MongoDbFactory;
 import org.springframework.data.mongodb.core.MongoTemplate;

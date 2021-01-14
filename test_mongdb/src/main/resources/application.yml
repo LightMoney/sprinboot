@@ -8,7 +8,7 @@ spring:
   data:
     mongodb:
       primary:
-        uri: mongodb://root:hthl%402018@192.168.14.41:27017/cps_view?authSource=admin
+        uri: mongodb://root:hthl%402018@192.168.15.29:27017/monitor?authSource=admin
       secondary:
         uri: mongodb://root:hthl%402018@192.168.14.41:27017/test1?authSource=admin
 

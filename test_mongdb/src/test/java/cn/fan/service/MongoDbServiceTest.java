@@ -2,10 +2,14 @@ package cn.fan.service;
 
 import cn.fan.model.Book;
 
+import cn.fan.model.CollectData;
 import cn.fan.model.PositionData;
 import cn.fan.util.DateUtil;
 import cn.fan.util.MongoPageHelper;
 import cn.fan.util.PageResult;
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.internal.requests.ClassRequest;
@@ -39,7 +43,7 @@ import java.util.Map;
 @SpringBootTest
 @Slf4j
 public class MongoDbServiceTest {
-//    @Qualifier("secondaryMongoTemplate")
+    @Qualifier("primaryMongoTemplate")
     @Autowired
     private MongoTemplate mongoTemplate;
 
@@ -121,11 +125,42 @@ public class MongoDbServiceTest {
 //        log.info("" + objectPageResult);
     }
 
+    /**
+     * 查询普通数组还是采用聚合类型吧
+     * 对象数组可以采用elemMatch
+     */
+    @Test
+    public void query(){
+//        Integer equipId=92;
+//        Query query=new Query();
+//        query.addCriteria(Criteria.where("equipId").is(92));
+//        query.addCriteria(Criteria.where("partnerId").elemMatch(new Criteria()));
+        Aggregation aggregation = Aggregation.newAggregation(
+                Aggregation.match(Criteria.where("partnerId").in(1000330,100010))//,
+//                Aggregation.group("id").count().as("count")
+//                        .max("price").as("max")
+//                        .min("price").as("min"),
+//                Aggregation.project("id", "name", "tt")
+        );
+        AggregationResults<CollectData> aggregationResults =
+                mongoTemplate.aggregate(aggregation, CollectData.class, CollectData.class);
+//        CollectData one = mongoTemplate.findOne(query, CollectData.class);
+        log.info("end");
+    }
 
+    /**
+     * 同Criteria中第一个字段where（）  要其他字段用and（）不要写相同字段会报错  也可以另起一个继续where（）最后添加到query中  默认使用and连接
+     * 默认查询条件是and连接
+     *
+     * 要拼接嵌套 and  或or
+     * 使用andOperator(）和 orOperator(）
+     */
     @Test
     public void delete() {
         Query query = new Query();
-        query.addCriteria(Criteria.where("taskId").is("CR1321623433278029824"));
+//        query.addCriteria(Criteria.where("taskId").is("CR1321623433278029824").orOperator(Criteria.where("ds").in(1,2,3)).and("dd"));
+        query.addCriteria(Criteria.where("taskId").is("CR1321623433278029824")
+                .andOperator(Criteria.where("ds").lt(232).gt(22).and("dd").lt(12).gt(1)));
         mongoTemplate.remove(query, PositionData.class);
     }
 
