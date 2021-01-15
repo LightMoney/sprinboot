@@ -55,24 +55,47 @@ public class StreamTest {
      * 映射
      * map：接收一个函数作为参数，该函数会被应用到每个元素上，并将其映射成一个新的元素。
      * flatMap：接收一个函数作为参数，将流中的每个值都换成另一个流，然后把所有流连接成一个流。
+     *
+     *
+     * toMap(Function<? super T, ? extends K> keyMapper, Function<? super T, ? extends U> valueMapper);
+     * toMap(Function<? super T, ? extends K> keyMapper, Function<? super T, ? extends U> valueMapper,
+     *         BinaryOperator<U> mergeFunction);
+     * toMap(Function<? super T, ? extends K> keyMapper, Function<? super T, ? extends U> valueMapper,
+     *         BinaryOperator<U> mergeFunction, Supplier<M> mapSupplier);
+     * 参数含义分别是：
+     *
+     * keyMapper：Key 的映射函数
+     *
+     * valueMapper：Value 的映射函数
+     *
+     * mergeFunction：当 Key 冲突时，调用的合并方法
+     *
+     * mapSupplier：Map 构造器，在需要返回特定的 Map 时使用
      */
     @Test
     public void testStream2() {
         List<String> list = Arrays.asList("a,b,c,d", "1,2,3");
 
 //将每个元素转成一个新的且不带逗号的元素
-        Stream<String> s1 = list.stream().map(s -> s.replaceAll(",", ""));
-        s1.forEach(System.out::println); // abc  123
+//        Stream<String> s1 = list.stream().map(s -> s.replaceAll(",", ""));
+//        s1.forEach(System.out::println); // abc  123
 
-        Map<Integer, Object> collect = list.stream().collect(Collectors.toMap(x -> x.length(), x -> x));
+        Map<Integer, List<String>> cc= list.stream().collect(Collectors.toMap(x -> x.length(), x -> {
+            List<String> ll=new ArrayList<>();
+            ll.add(x);
+            return ll;
+        },(o,n)->{
+            o.addAll(n);
+            return o;}));
 
-        Stream<String> s3 = list.stream().flatMap(s -> {
-            //将每个元素转换成一个stream
-            String[] split = s.split(",");
-            Stream<String> s2 = Arrays.stream(split);
-            return s2;
-        });
-        s3.forEach(System.out::println); // a b c 1 2 3
+
+//        Stream<String> s3 = list.stream().flatMap(s -> {
+//            //将每个元素转换成一个stream
+//            String[] split = s.split(",");
+//            Stream<String> s2 = Arrays.stream(split);
+//            return s2;
+//        });
+//        s3.forEach(System.out::println); // a b c 1 2 3
     }
 
 
