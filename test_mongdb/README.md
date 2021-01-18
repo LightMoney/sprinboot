@@ -18,8 +18,9 @@ momgodb 分页的方式
   2.提取公共配置类AbstractMongoConfig,实现对应配置类
   3.若密码中含有@符号使用%40代替
   
-  
-  直接通过获取库名，在同一mongo中切换还没实现，上面只是替代方案   
+  #对于同一库的不同表，直接使用对应实例查询即可，若使用object来接收，则指定collectionName
+ 如下： Object one = template.findOne(query, Object.class,"collect");
+  直接通过获取库名，在同一mongo中切换还没实现，上面只是替代方案 （也满足需求，更简洁通用需自行实现）  
   
  关于decimal与bigdecimal的接收转换
  低版本，使用下的配置即可
