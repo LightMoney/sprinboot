@@ -266,10 +266,66 @@ public class DesignPatternTest {
 
         // 线程池执行任务(一次添加 4 个任务)
         // 执行任务的方法有两种:submit 和 execute
-//         threadPool.submit(runnable);// 执行方式 1:submit
+//         threadPool.submit(runnable);// 执行方式 1:submit     单参数为callable时才有返回值 否则为null
 //        threadPool.execute(runnable); // 执行方式 2:execute
 //        threadPool.execute(runnable);
 //        threadPool.execute(runnable);
         System.out.println("结束");
     }
+
+    /**
+     * 异步编程    jdk5   Future
+     * 方便简单  但是对复杂的多计算合并操作
+     * 实际中我们需要实现如下功能  使用future就不方便
+     * 1.将多个异步计算的结果合并成一个
+     * 2.等待Future集合中的所有任务都完成
+     * 3.Future完成事件（即，任务完成以后触发执行动作）
+     */
+    @Test
+    public  void testTT() throws ExecutionException, InterruptedException {
+        ExecutorService executorService = Executors.newSingleThreadExecutor();
+        Future<Integer> submit = executorService.submit(() -> {
+            try {
+                Thread.sleep(5000);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            return 1;
+        });
+       System.out.println(submit.get());
+        System.out.println("finish!!!");
+    }
+
+    /**
+     * 注意  如果每一步都很简单没有必要 使用异步   使用场景是每一步都需要大量时间的操作
+     * jdk 8  CompletableFuture
+     * 1.在Java8中，CompletableFuture提供了非常强大的Future的扩展功能，可以帮助我们简化异步编程的复杂性，并且提供了函数式编程的能力，可以通过回调的方式处理计算结果，也提供了转换和组合 CompletableFuture 的方法。
+     * 2.它可能代表一个明确完成的Future，也有可能代表一个完成阶段（ CompletionStage ），它支持在计算完成以后触发一些函数或执行某些动作。
+     * 3.它实现了Future和CompletionStage接口
+     */
+    @Test
+    public void testCC(){
+
+//        CF<Stirng> cf = CompletableFuture.completableFuture("Value");
+//        String result = cf.get();
+//        // 阻塞等待结果
+//        String result = cf.join();
+//
+//// 非阻塞等待结果输出
+//        cf.thenAccept(s -> System.out.println(s));
+//
+//        String load() {...}
+//// 非阻塞等待结果
+//        CF<Stirng> cf = CompletableFuture.supplyAsync(() -> load());
+//// 非阻塞等待结果，并且指定使用某个线程池执行
+//        CF<Stirng> cf = CompletableFuture.supplyAsync(() -> load() , executorService);
+        //带有async的方法都是默认异步执行  不在当前线程内执行
+        CompletableFuture.supplyAsync(()->"Hello")
+                .thenApply(s->s+ "Word")
+                .thenApply(String::toLowerCase)
+                .thenCombine(CompletableFuture.completedFuture("Java"),(s1,s2)->s1+s2)
+                .thenAccept(System.out::println);
+    }
+
+
 }

@@ -55,21 +55,21 @@ public class StreamTest {
      * 映射
      * map：接收一个函数作为参数，该函数会被应用到每个元素上，并将其映射成一个新的元素。
      * flatMap：接收一个函数作为参数，将流中的每个值都换成另一个流，然后把所有流连接成一个流。
-     *
-     *
+     * <p>
+     * <p>
      * toMap(Function<? super T, ? extends K> keyMapper, Function<? super T, ? extends U> valueMapper);
      * toMap(Function<? super T, ? extends K> keyMapper, Function<? super T, ? extends U> valueMapper,
-     *         BinaryOperator<U> mergeFunction);
+     * BinaryOperator<U> mergeFunction);
      * toMap(Function<? super T, ? extends K> keyMapper, Function<? super T, ? extends U> valueMapper,
-     *         BinaryOperator<U> mergeFunction, Supplier<M> mapSupplier);
+     * BinaryOperator<U> mergeFunction, Supplier<M> mapSupplier);
      * 参数含义分别是：
-     *
+     * <p>
      * keyMapper：Key 的映射函数
-     *
+     * <p>
      * valueMapper：Value 的映射函数
-     *
+     * <p>
      * mergeFunction：当 Key 冲突时，调用的合并方法
-     *
+     * <p>
      * mapSupplier：Map 构造器，在需要返回特定的 Map 时使用
      */
     @Test
@@ -80,13 +80,14 @@ public class StreamTest {
 //        Stream<String> s1 = list.stream().map(s -> s.replaceAll(",", ""));
 //        s1.forEach(System.out::println); // abc  123
 
-        Map<Integer, List<String>> cc= list.stream().collect(Collectors.toMap(x -> x.length(), x -> {
-            List<String> ll=new ArrayList<>();
+        Map<Integer, List<String>> cc = list.stream().collect(Collectors.toMap(x -> x.length(), x -> {
+            List<String> ll = new ArrayList<>();
             ll.add(x);
             return ll;
-        },(o,n)->{
+        }, (o, n) -> {
             o.addAll(n);
-            return o;}));
+            return o;
+        }));
 
 
 //        Stream<String> s3 = list.stream().flatMap(s -> {
@@ -199,7 +200,7 @@ public class StreamTest {
         Student s4 = new Student("dd", 40);
         List<Student> students = Arrays.asList(s1, s2, s3, s4);
         Map<Boolean, List<Student>> listMap = students.stream().collect(
-                Collectors.partitioningBy(student -> student.getAge()>20));
+                Collectors.partitioningBy(student -> student.getAge() > 20));
 //                        student.getName().
 //                        contains("aa")));
 //将接收的list分为满足条件的true 和未满足条件的false 的两个部分
@@ -210,7 +211,7 @@ public class StreamTest {
      * 根据类型分组 同sql中 group  by
      */
     @Test
-    public void testStream8(){
+    public void testStream8() {
         //省略List<student> students的初始化
         Student s1 = new Student("aa", 30);
         Student s2 = new Student("bb", 20);
@@ -218,21 +219,26 @@ public class StreamTest {
         Student s4 = new Student("dd", 40);
         List<Student> students = Arrays.asList(s1, s2, s3, s4);
         Map<String, List<Student>> collect = students.stream().collect(Collectors.groupingBy(student -> student.getName()));
-        log.info(""+collect);
+        log.info("" + collect);
     }
 
     /**
-     *  字符串拼接
+     * 字符串拼接
      * Collectors.joining()和map（）匹配使用
      * joining接收三个参数，第一个是分界符，第二个是前缀符，第三个是结束符。也可以不传入参数Collectors.joining()，这样就是直接拼接。
      */
     @Test
-    public void testStream9(){
+    public void testStream9() {
         Student s1 = new Student("aa", 30);
         Student s2 = new Student("bb", 20);
         Student s4 = new Student("dd", 40);
         List<Student> students = Arrays.asList(s1, s2, s4);
         String collect = students.stream().map(Student::getName).collect(Collectors.joining(",", "[", "]"));
-        log.info(""+collect);
+        log.info("" + collect);
+    }
+
+    @Test
+    public void testLambda() {
+
     }
 }
