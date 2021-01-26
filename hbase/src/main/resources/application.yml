@@ -1,9 +1,11 @@
 hbase:
   zookeeper:
-    quorum: master,slave1,slave2,slave3,slave4
+    quorum: bigdata1,bigdata2,bigdata3,bigdata4,bigdata5
     property:
       clientPort: 2181
 
 zookeeper:
   znode:
     parent: /hbase
+server:
+  port: 8081

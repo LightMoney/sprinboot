@@ -127,24 +127,30 @@ public class MongoDbServiceTest {
 
     /**
      * 查询普通数组还是采用聚合类型吧
-     * 对象数组可以采用elemMatch
+     * 对象数组可以采用elemMatch  好像直接用in也行
      */
     @Test
     public void query(){
-//        Integer equipId=92;
-//        Query query=new Query();
-//        query.addCriteria(Criteria.where("equipId").is(92));
-//        query.addCriteria(Criteria.where("partnerId").elemMatch(new Criteria()));
-        Aggregation aggregation = Aggregation.newAggregation(
-                Aggregation.match(Criteria.where("partnerId").in(1000330,100010))//,
-//                Aggregation.group("id").count().as("count")
-//                        .max("price").as("max")
-//                        .min("price").as("min"),
-//                Aggregation.project("id", "name", "tt")
-        );
-        AggregationResults<CollectData> aggregationResults =
-                mongoTemplate.aggregate(aggregation, CollectData.class, CollectData.class);
-//        CollectData one = mongoTemplate.findOne(query, CollectData.class);
+////        Integer equipId=92;
+////        Query query=new Query();
+////        query.addCriteria(Criteria.where("equipId").is(92));
+////        query.addCriteria(Criteria.where("partnerId").elemMatch(new Criteria()));
+        ////        query.addCriteria(Criteria.where("partnerId").in(new Criteria()));
+//        Aggregation aggregation = Aggregation.newAggregation(
+//                Aggregation.match(Criteria.where("partnerId").in(1000330,100010))//,
+////                Aggregation.group("id").count().as("count")
+////                        .max("price").as("max")
+////                        .min("price").as("min"),
+////                Aggregation.project("id", "name", "tt")
+//        );
+//        AggregationResults<CollectData> aggregationResults =
+//                mongoTemplate.aggregate(aggregation, CollectData.class, CollectData.class);
+////        CollectData one = mongoTemplate.findOne(query, CollectData.class);
+        Query query=new Query();
+//        query.addCriteria(Criteria.where("terminalCode").is(p.getTerminalNo()));
+        query.addCriteria(Criteria.where("equipId").is(92));
+        Object one = mongoTemplate.findOne(query, Object.class,"alarm");
+        Object two = mongoTemplate.findOne(query, Object.class,"collect");
         log.info("end");
     }
 
