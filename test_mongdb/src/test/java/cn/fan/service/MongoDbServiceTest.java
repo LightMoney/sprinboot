@@ -2,17 +2,11 @@ package cn.fan.service;
 
 import cn.fan.model.Book;
 
-import cn.fan.model.CollectData;
 import cn.fan.model.PositionData;
 import cn.fan.util.DateUtil;
 import cn.fan.util.MongoPageHelper;
-import cn.fan.util.PageResult;
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONArray;
-import com.alibaba.fastjson.JSONObject;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
-import org.junit.internal.requests.ClassRequest;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -20,11 +14,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.aggregation.Aggregation;
 import org.springframework.data.mongodb.core.aggregation.AggregationResults;
-import org.springframework.data.mongodb.core.mapreduce.GroupBy;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.repository.support.PageableExecutionUtils;
@@ -33,8 +25,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 import javax.annotation.Resource;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -130,7 +120,7 @@ public class MongoDbServiceTest {
      * 对象数组可以采用elemMatch  好像直接用in也行
      */
     @Test
-    public void query(){
+    public void query() {
 ////        Integer equipId=92;
 ////        Query query=new Query();
 ////        query.addCriteria(Criteria.where("equipId").is(92));
@@ -146,18 +136,18 @@ public class MongoDbServiceTest {
 //        AggregationResults<CollectData> aggregationResults =
 //                mongoTemplate.aggregate(aggregation, CollectData.class, CollectData.class);
 ////        CollectData one = mongoTemplate.findOne(query, CollectData.class);
-        Query query=new Query();
+        Query query = new Query();
 //        query.addCriteria(Criteria.where("terminalCode").is(p.getTerminalNo()));
         query.addCriteria(Criteria.where("equipId").is(92));
-        Object one = mongoTemplate.findOne(query, Object.class,"alarm");
-        Object two = mongoTemplate.findOne(query, Object.class,"collect");
+        Object one = mongoTemplate.findOne(query, Object.class, "alarm");
+        Object two = mongoTemplate.findOne(query, Object.class, "collect");
         log.info("end");
     }
 
     /**
      * 同Criteria中第一个字段where（）  要其他字段用and（）不要写相同字段会报错  也可以另起一个继续where（）最后添加到query中  默认使用and连接
      * 默认查询条件是and连接
-     *
+     * <p>
      * 要拼接嵌套 and  或or
      * 使用andOperator(）和 orOperator(）
      */

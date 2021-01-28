@@ -5,6 +5,10 @@ import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
 import java.util.*;
+import java.util.function.BiFunction;
+import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.function.Supplier;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -102,8 +106,8 @@ public class StreamTest {
 
     /**
      * 排序
-     * sorted()：自然排序，流中元素需实现Comparable接口
-     * sorted(Comparator com)：定制排序，自定义Comparator排序器
+     * sorted()：自然排序，流中元素需实现Comparable接口 并实现比较方法
+     * sorted(Comparator com)：定制排序，自定义Comparator排序器   也可使用Comparator.comparing(Student::getAge)
      */
     @Test
     public void testStream3() {
@@ -112,21 +116,22 @@ public class StreamTest {
         list.stream().sorted().forEach(System.out::println);// aa dd ff
         Student s1 = new Student("aa", 10);
         Student s2 = new Student("bb", 20);
-        Student s3 = new Student("aa", 30);
-        Student s4 = new Student("dd", 40);
+        Student s3 = new Student("aa", 3);
+        Student s4 = new Student("dd", 20);
         List<Student> studentList = Arrays.asList(s1, s2, s3, s4);
 //自定义排序：先按姓名升序，姓名相同则按年龄升序
-        studentList.stream().sorted(
-                (o1, o2) -> {
-                    if (o1.getName().equals(o2.getName())) {
-                        return o1.getAge() - o2.getAge();
-                    } else {
-                        return o1.getName().compareTo(o2.getName());
-                    }
-                }
-        ).forEach(System.out::println);
-
-
+//        studentList.stream().sorted(
+//                (o1, o2) -> {
+//                    if (o1.getName().equals(o2.getName())) {
+//                        return o1.getAge() - o2.getAge();
+//                    } else {
+//                        return o1.getName().compareTo(o2.getName());
+//                    }
+//                }
+//        ).forEach(System.out::println);
+//studentList.stream().sorted(Comparator.comparing(Student::getAge)).collect(Collectors.toList());
+        List<Student> collect = studentList.stream().sorted().collect(Collectors.toList());
+log.info(""+collect);
     }
 
     /**
@@ -236,9 +241,36 @@ public class StreamTest {
         String collect = students.stream().map(Student::getName).collect(Collectors.joining(",", "[", "]"));
         log.info("" + collect);
     }
-
+    private static String end = ".";
     @Test
     public void testLambda() {
+        //Supplier< T > 供应商：没有参数，有返回值
+        Supplier<String> supplier = () -> "this is test";
+        String s = supplier.get();
+        log.info(s);
 
+        //Consumer< T > 消费者： 只有一个参数，没有返回值
+        Consumer consumer = (name) -> System.out.println(name);
+        consumer.accept("good");
+
+
+//        Function< T, R > 函数：一个参数，一个返回值
+        Function<String, String> function = (name) -> "this is :" + name;
+        String colin = function.apply("colin");
+        log.info(colin);
+
+// 在代码块的内部可以访问静态全局变量
+        // 在代码块中可以访问外边局部变量
+        // 在代码块的内部可以修改全局静态变量
+        // 在代码块内部是不能访问接口中的其它方法的
+//        BiFunction< T, U, R > 二元函数：两个参数，一个返回值
+        String split = ": ";
+        BiFunction<String, String, String> biFunction = (String name, String msg) -> {
+            end = "!";
+            String hello = name + split + msg + end;
+            return hello;
+        };
+        String hello = biFunction.apply("mengday", "happy new year everyone");
+        System.out.println(hello);
     }
 }
