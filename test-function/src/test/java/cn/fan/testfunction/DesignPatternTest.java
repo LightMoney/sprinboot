@@ -2,6 +2,7 @@ package cn.fan.testfunction;
 
 import cn.fan.testfunction.model.Student;
 import cn.fan.testfunction.model.User;
+import cn.fan.testfunction.utils.MessageUtils;
 import cn.fan.testfunction.utils.OnlyIdUtils;
 import cn.hutool.core.convert.Convert;
 import cn.hutool.core.lang.Snowflake;
@@ -327,5 +328,8 @@ public class DesignPatternTest {
                 .thenAccept(System.out::println);
     }
 
-
+@Test
+    public  void tee(){
+    MessageUtils.send("13881983613","test");
+}
 }
