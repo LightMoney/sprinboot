@@ -283,7 +283,7 @@ public class DesignPatternTest {
      * 3.Future完成事件（即，任务完成以后触发执行动作）
      */
     @Test
-    public  void testTT() throws ExecutionException, InterruptedException {
+    public void testTT() throws ExecutionException, InterruptedException {
         ExecutorService executorService = Executors.newSingleThreadExecutor();
         Future<Integer> submit = executorService.submit(() -> {
             try {
@@ -293,7 +293,7 @@ public class DesignPatternTest {
             }
             return 1;
         });
-       System.out.println(submit.get());
+        System.out.println(submit.get());
         System.out.println("finish!!!");
     }
 
@@ -305,7 +305,7 @@ public class DesignPatternTest {
      * 3.它实现了Future和CompletionStage接口
      */
     @Test
-    public void testCC(){
+    public void testCC() {
 
 //        CF<Stirng> cf = CompletableFuture.completableFuture("Value");
 //        String result = cf.get();
@@ -321,15 +321,27 @@ public class DesignPatternTest {
 //// 非阻塞等待结果，并且指定使用某个线程池执行
 //        CF<Stirng> cf = CompletableFuture.supplyAsync(() -> load() , executorService);
         //带有async的方法都是默认异步执行  不在当前线程内执行
-        CompletableFuture.supplyAsync(()->"Hello")
-                .thenApply(s->s+ "Word")
+        CompletableFuture.supplyAsync(() -> "Hello")
+                .thenApply(s -> s + "Word")
                 .thenApply(String::toLowerCase)
-                .thenCombine(CompletableFuture.completedFuture("Java"),(s1,s2)->s1+s2)
+                .thenCombine(CompletableFuture.completedFuture("Java"), (s1, s2) -> s1 + s2)
                 .thenAccept(System.out::println);
     }
 
-@Test
-    public  void tee(){
-    MessageUtils.send("13881983613","test");
-}
+    @Test
+    public void tee() {
+        List<String> phone = new ArrayList<>(2);
+        phone.add("13881983613");
+        phone.add("18502821590");
+        phone.forEach(p -> {
+            MessageUtils.send(p, "tweq2");
+            try {
+                Thread.sleep(60);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        });
+
+
+    }
 }
