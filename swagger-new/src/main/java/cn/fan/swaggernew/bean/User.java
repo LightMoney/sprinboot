@@ -1,9 +1,11 @@
 package cn.fan.swaggernew.bean;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 
 /**
  * <p>Title: User.java</p>
@@ -13,11 +15,8 @@ import java.io.Serializable;
  * @author Xiao Nong
  * @version 1.0
  * @date 2019年7月16日
- *
- * @ApiModel：用在返回对象类上，描述一个Model的信息（这种一般用在post创建的时候
- * ，使用@RequestBody这样的场景，请求参数无法使用@ApiImplicitParam注解进行描述的时候）
+ * @ApiModel：用在返回对象类上，描述一个Model的信息（这种一般用在post创建的时候 ，使用@RequestBody这样的场景，请求参数无法使用@ApiImplicitParam注解进行描述的时候）
  *   @ApiModelProperty：用在出入参数对象的字段上，表示对model属性的说明或者数据操作更改
- *
  */
 @ApiModel(value = "user对象", description = "新增&更新用户对象说明")
 public class User implements Serializable {
@@ -38,12 +37,23 @@ public class User implements Serializable {
     @ApiModelProperty(name = "nickName", value = "昵称", required = true, example = "瑞雪狸猫")
     private String nickName;
 
-    @ApiModelProperty(hidden = true,example = "weqe")
+    @ApiModelProperty(hidden = true, example = "weqe")
     private String regTime;
 
     @ApiModelProperty(name = "age", value = "年龄", example = "18")
     private Integer age;
 
+    public LocalDateTime getTtime() {
+        return ttime;
+    }
+
+    public void setTtime(LocalDateTime ttime) {
+        this.ttime = ttime;
+    }
+
+    @ApiModelProperty(name = "ttme")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    private LocalDateTime ttime;
 
     public User() {
         super();
