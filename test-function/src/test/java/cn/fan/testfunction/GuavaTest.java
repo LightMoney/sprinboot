@@ -95,7 +95,7 @@ public class GuavaTest {
         ImmutableSet<String> imSet=ImmutableSet.of("peida","jerry","harry","lisa");
         System.out.println("imSet："+imSet);
 
-        //set直接转list
+        //set直接转list  2
         ImmutableList<String> imlist=ImmutableList.copyOf(imSet);
         System.out.println("imlist："+imlist);
 
