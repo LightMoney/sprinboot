@@ -32,11 +32,16 @@ public class RabbitConfig {
         rabbitTemplate.setConfirmCallback( new RabbitTemplate.ConfirmCallback() {
             @Override
             public void confirm(CorrelationData correlationData, boolean ack, String cause) {
-               log.info("ConfirmCallback:     "+"相关数据："+correlationData);
-               log.info("ConfirmCallback:     "+"确认情况："+ack);
-               log.info("ConfirmCallback:     "+"原因："+cause);
+//               log.info("ConfirmCallback:     "+"相关数据："+correlationData);
+//               log.info("ConfirmCallback:     "+"确认情况："+ack);
+//               log.info("ConfirmCallback:     "+"原因："+cause);
                 if (ack){
                     log.info("消息已发送到mq，可进行相关操作");
+                }else {
+                    log.info("ConfirmCallback:     "+"相关数据："+correlationData);
+                    log.info("ConfirmCallback:     "+"确认情况："+ack);
+                    log.info("ConfirmCallback:     "+"原因："+cause);
+
                 }
             }
         });
@@ -49,6 +54,8 @@ public class RabbitConfig {
                log.info("ReturnCallback:     "+"回应信息："+replyText);
                log.info("ReturnCallback:     "+"交换机："+exchange);
                log.info("ReturnCallback:     "+"路由键："+routingKey);
+                //                    重新发送 或将数据转存
+//                    rabbitTemplate.convertAndSend("topic.#","tets");
             }
         });
         return rabbitTemplate;
