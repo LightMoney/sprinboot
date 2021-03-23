@@ -6,3 +6,8 @@
 配合@Async使用
 详情见  TestTaskExcutor类
 
+
+
+雪花算法 
+详见OnlyIdUtils类 generate 
+

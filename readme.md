@@ -1,0 +1,1 @@
+ApplicationContextProvider  为获取spring容器中bean类

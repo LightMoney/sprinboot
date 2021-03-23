@@ -20,6 +20,7 @@ import sun.plugin.security.JDK11ClassFileTransformer;
 import sun.rmi.runtime.Log;
 
 import java.awt.*;
+import java.math.BigDecimal;
 import java.util.*;
 import java.util.List;
 import java.util.concurrent.*;
@@ -342,6 +343,17 @@ public class DesignPatternTest {
             }
         });
 
+
+    }
+
+    @Test
+    public  void tess(){
+        BigDecimal a=new BigDecimal(0);
+        BigDecimal b=new BigDecimal(2);
+        BigDecimal c=new BigDecimal("0.00");
+        boolean equals = c.equals(a);
+        log.warn(""+equals);
+//        b.divide(a);
 
     }
 }
