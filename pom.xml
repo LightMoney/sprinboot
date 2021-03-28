@@ -38,6 +38,7 @@
         <module>springboot-netty</module>
         <module>permission</module>
         <module>shiro-token</module>
+        <module>springboot-kafka</module>
     </modules>
 
 
