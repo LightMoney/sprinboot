@@ -85,8 +85,8 @@ public class CustomHandler extends SimpleChannelInboundHandler<HttpObject>{//Htt
  
 	/**
 	 * ChannelHandlerContext：上下文对象
-	 * 
-	 * 
+	 * HttpObject 可以使用object来接收
+	 * 确定是什么类型后直接方法中强转（二进制流）
 	 */
 	@Override
 	protected void channelRead0(ChannelHandlerContext ctx, HttpObject msg) throws Exception {
