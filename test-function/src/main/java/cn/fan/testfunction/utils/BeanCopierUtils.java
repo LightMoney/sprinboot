@@ -5,7 +5,7 @@ import org.springframework.cglib.beans.BeanCopier;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
+/**从执行效率来看，可以看出 beanCopier > orika > springBeanUtil > dozer > apacheBeanUtil
  * 利用cglib 技术进行bean 之间的负责，是BeanUtils 的 性能优化版本
  */
 public class BeanCopierUtils {

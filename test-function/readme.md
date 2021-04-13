@@ -11,3 +11,5 @@
 雪花算法 
 详见OnlyIdUtils类 generate 
 
+
+springutil  类实现ApplicationContextAware 获取bean的方法
