@@ -12,11 +12,12 @@ import java.util.Map;
  * @Description :
  **/
 @Component
-@RabbitListener(queues = "fanout.C")
+@RabbitListener(queues = "fanout.C",containerFactory = "rabbitListenerContainerFactory1")
 public class FanoutReceiverC {
 
     @RabbitHandler
     public void process(Map testMessage) {
+
         System.out.println("FanoutReceiverC消费者收到消息  : " +testMessage.toString());
     }
 

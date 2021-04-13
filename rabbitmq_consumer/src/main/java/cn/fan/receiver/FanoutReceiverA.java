@@ -11,9 +11,11 @@ import java.util.Map;
  * @Author : JCccc
  * @CreateTime : 2019/9/3
  * @Description :
+ *
+ * 给fanout队列设置ack
  **/
 @Component
-@RabbitListener(queues = "fanout.A")
+@RabbitListener(queues = "fanout.A",containerFactory = "rabbitListenerContainerFactory1")
 public class FanoutReceiverA {
 
     @RabbitHandler

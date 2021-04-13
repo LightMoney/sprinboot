@@ -12,7 +12,7 @@ spring:
     password: guest
     listener:
       simple:
-        acknowledge-mode: auto  # 不写默认也是自动ack  manual手动
+#        acknowledge-mode: auto  # 不写默认也是自动ack  manual手动
         retry:
           enabled: true
           max-attempts: 5  #重发是在消费端应用内处理的，不是rabbitmq重发
