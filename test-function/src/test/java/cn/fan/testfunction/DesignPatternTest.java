@@ -1,5 +1,7 @@
 package cn.fan.testfunction;
 
+import cn.fan.testfunction.model.JavaObservable;
+import cn.fan.testfunction.model.ReadObserver;
 import cn.fan.testfunction.model.Student;
 import cn.fan.testfunction.model.User;
 import cn.fan.testfunction.utils.MessageUtils;
@@ -346,14 +348,22 @@ public class DesignPatternTest {
 
     }
 
+    /**
+     * 观察者模式
+     * 观察者模式的优点是为了给观察目标和观察者解耦，而缺点也很明显，从上面的例子也可以看出，如果观察者对象太多的话，有可能会造成内存泄露。
+     * 另外，从性能上面考虑，所有观察者的更新都是在一个循环中排队进行的，所以观察者的更新操作可以考虑做成线程异步（或者可以使用线程池）的方式，以提升整体效率。
+     */
     @Test
     public  void tess(){
-        BigDecimal a=new BigDecimal(0);
-        BigDecimal b=new BigDecimal(2);
-        BigDecimal c=new BigDecimal("0.00");
-        boolean equals = c.equals(a);
-        log.warn(""+equals);
-//        b.divide(a);
+        JavaObservable javaStackObservable = new JavaObservable();
+
+        // 添加观察者
+        javaStackObservable.addObserver(new ReadObserver("小明"));
+        javaStackObservable.addObserver(new ReadObserver("小张"));
+        javaStackObservable.addObserver(new ReadObserver("小爱"));
+
+        // 发表文章
+        javaStackObservable.publish("什么是观察者模式？");
 
     }
 }
