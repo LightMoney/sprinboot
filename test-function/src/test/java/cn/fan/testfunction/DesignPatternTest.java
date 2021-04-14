@@ -1,9 +1,6 @@
 package cn.fan.testfunction;
 
-import cn.fan.testfunction.model.JavaObservable;
-import cn.fan.testfunction.model.ReadObserver;
-import cn.fan.testfunction.model.Student;
-import cn.fan.testfunction.model.User;
+import cn.fan.testfunction.model.*;
 import cn.fan.testfunction.utils.MessageUtils;
 import cn.fan.testfunction.utils.OnlyIdUtils;
 import cn.hutool.core.convert.Convert;
@@ -354,7 +351,7 @@ public class DesignPatternTest {
      * 另外，从性能上面考虑，所有观察者的更新都是在一个循环中排队进行的，所以观察者的更新操作可以考虑做成线程异步（或者可以使用线程池）的方式，以提升整体效率。
      */
     @Test
-    public  void tess(){
+    public void tess() {
         JavaObservable javaStackObservable = new JavaObservable();
 
         // 添加观察者
@@ -368,13 +365,43 @@ public class DesignPatternTest {
     }
 
     /**
+     * future模式   去除了主函数中的等待时间，并使原本需要等待的时间可以处理其他业务
+     */
+    @Test
+    public void testsF() throws ExecutionException, InterruptedException {
+        FutureTask future = new FutureTask<>(new RealData("a"));
+        ExecutorService executor = Executors.newFixedThreadPool(1);
+//执行FutureTask/
+//在这里开始线程进行RealData的call执行
+        executor.submit(future);
+        System.err.println("请求完毕");
+        try {
+//这里依然可以做额外的数据操作.这里使用sleep代替其他业务逻辑的处理
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+        }
+//此时call()方法没有执行完成,则依然会等待
+        System.err.println("数据=" + future.get());
+
+//while (future.isDone()) {
+
+//}
+
+//其他一些常用的方法
+//future.cancel(boolean mayInterruptIfRunning)
+//future.isCancelled();
+//future.isDone();
+
+    }
+
+    /**
      * 判断是否是回文
      * 思路：取头尾索引依次对比，跳过非字母数字
      */
     @Test
-    public void  testHuiWen(){
+    public void testHuiWen() {
         boolean palindrome = isPalindrome("A man, a plan, a canal: Panama");
-        log.info(palindrome+"");
+        log.info(palindrome + "");
     }
 
     public boolean isPalindrome(String s) {
@@ -407,12 +434,96 @@ public class DesignPatternTest {
      * 写一个函数实现从字符串中删除任意给出的字符
      */
     @Test
-    public void testDelete(){
-        String targ="fslfsdfsd";
-        String flag="f";
+    public void testDelete() {
+        String targ = "fslfsdfsd";
+        String flag = "f";
         String replace = targ.replace(flag, "");
 //        String trim = replace.trim();
         log.info(replace);
+    }
 
+    /**
+     * 如何从一个字符串中找出第一个非重复的字符
+     */
+    @Test
+    public void testFirstDuplicat() {
+        String a = "abdacfffd";
+        char[] chars = a.toCharArray();
+        int length = chars.length;
+        for (int i = 0; i < length; i++) {
+            int x = 0;
+            for (int j = 0; j < length; j++) {
+                if (chars[i] == chars[j]) {
+                    ++x;
+                }
+            }
+            if (x < 2) {
+                System.out.println(chars[i]);
+                break;
+            }
+
+        }
+    }
+
+    /**
+     * 如何计算一个给定的字符在字符串中出现的次数
+     */
+    @Test
+    public void testNum() {
+        String s = "agvdgdsfssfsd";
+        char a = 's';
+        int x = 0;
+        char[] chars = s.toCharArray();
+
+        for (int i = 0; i < chars.length; i++) {
+            if (a == chars[i]) {
+                x++;
+            }
+        }
+        System.out.println(x);
+    }
+
+    /**
+     * 写出一个函数判断两个字符串是否可以通过改变字母的顺序变成一样的字符串
+     */
+
+    @Test
+    public void testDec() {
+
+
+    }
+
+    public boolean anagram(String s, String t) {
+        // write your code here
+        int[] cntS = new int[256];
+        int[] cntT = new int[256];
+        for (char c : s.toCharArray()) {
+            cntS[c]++;
+        }
+        for (char c : t.toCharArray()) {
+            cntT[c]++;
+        }
+        for (int i = 0; i < 256; i++) {
+            if (cntS[i] != cntT[i]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /**
+     * 冒泡排序
+     */
+    public void testMP(){
+        int[] a = {1, 2, 5, 4, 3};
+        for (int i = 0; i < a.length; i++) {
+            for (int j = 0; j < a.length - i-1; j++) {
+                if (a[j] > a[j + 1]) {
+                    int c = a[j];
+                    a[j] = a[j + 1];
+                    a[j + 1] = c;
+                }
+            }
+        }
     }
 }
