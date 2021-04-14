@@ -366,4 +366,53 @@ public class DesignPatternTest {
         javaStackObservable.publish("什么是观察者模式？");
 
     }
+
+    /**
+     * 判断是否是回文
+     * 思路：取头尾索引依次对比，跳过非字母数字
+     */
+    @Test
+    public void  testHuiWen(){
+        boolean palindrome = isPalindrome("A man, a plan, a canal: Panama");
+        log.info(palindrome+"");
+    }
+
+    public boolean isPalindrome(String s) {
+        // write your code here
+        if (s == null || s.length() == 0) {
+            return true;
+        }
+
+        s = s.toLowerCase();
+        int i = 0, j = s.length() - 1;
+
+        while (i < j) {
+            while (i < j && !Character.isLetterOrDigit(s.charAt(i))) {
+                i++;
+            }
+            while (i < j && !Character.isLetterOrDigit(s.charAt(j))) {
+                j--;
+            }
+            if (s.charAt(i) != s.charAt(j)) {
+                return false;
+            }
+            i++;
+            j--;
+        }
+        return true;
+    }
+
+
+    /**
+     * 写一个函数实现从字符串中删除任意给出的字符
+     */
+    @Test
+    public void testDelete(){
+        String targ="fslfsdfsd";
+        String flag="f";
+        String replace = targ.replace(flag, "");
+//        String trim = replace.trim();
+        log.info(replace);
+
+    }
 }
