@@ -1,6 +1,8 @@
 package cn.fan.testfunction;
 
+import cn.fan.testfunction.config.AopBeanConfig;
 import cn.fan.testfunction.model.*;
+import cn.fan.testfunction.service.TestService;
 import cn.fan.testfunction.utils.MessageUtils;
 import cn.fan.testfunction.utils.OnlyIdUtils;
 import cn.hutool.core.convert.Convert;
@@ -11,6 +13,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.tomcat.util.threads.ThreadPoolExecutor;
 import org.junit.Test;
 import org.springframework.beans.BeanUtils;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.scheduling.concurrent.ConcurrentTaskExecutor;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -19,6 +23,7 @@ import sun.plugin.security.JDK11ClassFileTransformer;
 import sun.rmi.runtime.Log;
 
 import java.awt.*;
+import java.lang.reflect.Method;
 import java.math.BigDecimal;
 import java.util.*;
 import java.util.List;
@@ -488,7 +493,13 @@ public class DesignPatternTest {
      */
 
     @Test
-    public void testDec() {
+    public void testDec() throws ClassNotFoundException, NoSuchMethodException {
+        ApplicationContext annotationConfigApplicationContext = new AnnotationConfigApplicationContext(AopBeanConfig.class);
+//        Class<?> user = Class.forName("cn.fan.testfunction.web.TestColntroller");
+//
+//        Method setService = user.getMethod("setService", TestService.class);
+//       setService.invoke(user, )
+//        System.out.println("ss");
 
 
     }
