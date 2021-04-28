@@ -8,3 +8,6 @@ Jedis：
  LettuceConnectionFactory connectionFactory = (LettuceConnectionFactory) redisTemplate.getConnectionFactory();
          connectionFactory.setDatabase(2);
          redisTemplate.setConnectionFactory(connectionFactory);
+         
+         
+ lua脚本中有中文会有异常

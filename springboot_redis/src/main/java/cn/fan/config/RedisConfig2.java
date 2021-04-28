@@ -36,7 +36,7 @@ public class RedisConfig2 {
     private String hostName;
     @Value("${spring.redis.port}")
     private int port;
-        @Value("${spring.redis.password}")
+    @Value("${spring.redis.password}")
     private String passWord;
     @Value("${spring.redis.lettuce.pool.max-idle}")
     private int maxIdl;
