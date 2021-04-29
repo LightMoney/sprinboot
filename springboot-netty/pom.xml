@@ -18,7 +18,7 @@
             <!--            <version>2.0.5.RELEASE</version>-->
         </dependency>
 
-        <!-- netty 框架-->
+        <!-- netty 框架  一般使用是4.1版本  5.x版本已经不维护了-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-all</artifactId>
