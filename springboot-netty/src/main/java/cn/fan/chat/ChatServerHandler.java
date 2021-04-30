@@ -20,26 +20,26 @@ import java.util.Date;
  */
 public class ChatServerHandler extends ChannelInboundHandlerAdapter {
     //GlobalEventExecutor.INSTANCE全局事件执行器
-    private  static ChannelGroup channels=new DefaultChannelGroup(GlobalEventExecutor.INSTANCE);
+    private static ChannelGroup channels = new DefaultChannelGroup(GlobalEventExecutor.INSTANCE);
 
-    SimpleDateFormat sdf =  new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
         Channel channel = ctx.channel();
-       channels.writeAndFlush("[客户端]："+channel.remoteAddress()+"上线了 "+ sdf.format(new Date()));
+        channels.writeAndFlush("[客户端]：" + channel.remoteAddress() + "上线了 " + sdf.format(new Date()));
         channels.add(channel);
-        System.out.println("客户端："+channel.remoteAddress()+"上线了 "+ sdf.format(new Date()));
+        System.out.println("客户端：" + channel.remoteAddress() + "上线了 " + sdf.format(new Date()));
     }
 
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
         Channel channel = ctx.channel();
-        channels.forEach(p->{
-            if (p!=channel){
-                p.writeAndFlush("[客户端]:"+p.remoteAddress()+"发送消息:"+msg);
-            }else {
-                p.writeAndFlush("[自己]：发送消息:"+msg);
+        channels.forEach(p -> {
+            if (p != channel) {
+                p.writeAndFlush("[客户端]:" + p.remoteAddress() + "发送消息:" + msg);
+            } else {
+                p.writeAndFlush("[自己]：发送消息:" + msg);
             }
         });
     }
@@ -47,5 +47,13 @@ public class ChatServerHandler extends ChannelInboundHandlerAdapter {
     @Override
     public void handlerRemoved(ChannelHandlerContext ctx) throws Exception {
         super.handlerRemoved(ctx);
+    }
+
+    //下线通知
+    @Override
+    public void channelInactive(ChannelHandlerContext ctx) throws Exception {
+        Channel channel = ctx.channel();
+        channels.remove(channel);
+        System.out.println("" + channel.remoteAddress() + "下线");
     }
 }
