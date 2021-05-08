@@ -33,7 +33,13 @@ public class SwaggerConfig {
                 //扫描的路径包,设置basePackage会将包下的所有被@Api标记类的所有方法作为api
 //                .apis(RequestHandlerSelectors.basePackage("cn.fan.swagger.controller"))
 //                对@apiOperation标记的方法作为api
-                .apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class))
+//                .apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class))
+                .apis(input -> {
+                    if(input.isAnnotatedWith(ApiOperation.class) && !input.isAnnotatedWith(ApiVersion.class)){
+                        return true;
+                    }
+                    return false;
+                })
                 //指定路径处理PathSelectors.any()代表所有的路径
                 .paths(PathSelectors.any())
                 .build()//;
@@ -61,7 +67,8 @@ public class SwaggerConfig {
                     return false;
                 })//controller路径
                 .paths(PathSelectors.any())
-                .build();
+                .build()
+                .globalOperationParameters(globalOperation());//添加头信息
     }
 
     /**
