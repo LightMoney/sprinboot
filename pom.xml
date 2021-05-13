@@ -39,6 +39,7 @@
         <module>permission</module>
         <module>shiro-token</module>
         <module>springboot-kafka</module>
+        <module>swagger2word</module>
     </modules>
 
 

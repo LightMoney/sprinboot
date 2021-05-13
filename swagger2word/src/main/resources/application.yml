@@ -1,0 +1,30 @@
+server:
+  port: 8081
+  tomcat:
+    max-threads: 800
+    uri-encoding: UTF-8
+
+spring:
+  application:
+    name: swagger2word
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    cache: false
+    servlet:
+      content-type: text/html
+    enabled: true
+    encoding: UTF-8
+    mode: HTML5
+
+# Swagger json url address
+# etc. https://petstore.swagger.io/
+swagger.url:  http://localhost:8080/v2/api-docs?group=app1.0.0
+#  https://petstore.swagger.io/v2/swagger.json
+
+
+
+
+
+
+
