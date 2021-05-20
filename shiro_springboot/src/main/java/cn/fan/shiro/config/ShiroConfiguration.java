@@ -1,4 +1,4 @@
-package cn.fan.shiro;
+package cn.fan.shiro.config;
 
 import cn.fan.shiro.realm.CustomRealm;
 import cn.fan.shiro.session.CustomSessionManager;
@@ -32,10 +32,10 @@ public class ShiroConfiguration {
         DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager();
         securityManager.setRealm(realm);
 
-        //将自定义的会话管理器注册到安全管理器中
-        securityManager.setSessionManager(sessionManager());
-        //将自定义的redis缓存管理器注册到安全管理器中
-        securityManager.setCacheManager(cacheManager());
+//        //将自定义的会话管理器注册到安全管理器中
+//        securityManager.setSessionManager(sessionManager());
+//        //将自定义的redis缓存管理器注册到安全管理器中
+//        securityManager.setCacheManager(cacheManager());
 
         return securityManager;
     }
@@ -64,7 +64,7 @@ public class ShiroConfiguration {
          *
          */
         Map<String,String> filterMap = new LinkedHashMap<>();
-        //filterMap.put("/user/home","anon");//当前请求地址可以匿名访问
+        filterMap.put("/user/home","anon");//当前请求地址可以匿名访问
 
         //具有某中权限才能访问
         //使用过滤器的形式配置请求地址的依赖权限
@@ -80,48 +80,48 @@ public class ShiroConfiguration {
         return filterFactory;
     }
 
-
-    @Value("${spring.redis.host}")
-    private String host;
-    @Value("${spring.redis.port}")
-    private int port;
-
-    /**
-     * 1.redis的控制器，操作redis
-     */
-    public RedisManager redisManager() {
-        RedisManager redisManager = new RedisManager();
-        redisManager.setHost(host);
-        redisManager.setPort(port);
-        return redisManager;
-    }
-
-    /**
-     * 2.sessionDao
-     */
-    public RedisSessionDAO redisSessionDAO() {
-        RedisSessionDAO sessionDAO = new RedisSessionDAO();
-        sessionDAO.setRedisManager(redisManager());
-        return sessionDAO;
-    }
-
-    /**
-     * 3.会话管理器
-     */
-    public DefaultWebSessionManager sessionManager() {
-        CustomSessionManager sessionManager = new CustomSessionManager();
-        sessionManager.setSessionDAO(redisSessionDAO());
-        return sessionManager;
-    }
-
-    /**
-     * 4.缓存管理器
-     */
-    public RedisCacheManager cacheManager() {
-        RedisCacheManager redisCacheManager = new RedisCacheManager();
-        redisCacheManager.setRedisManager(redisManager());
-        return redisCacheManager;
-    }
+//
+//    @Value("${spring.redis.host}")
+//    private String host;
+//    @Value("${spring.redis.port}")
+//    private int port;
+//
+//    /**
+//     * 1.redis的控制器，操作redis
+//     */
+//    public RedisManager redisManager() {
+//        RedisManager redisManager = new RedisManager();
+//        redisManager.setHost(host);
+//        redisManager.setPort(port);
+//        return redisManager;
+//    }
+//
+//    /**
+//     * 2.sessionDao
+//     */
+//    public RedisSessionDAO redisSessionDAO() {
+//        RedisSessionDAO sessionDAO = new RedisSessionDAO();
+//        sessionDAO.setRedisManager(redisManager());
+//        return sessionDAO;
+//    }
+//
+//    /**
+//     * 3.会话管理器
+//     */
+//    public DefaultWebSessionManager sessionManager() {
+//        CustomSessionManager sessionManager = new CustomSessionManager();
+//        sessionManager.setSessionDAO(redisSessionDAO());
+//        return sessionManager;
+//    }
+//
+//    /**
+//     * 4.缓存管理器
+//     */
+//    public RedisCacheManager cacheManager() {
+//        RedisCacheManager redisCacheManager = new RedisCacheManager();
+//        redisCacheManager.setRedisManager(redisManager());
+//        return redisCacheManager;
+//    }
 
 
 

@@ -1,4 +1,4 @@
-package cn.fan.shiro;
+package cn.fan.shiro.handler;
 
 import org.apache.shiro.authz.AuthorizationException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
