@@ -3,6 +3,7 @@ package cn.fan.testfunction;
 
 import cn.fan.testfunction.thread.TaskExecutor;
 import cn.fan.testfunction.thread2.TestTaskExcutor;
+import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -25,13 +26,13 @@ public class TaskExecutorTest {
 //       return new TestTaskExcutor();
 //   };
 
-@Autowired
-private TestTaskExcutor excutor;
+    @Autowired
+    private TestTaskExcutor excutor;
+
     @Bean
     private TaskExecutor taskExecutor() {
         return new TaskExecutor();
     }
-
 
 
     @Test
@@ -40,17 +41,44 @@ private TestTaskExcutor excutor;
     }
 
     @Test
-    public  void  testTask() throws InterruptedException {
+    public void testTask() throws InterruptedException {
         List<Integer> list = new ArrayList<>();
-        for (int i =1;i<=12;i++){
+        for (int i = 1; i <= 12; i++) {
             Thread.sleep(1000);
             list.add(null);
         }
-       log.info("开始执行多线程任务1111111111:::"+System.currentTimeMillis());
-        for (int i =0;i<=5;i++){
+        log.info("开始执行多线程任务1111111111:::" + System.currentTimeMillis());
+        for (int i = 0; i <= 5; i++) {
             excutor.doTaskTest(i);
         }
-        log.info("主线程继续执行222222222222222:::::"+Thread.currentThread().getName());
+        log.info("主线程继续执行222222222222222:::::" + Thread.currentThread().getName());
+
+    }
+
+    @Test
+    public void test1() {
+        Thread thread1 = new Thread() {
+            @Override
+            public void run() {
+                String[] o = {"A", "B", "C"};
+                for (int i = 0; i < 3; i++) {
+                    System.out.print(o[i]);
+                    yield();
+                }
+            }
+        };
+        Thread thread2 = new Thread() {
+            @Override
+            public void run() {
+                int[] a = {1, 2, 3};
+                for (int i = 0; i < 3; i++) {
+                    System.out.print(a[i]);
+                    yield();
+                }
+            }
+        };
+        thread1.start();
+        thread2.start();
 
     }
 }

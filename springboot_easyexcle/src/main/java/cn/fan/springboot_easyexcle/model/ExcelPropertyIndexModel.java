@@ -6,6 +6,7 @@ import lombok.Data;
 
 /**
  * excle数据模型
+ * 高版本可以不继承baserowmodel
  */
 @Data
 public class ExcelPropertyIndexModel extends BaseRowModel {

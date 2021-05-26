@@ -157,9 +157,11 @@ public class SpringbootEasyexcleApplicationTests {
         try (InputStream in = new FileInputStream("withHead.xlsx");) {
             DemoDataListener demoDataListener = new DemoDataListener();
 //            List<Object> objects = EasyExcel.read(in,demoDataListener).sheet(0).doReadSync();
-            List<Object> objects1 = EasyExcel.read(in, TestData.class, demoDataListener).sheet().doReadSync();
+//            读取时 可以对模型数据  字段指定@ExcelProperty(value = "其他", index = 3) 来对应表格中的某一行
+            List<TestData> objects1 = EasyExcel.read(in, TestData.class, demoDataListener).sheet().doReadSync();
             System.err.println("data:" + demoDataListener.getHeadList());
-            System.out.println("listen:"+demoDataListener.getList());
+            System.out.println("listen:" + demoDataListener.getList());
+
         }
     }
 
@@ -196,6 +198,7 @@ public class SpringbootEasyexcleApplicationTests {
      * 注意sheetNO号要写上，否则无法写入
      * 需要测试下打包后在服务器上路径是否正确
      * 该方法适用于单sheet模板数据导入
+     *
      * @throws IOException
      */
     @Test
@@ -204,59 +207,59 @@ public class SpringbootEasyexcleApplicationTests {
 //            InputStream inputStream = this.getClass().getClassLoader().getResourceAsStream("static/template2.xlsx");
 //        String templateFileName = this.getClass().getResource("/static/").getPath() + "template2.xlsx";
 
-    String templateFileName = TestFileUtil.getPath() + "static" + File.separator + "template2.xlsx";
-    // 模板注意 用{} 来表示你要用的变量 如果本来就有"{","}" 特殊字符 用"\{","\}"代替
-    // {} 代表普通变量 {.} 代表是list的变量
-    // 这里模板 删除了list以后的数据，也就是统计的这一行
+        String templateFileName = TestFileUtil.getPath() + "static" + File.separator + "template2.xlsx";
+        // 模板注意 用{} 来表示你要用的变量 如果本来就有"{","}" 特殊字符 用"\{","\}"代替
+        // {} 代表普通变量 {.} 代表是list的变量
+        // 这里模板 删除了list以后的数据，也就是统计的这一行
 //        String templateFileName =
 //        this.getPath() + "demo" + File.separator + "fill" + File.separator + "complexFillWithTable.xlsx";
-    String fileName = TestFileUtil.getPath() + "static" + File.separator + "t2.xlsx";
+        String fileName = TestFileUtil.getPath() + "static" + File.separator + "t2.xlsx";
 
-    ExcelWriter excelWriter = EasyExcel.write(fileName).withTemplate(templateFileName).build();
+        ExcelWriter excelWriter = EasyExcel.write(fileName).withTemplate(templateFileName).build();
 //        我这里不写sheetNo会有读不到的问题
-    WriteSheet writeSheet = EasyExcel.writerSheet(1).build();
-    List<FillData> list = new ArrayList<>();
-    FillData fillData = new FillData();
-    fillData.setDate(new Date());
-    fillData.setCustomerName("测试");
-    fillData.setNum(11);
-    fillData.setProductName("测试产品");
-    fillData.setOne(13.0);
-    fillData.setTicketNo("15489");
-    fillData.setType("c");
-    fillData.setUnit("PCs");
-    fillData.setCountOne(22.0);
-    FillData fillData1 = new FillData();
-    fillData1.setDate(new Date());
-    fillData1.setCustomerName("测试1");
-    fillData1.setNum(11);
-    fillData1.setProductName("测试产品1");
-    fillData1.setOne(13.0);
-    fillData1.setTicketNo("154891");
-    fillData1.setType("c1");
-    fillData1.setUnit("PCs1");
-    fillData1.setCountOne(22.0);
-    list.add(fillData);
-    list.add(fillData1);
+        WriteSheet writeSheet = EasyExcel.writerSheet(1).build();
+        List<FillData> list = new ArrayList<>();
+        FillData fillData = new FillData();
+        fillData.setDate(new Date());
+        fillData.setCustomerName("测试");
+        fillData.setNum(11);
+        fillData.setProductName("测试产品");
+        fillData.setOne(13.0);
+        fillData.setTicketNo("15489");
+        fillData.setType("c");
+        fillData.setUnit("PCs");
+        fillData.setCountOne(22.0);
+        FillData fillData1 = new FillData();
+        fillData1.setDate(new Date());
+        fillData1.setCustomerName("测试1");
+        fillData1.setNum(11);
+        fillData1.setProductName("测试产品1");
+        fillData1.setOne(13.0);
+        fillData1.setTicketNo("154891");
+        fillData1.setType("c1");
+        fillData1.setUnit("PCs1");
+        fillData1.setCountOne(22.0);
+        list.add(fillData);
+        list.add(fillData1);
 // 这里注意 入参用了forceNewRow 代表在写入list的时候不管list下面有没有空行 都会创建一行，然后下面的数据往后移动。默认 是false，会直接使用下一行，如果没有则创建。
-    // forceNewRow 如果设置了true,有个缺点 就是他会把所有的数据都放到内存了，所以慎用
-    // 简单的说 如果你的模板有list,且list不是最后一行，下面还有数据需要填充 就必须设置 forceNewRow=true 但是这个就会把所有数据放到内存 会很耗内存
-    // 如果数据量大 list不是最后一行 参照下一个
-    FillConfig fillConfig = FillConfig.builder().forceNewRow(Boolean.TRUE).build();
-    // 直接写入数据
-    excelWriter.fill(list, fillConfig, writeSheet);
-    excelWriter.fill(list, fillConfig, writeSheet);
+        // forceNewRow 如果设置了true,有个缺点 就是他会把所有的数据都放到内存了，所以慎用
+        // 简单的说 如果你的模板有list,且list不是最后一行，下面还有数据需要填充 就必须设置 forceNewRow=true 但是这个就会把所有数据放到内存 会很耗内存
+        // 如果数据量大 list不是最后一行 参照下一个
+        FillConfig fillConfig = FillConfig.builder().forceNewRow(Boolean.TRUE).build();
+        // 直接写入数据
+        excelWriter.fill(list, fillConfig, writeSheet);
+        excelWriter.fill(list, fillConfig, writeSheet);
 
 //             写入list之前的数据
-    Map<String, Object> map = new HashMap<String, Object>();
-    map.put("orderNo", "123456");
-    map.put("count", 1000);
-    excelWriter.fill(map, writeSheet);
+        Map<String, Object> map = new HashMap<String, Object>();
+        map.put("orderNo", "123456");
+        map.put("count", 1000);
+        excelWriter.fill(map, writeSheet);
 
 
-    excelWriter.finish();
-    // 总体上写法比较复杂 但是也没有想到好的版本 异步的去写入excel 不支持行的删除和移动，也不支持备注这种的写入，所以也排除了可以
-    // 新建一个 然后一点点复制过来的方案，最后导致list需要新增行的时候，后面的列的数据没法后移，后续会继续想想解决方案
+        excelWriter.finish();
+        // 总体上写法比较复杂 但是也没有想到好的版本 异步的去写入excel 不支持行的删除和移动，也不支持备注这种的写入，所以也排除了可以
+        // 新建一个 然后一点点复制过来的方案，最后导致list需要新增行的时候，后面的列的数据没法后移，后续会继续想想解决方案
 //        }
 
     }
