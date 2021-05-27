@@ -1,21 +1,33 @@
 package cn.fan.springboot_easyexcle;
 
+import cn.fan.springboot_easyexcle.poi.handler.SheetHandler;
 import org.apache.poi.hpsf.DocumentSummaryInformation;
 import org.apache.poi.hssf.usermodel.*;
+import org.apache.poi.openxml4j.exceptions.OpenXML4JException;
+import org.apache.poi.openxml4j.opc.OPCPackage;
+import org.apache.poi.openxml4j.opc.PackageAccess;
 import org.apache.poi.poifs.filesystem.POIFSFileSystem;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.ss.util.CellRangeAddress;
 import org.apache.poi.util.IOUtils;
+import org.apache.poi.xssf.eventusermodel.ReadOnlySharedStringsTable;
+import org.apache.poi.xssf.eventusermodel.XSSFReader;
+import org.apache.poi.xssf.eventusermodel.XSSFSheetXMLHandler;
+import org.apache.poi.xssf.model.SharedStringsTable;
+import org.apache.poi.xssf.model.StylesTable;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.junit.Test;
+import org.junit.rules.Stopwatch;
+import org.springframework.util.StopWatch;
+import org.xml.sax.InputSource;
+import org.xml.sax.SAXException;
+import org.xml.sax.XMLReader;
+import org.xml.sax.helpers.XMLReaderFactory;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -440,5 +452,39 @@ public class PoiTest {
                 break;
         }
         return value;
+    }
+    /**
+     * 使用事件模型解析百万数据excel报表
+     */
+    @Test
+    public void start6() throws IOException, SAXException, OpenXML4JException {
+        StopWatch watch = new StopWatch();
+        watch.start();
+        String path = "D:\\BaiduNetdiskDownload\\26-传统行业SaaS解决方案\\08-员工管理及POI\\02-POI报表的高级应用\\资源\\百万数据报表\\demo.xlsx";
+
+        //1.根据excel报表获取OPCPackage
+        OPCPackage opcPackage = OPCPackage.open(path, PackageAccess.READ);
+        //2.创建XSSFReader
+        XSSFReader reader = new XSSFReader(opcPackage);
+        //3.获取SharedStringTable对象
+        ReadOnlySharedStringsTable strings = new ReadOnlySharedStringsTable(
+                opcPackage);
+//        SharedStringsTable table = reader.getSharedStringsTable();
+        //4.获取styleTable对象
+        StylesTable stylesTable = reader.getStylesTable();
+        //5.创建Sax的xmlReader对象
+        XMLReader xmlReader = XMLReaderFactory.createXMLReader();
+        //6.注册事件处理器
+        XSSFSheetXMLHandler xmlHandler = new XSSFSheetXMLHandler(stylesTable,strings,new SheetHandler(),false);
+        xmlReader.setContentHandler(xmlHandler);
+        //7.逐行读取
+        XSSFReader.SheetIterator sheetIterator = (XSSFReader.SheetIterator) reader.getSheetsData();
+        while (sheetIterator.hasNext()) {
+            InputStream stream = sheetIterator.next(); //每一个sheet的流数据
+            InputSource is = new InputSource(stream);
+            xmlReader.parse(is);
+        }
+        watch.stop();
+        System.out.println(watch.getTotalTimeSeconds());
     }
 }
