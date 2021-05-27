@@ -22,6 +22,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.util.StopWatch;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
@@ -154,13 +155,18 @@ public class SpringbootEasyexcleApplicationTests {
 
     @Test
     public void read() throws Exception {
-        try (InputStream in = new FileInputStream("withHead.xlsx");) {
+        StopWatch watch = new StopWatch();
+        watch.start();
+        try (InputStream in = new FileInputStream("D:\\BaiduNetdiskDownload\\26-传统行业SaaS解决方案\\08-员工管理及POI\\02-POI报表的高级应用\\资源\\百万数据报表\\demo.xlsx");) {
             DemoDataListener demoDataListener = new DemoDataListener();
 //            List<Object> objects = EasyExcel.read(in,demoDataListener).sheet(0).doReadSync();
 //            读取时 可以对模型数据  字段指定@ExcelProperty(value = "其他", index = 3) 来对应表格中的某一行
             List<TestData> objects1 = EasyExcel.read(in, TestData.class, demoDataListener).sheet().doReadSync();
-            System.err.println("data:" + demoDataListener.getHeadList());
-            System.out.println("listen:" + demoDataListener.getList());
+            watch.stop();
+            //104万  7列数据 18.83s
+          System.out.println(watch.getTotalTimeSeconds());
+//            System.err.println("data:" + demoDataListener.getHeadList());
+//            System.out.println("listen:" + demoDataListener.getList());
 
         }
     }
@@ -207,6 +213,7 @@ public class SpringbootEasyexcleApplicationTests {
 //            InputStream inputStream = this.getClass().getClassLoader().getResourceAsStream("static/template2.xlsx");
 //        String templateFileName = this.getClass().getResource("/static/").getPath() + "template2.xlsx";
 
+//运行时读取的是target下的路径，可大断点查看
         String templateFileName = TestFileUtil.getPath() + "static" + File.separator + "template2.xlsx";
         // 模板注意 用{} 来表示你要用的变量 如果本来就有"{","}" 特殊字符 用"\{","\}"代替
         // {} 代表普通变量 {.} 代表是list的变量
@@ -248,7 +255,7 @@ public class SpringbootEasyexcleApplicationTests {
         FillConfig fillConfig = FillConfig.builder().forceNewRow(Boolean.TRUE).build();
         // 直接写入数据
         excelWriter.fill(list, fillConfig, writeSheet);
-        excelWriter.fill(list, fillConfig, writeSheet);
+//        excelWriter.fill(list, fillConfig, writeSheet);
 
 //             写入list之前的数据
         Map<String, Object> map = new HashMap<String, Object>();
