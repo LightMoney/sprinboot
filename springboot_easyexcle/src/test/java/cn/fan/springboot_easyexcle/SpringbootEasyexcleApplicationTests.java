@@ -1,11 +1,8 @@
 package cn.fan.springboot_easyexcle;
 
 import cn.fan.springboot_easyexcle.listener.DemoDataListener;
-import cn.fan.springboot_easyexcle.model.ExcelPropertyIndexModel;
-import cn.fan.springboot_easyexcle.model.FillData;
-import cn.fan.springboot_easyexcle.model.MultiLineHeadExcelModel;
+import cn.fan.springboot_easyexcle.model.*;
 //import cn.fan.springboot_easyexcle.util.EasyExcelUtil;
-import cn.fan.springboot_easyexcle.model.TestData;
 import cn.fan.springboot_easyexcle.util.TestFileUtil;
 import com.alibaba.excel.EasyExcel;
 import com.alibaba.excel.ExcelReader;
@@ -17,6 +14,7 @@ import com.alibaba.excel.metadata.Sheet;
 import com.alibaba.excel.metadata.Table;
 import com.alibaba.excel.support.ExcelTypeEnum;
 import com.alibaba.excel.write.metadata.WriteSheet;
+import com.alibaba.excel.write.metadata.WriteTable;
 import com.alibaba.excel.write.metadata.fill.FillConfig;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -105,13 +103,35 @@ public class SpringbootEasyexcleApplicationTests {
      */
     @Test
     public void writeWithMultiHead() throws IOException {
-        try (OutputStream out = new FileOutputStream("withMultiHead.xlsx");) {
-            ExcelWriter writer = new ExcelWriter(out, ExcelTypeEnum.XLSX);
-            for (int j = 1; j < 5; j++) {
-                Sheet sheet1 = new Sheet(j, 0, MultiLineHeadExcelModel.class);
-                sheet1.setSheetName("sheet" + j);
-                Table table1 = new Table(1);
+//        try (OutputStream out = new FileOutputStream("withMultiHead.xlsx");) {
+//            ExcelWriter writer = new ExcelWriter(out, ExcelTypeEnum.XLSX);
+//            for (int j = 1; j < 5; j++) {
+//                Sheet sheet1 = new Sheet(j, 0, MultiLineHeadExcelModel.class);
+//                sheet1.setSheetName("sheet" + j);
+//                List<MultiLineHeadExcelModel> data = new ArrayList<>();
+//                for (int i = 0; i < 100; i++) {
+//                    MultiLineHeadExcelModel item = new MultiLineHeadExcelModel();
+//                    item.setP1("p1" + i);
+//                    item.setP2("p2" + i);
+//                    item.setP3("p3" + i);
+//                    item.setP4("p4" + i);
+//                    item.setP5("p5" + i);
+//                    item.setP6("p6" + i);
+//                    item.setP7("p7" + i);
+//                    item.setP8("p8" + i);
+//                    item.setP9("p9" + i);
+//                    item.setP10("p10" + i);
+//                    data.add(item);
+//                }
+//                writer.write(data, sheet1);
+//            }
 
+            // 写法1
+            String fileName = TestFileUtil.getPath() + "导入数据模型.xlsx";
+        ExcelWriter excelWrite=null;
+            try{
+                excelWrite = EasyExcel.write(fileName, MultiLineHeadExcelModel.class).build();
+            for (int j = 1; j < 5; j++) {
                 List<MultiLineHeadExcelModel> data = new ArrayList<>();
                 for (int i = 0; i < 100; i++) {
                     MultiLineHeadExcelModel item = new MultiLineHeadExcelModel();
@@ -127,8 +147,21 @@ public class SpringbootEasyexcleApplicationTests {
                     item.setP10("p10" + i);
                     data.add(item);
                 }
-                writer.write(data, sheet1);
+                // 这里 需要指定写用哪个class去写，然后写到第一个sheet，名字为模板 然后文件流会自动关闭
+                // 如果这里想使用03 则 传入excelType参数即可
+//                不适合多表
+//                EasyExcel.write(fileName, MultiLineHeadExcelModel.class).sheet(j,"模板"+j).doWrite(data);
+                WriteSheet writeSheet = EasyExcel.writerSheet(j, "模板" + j).build();
+                // 分页去数据库查询数据 这里可以去数据库查询每一页的数据
+
+                excelWrite.write(data, writeSheet);
             }
+            } finally {
+            // 千万别忘记finish 会帮忙关闭流
+            if (excelWrite != null) {
+                excelWrite.finish();
+            }
+        }
 //
 //            Sheet sheet2 = new Sheet(2, 0, MultiLineHeadExcelModel.class);
 //            sheet2.setSheetName("sheet2");
@@ -149,8 +182,8 @@ public class SpringbootEasyexcleApplicationTests {
 //            }
 //
 //            writer.write(data2, sheet2);
-            writer.finish();
-        }
+//            writer.finish();
+//        }
     }
 
     @Test
@@ -161,10 +194,11 @@ public class SpringbootEasyexcleApplicationTests {
             DemoDataListener demoDataListener = new DemoDataListener();
 //            List<Object> objects = EasyExcel.read(in,demoDataListener).sheet(0).doReadSync();
 //            读取时 可以对模型数据  字段指定@ExcelProperty(value = "其他", index = 3) 来对应表格中的某一行
+//            一般使用doRead()来读  无返回  保存操作可以封装到   listener中去
             List<TestData> objects1 = EasyExcel.read(in, TestData.class, demoDataListener).sheet().doReadSync();
             watch.stop();
             //104万  7列数据 18.83s
-          System.out.println(watch.getTotalTimeSeconds());
+            System.out.println(watch.getTotalTimeSeconds());
 //            System.err.println("data:" + demoDataListener.getHeadList());
 //            System.out.println("listen:" + demoDataListener.getList());
 
@@ -263,13 +297,38 @@ public class SpringbootEasyexcleApplicationTests {
         map.put("count", 1000);
         excelWriter.fill(map, writeSheet);
 
-
         excelWriter.finish();
         // 总体上写法比较复杂 但是也没有想到好的版本 异步的去写入excel 不支持行的删除和移动，也不支持备注这种的写入，所以也排除了可以
         // 新建一个 然后一点点复制过来的方案，最后导致list需要新增行的时候，后面的列的数据没法后移，后续会继续想想解决方案
 //        }
 
     }
+
+
+    @Test
+    public  void  testData(){
+        String fileName = TestFileUtil.getPath() + "导入数据模型.xlsx";
+
+
+                List<UserData> data = new ArrayList<>();
+                for (int i = 0; i < 100000; i++) {
+                    UserData item = new UserData();
+                    item.setName("test" + i);
+                    item.setWorkno(""+i);
+                    item.setMobile("130" + i);
+                    item.setEm(1);
+                    item.setReg(new Date(1622172757632L));
+                    item.setDeptno("DEPT-DEV");
+                    data.add(item);
+                }
+                // 这里 需要指定写用哪个class去写，然后写到第一个sheet，名字为模板 然后文件流会自动关闭
+                // 如果这里想使用03 则 传入excelType参数即可
+//                不适合多表
+                EasyExcel.write(fileName, UserData.class).sheet("模板").doWrite(data);
+
+
+    }
+
 //下载
 //    @Override
 //    public void fileDownload(@RequestBody Map map) {
