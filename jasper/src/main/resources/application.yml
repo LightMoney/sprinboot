@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: test—jasper
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/hrm?useUnicode=true&characterEncoding=utf8
+    username: root
+    password: root
+server:
+  port: 9001
+
+

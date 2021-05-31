@@ -41,6 +41,7 @@
         <module>springboot-kafka</module>
         <module>swagger2word</module>
         <module>shiro_ini</module>
+        <module>jasper</module>
     </modules>
 
 
