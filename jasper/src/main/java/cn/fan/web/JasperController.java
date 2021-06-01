@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.util.HashMap;
 
 
@@ -40,5 +42,119 @@ public class JasperController {
             os.flush();
             os.close();
         }
+    }
+
+    /**
+     * 适用于单数据
+     * 通过map传参
+     * jasper studio中  ouline框下创建 parameters下对应参数  拖入对应位置
+     * 代码中的字段名要和jasper中的字段名一致
+     *
+     * @param request
+     * @param response
+     * @throws IOException
+     */
+    @GetMapping("/test/param")
+    public void creatPdf1(HttpServletRequest request, HttpServletResponse response) throws IOException {
+
+        ServletOutputStream os = response.getOutputStream();
+        //1.引入使用工具建好的jasper 文件
+        Resource classPathResource = new ClassPathResource("template/param.jasper");
+        FileInputStream inputStream = new FileInputStream(classPathResource.getFile());
+//        2.创建jasperPrint，向jasper 中填充数据
+        try {
+            HashMap<String, Object> map = new HashMap<>();
+            map.put("username", "李四");
+            map.put("age", "12");
+            map.put("company", "光源科技");
+            map.put("dept", "研发部");
+            JasperPrint print = JasperFillManager.fillReport(inputStream, map, new JREmptyDataSource());
+//            3.将 jasperPrint 输出 为pdf
+            JasperExportManager.exportReportToPdfStream(print, os);
+        } catch (JRException e) {
+            e.printStackTrace();
+        } finally {
+            os.flush();
+            os.close();
+        }
+    }
+
+
+    /**
+     * 适用于多数据list
+     * jdbc 数据填充
+     * jasper studio中 Repository Explorer 中Data Adapter 右键新建连接  选择jdbc连接
+     * <p>
+     * 选择对应驱动 输入用户名密码       Driver Classpath  引入对应的驱动包  测试连接成功后
+     * 创建jasper工程，选择上面创建的连接，写sql完成fields的导入，拖进去就可以
+     * 只保留后面有函数的部分呢   在detail区域操作  将区域高和fields的高设置为相同  生成的list行间无间隙
+     *选中对应的fields可在属性中设置border
+     * @param request
+     * @param response
+     * @throws IOException
+     */
+    @GetMapping("/test/sql")
+    public void creatPdf2(HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+        ServletOutputStream os = response.getOutputStream();
+        //1.引入使用工具建好的jasper 文件
+        Resource classPathResource = new ClassPathResource("template/jdbc.jasper");
+        FileInputStream inputStream = new FileInputStream(classPathResource.getFile());
+//        2.创建jasperPrint，向jasper 中填充数据
+        try {
+            Connection connection = getConnection();
+            JasperPrint print = JasperFillManager.fillReport(inputStream, new HashMap<>(), connection);
+//            3.将 jasperPrint 输出 为pdf
+            JasperExportManager.exportReportToPdfStream(print, os);
+        } catch (JRException e) {
+            e.printStackTrace();
+        } finally {
+            os.flush();
+            os.close();
+        }
+    }
+
+
+    /**jdbc 数据填充   动态传参
+     * 适用于多数据list
+     *
+     * jasper studio中 Repository Explorer 中Data Adapter 右键新建连接  选择jdbc连接
+     * <p>
+     * 选择对应驱动 输入用户名密码       Driver Classpath  引入对应的驱动包  测试连接成功后
+     * 创建jasper工程，选择上面创建的连接，写sql  添加条件 where id=$P{cid}     完成fields的导入，拖进去就可以
+     * 然后再Paramter中创建参数   cid
+     * 只保留后面有函数的部分呢   在detail区域操作  将区域高和fields的高设置为相同  生成的list行间无间隙
+     *选中对应的fields可在属性中设置border
+     * @param request
+     * @param response
+     * @throws IOException
+     */
+    @GetMapping("/test/sql2")
+    public void creatPdf3(HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+        ServletOutputStream os = response.getOutputStream();
+        //1.引入使用工具建好的jasper 文件
+        Resource classPathResource = new ClassPathResource("template/jdbc2.jasper");
+        FileInputStream inputStream = new FileInputStream(classPathResource.getFile());
+//        2.创建jasperPrint，向jasper 中填充数据
+        try {
+            HashMap<String, Object> map = new HashMap<>();
+            map.put("cid","1063705989926227968");
+            Connection connection = getConnection();
+            JasperPrint print = JasperFillManager.fillReport(inputStream, map, connection);
+//            3.将 jasperPrint 输出 为pdf
+            JasperExportManager.exportReportToPdfStream(print, os);
+        } catch (JRException e) {
+            e.printStackTrace();
+        } finally {
+            os.flush();
+            os.close();
+        }
+    }
+    public Connection getConnection() throws Exception {
+        Class.forName("com.mysql.jdbc.Driver");
+        Connection connection = DriverManager
+                .getConnection("jdbc:mysql://localhost/hrm?serverTimezone=UTC&useUnicode=true&characterEncoding=UTF-8", "root", "root");
+        return connection;
     }
 }
