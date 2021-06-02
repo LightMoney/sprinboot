@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.5.0.final using JasperReports Library version 6.5.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="second" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="fcec1951-65c5-4def-a9d0-3849aaacbe68">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="83" splitType="Stretch">
+			<image>
+				<reportElement x="65" y="33" width="50" height="50" uuid="7f77417f-e66f-48fb-939a-db483c3455cc"/>
+				<imageExpression><![CDATA["C:/Users/HTHLKJ/Desktop/001.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<staticText>
+				<reportElement x="190" y="50" width="260" height="30" uuid="c1e3d882-6380-466b-8b22-07af8ff3b45f"/>
+				<textElement>
+					<font fontName="华文宋体" size="20"/>
+				</textElement>
+				<text><![CDATA[测试第一个jasper]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>

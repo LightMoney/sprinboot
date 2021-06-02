@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.5.0.final using JasperReports Library version 6.5.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="param" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0cbca99c-9429-4736-a584-be7f0e1a4edf">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="username" class="java.lang.String">
+		<parameterDescription><![CDATA[用户名]]></parameterDescription>
+	</parameter>
+	<parameter name="age" class="java.lang.String">
+		<parameterDescription><![CDATA[年龄]]></parameterDescription>
+	</parameter>
+	<parameter name="company" class="java.lang.String">
+		<parameterDescription><![CDATA[公司]]></parameterDescription>
+	</parameter>
+	<parameter name="dept" class="java.lang.String">
+		<parameterDescription><![CDATA[岗位]]></parameterDescription>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="227" y="30" width="100" height="30" uuid="13370f81-d0e7-4dc0-af43-6ecb3c7995ed"/>
+				<textElement>
+					<font fontName="华文宋体"/>
+				</textElement>
+				<text><![CDATA[用户信息]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<staticText>
+				<reportElement x="100" y="30" width="100" height="30" uuid="86abe6f5-afd3-4a49-82c6-d97632d0d2c1"/>
+				<textElement>
+					<font fontName="华文宋体"/>
+				</textElement>
+				<text><![CDATA[用户名称]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="320" y="30" width="100" height="30" uuid="931ac7c1-5941-4e08-9479-fbd965de5e52"/>
+				<textElement>
+					<font fontName="华文宋体"/>
+				</textElement>
+				<text><![CDATA[年龄]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="70" width="100" height="30" uuid="39dca19b-3464-4187-a8a6-b81d7f1d5901"/>
+				<textElement>
+					<font fontName="华文宋体"/>
+				</textElement>
+				<text><![CDATA[公司]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="320" y="70" width="100" height="30" uuid="81240583-f76b-4713-83cf-6230bdcf792d"/>
+				<textElement>
+					<font fontName="华文宋体"/>
+				</textElement>
+				<text><![CDATA[岗位]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="200" y="30" width="100" height="30" uuid="fe2a4ebd-b701-429c-a099-0bfb7621e2a0"/>
+				<textElement>
+					<font fontName="华文宋体"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{username}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="420" y="30" width="100" height="30" uuid="1a8c5556-b935-4f02-bc17-85fad647d522"/>
+				<textFieldExpression><![CDATA[$P{age}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="200" y="70" width="100" height="30" uuid="fec3181b-5e93-46fe-95a5-3c59cd357d77"/>
+				<textElement>
+					<font fontName="华文宋体"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{company}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="420" y="70" width="100" height="30" uuid="ed8cd221-5386-4fc3-8049-4d34d684acbe"/>
+				<textElement>
+					<font fontName="华文宋体"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{dept}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

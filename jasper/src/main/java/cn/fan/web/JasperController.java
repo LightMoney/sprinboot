@@ -1,6 +1,8 @@
 package cn.fan.web;
 
+import cn.fan.model.User;
 import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,7 +15,9 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 
 @RestController
@@ -88,7 +92,8 @@ public class JasperController {
      * 选择对应驱动 输入用户名密码       Driver Classpath  引入对应的驱动包  测试连接成功后
      * 创建jasper工程，选择上面创建的连接，写sql完成fields的导入，拖进去就可以
      * 只保留后面有函数的部分呢   在detail区域操作  将区域高和fields的高设置为相同  生成的list行间无间隙
-     *选中对应的fields可在属性中设置border
+     * 选中对应的fields可在属性中设置border
+     *
      * @param request
      * @param response
      * @throws IOException
@@ -115,16 +120,18 @@ public class JasperController {
     }
 
 
-    /**jdbc 数据填充   动态传参
+    /**
+     * jdbc 数据填充   动态传参
      * 适用于多数据list
-     *
+     * <p>
      * jasper studio中 Repository Explorer 中Data Adapter 右键新建连接  选择jdbc连接
      * <p>
      * 选择对应驱动 输入用户名密码       Driver Classpath  引入对应的驱动包  测试连接成功后
      * 创建jasper工程，选择上面创建的连接，写sql  添加条件 where id=$P{cid}     完成fields的导入，拖进去就可以
-     * 然后再Paramter中创建参数   cid
+     * 然后在Paramter中创建参数   cid
      * 只保留后面有函数的部分呢   在detail区域操作  将区域高和fields的高设置为相同  生成的list行间无间隙
-     *选中对应的fields可在属性中设置border
+     * 选中对应的fields可在属性中设置border
+     *
      * @param request
      * @param response
      * @throws IOException
@@ -139,7 +146,7 @@ public class JasperController {
 //        2.创建jasperPrint，向jasper 中填充数据
         try {
             HashMap<String, Object> map = new HashMap<>();
-            map.put("cid","1063705989926227968");
+            map.put("cid", "1063705989926227968");
             Connection connection = getConnection();
             JasperPrint print = JasperFillManager.fillReport(inputStream, map, connection);
 //            3.将 jasperPrint 输出 为pdf
@@ -151,10 +158,147 @@ public class JasperController {
             os.close();
         }
     }
+
     public Connection getConnection() throws Exception {
         Class.forName("com.mysql.jdbc.Driver");
         Connection connection = DriverManager
                 .getConnection("jdbc:mysql://localhost/hrm?serverTimezone=UTC&useUnicode=true&characterEncoding=UTF-8", "root", "root");
         return connection;
     }
+
+    /**
+     * javabean数据填充
+     * <p>
+     * 在outline  fields中创建对应的字段  与实体类中字段相同
+     * 拉到jasper 界面即可
+     *
+     * @param request
+     * @param response
+     * @throws IOException
+     */
+    @GetMapping("/test/bean")
+    public void creatPdf4(HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+        ServletOutputStream os = response.getOutputStream();
+        //1.引入使用工具建好的jasper 文件
+        Resource classPathResource = new ClassPathResource("template/javabean.jasper");
+        FileInputStream inputStream = new FileInputStream(classPathResource.getFile());
+//        2.创建jasperPrint，向jasper 中填充数据
+        try {
+            HashMap<String, Object> map = new HashMap<>();
+            List<User> users = new ArrayList<User>();
+            for (int i = 0; i < 5; i++) {
+                User user = new User();
+                user.setName("colin");
+                user.setAge("12");
+                user.setCompany("光源科技");
+                user.setDept("研发部");
+                users.add(user);
+            }
+            JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(users);
+            JasperPrint print = JasperFillManager.fillReport(inputStream, map, dataSource);
+//            3.将 jasperPrint 输出 为pdf
+            JasperExportManager.exportReportToPdfStream(print, os);
+        } catch (JRException e) {
+            e.printStackTrace();
+        } finally {
+            os.flush();
+            os.close();
+        }
+    }
+
+    /**
+     * 分组 报表
+     *
+     * @param request
+     * @param response
+     * @throws Exception
+     */
+    @GetMapping("/test/group")
+    public void creatPdf5(HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+        ServletOutputStream os = response.getOutputStream();
+        //1.引入使用工具建好的jasper 文件
+        Resource classPathResource = new ClassPathResource("template/group.jasper");
+        FileInputStream inputStream = new FileInputStream(classPathResource.getFile());
+//        2.创建jasperPrint，向jasper 中填充数据
+        try {
+            HashMap<String, Object> map = new HashMap<>();
+            List<User> users = new ArrayList<User>();
+            for (int i = 0; i < 5; i++) {
+                User user = new User();
+                user.setName("colin");
+                user.setAge("12");
+                user.setCompany("光源科技");
+                user.setDept("研发部");
+                users.add(user);
+            }
+
+            for (int i = 0; i < 5; i++) {
+                User user = new User();
+                user.setName("li");
+                user.setAge("12");
+                user.setCompany("佳佳科技");
+                user.setDept("研发部");
+                users.add(user);
+            }
+            JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(users);
+            JasperPrint print = JasperFillManager.fillReport(inputStream, map, dataSource);
+//            3.将 jasperPrint 输出 为pdf
+            JasperExportManager.exportReportToPdfStream(print, os);
+        } catch (JRException e) {
+            e.printStackTrace();
+        } finally {
+            os.flush();
+            os.close();
+        }
+    }
+
+    /**
+     * 图形报表
+     * @param request
+     * @param response
+     * @throws Exception
+     */
+    @GetMapping("/test/chart")
+    public void creatPdf6(HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+        ServletOutputStream os = response.getOutputStream();
+        //1.引入使用工具建好的jasper 文件
+        Resource classPathResource = new ClassPathResource("template/chart.jasper");
+        FileInputStream inputStream = new FileInputStream(classPathResource.getFile());
+//        2.创建jasperPrint，向jasper 中填充数据
+        try {
+            HashMap<String, Object> map = new HashMap<>();
+            List<User> users = new ArrayList<User>();
+            for (int i = 0; i < 5; i++) {
+                User user = new User();
+                user.setName("colin");
+                user.setAge("12");
+                user.setCompany("光源科技");
+                user.setDept("研发部");
+                users.add(user);
+            }
+
+            for (int i = 0; i < 5; i++) {
+                User user = new User();
+                user.setName("li");
+                user.setAge("12");
+                user.setCompany("佳佳科技");
+                user.setDept("研发部");
+                users.add(user);
+            }
+            JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(users);
+            JasperPrint print = JasperFillManager.fillReport(inputStream, map, dataSource);
+//            3.将 jasperPrint 输出 为pdf
+            JasperExportManager.exportReportToPdfStream(print, os);
+        } catch (JRException e) {
+            e.printStackTrace();
+        } finally {
+            os.flush();
+            os.close();
+        }
+    }
 }
+
+

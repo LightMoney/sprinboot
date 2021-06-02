@@ -12,3 +12,5 @@ https://community.jaspersoft.com/community-download
         引入jasperreports_extension.properties  文件
         stsong文件夹下fonts.xml中配置使用的中文字体
         stsong.ttf文件已经有所有字体了
+
+jr下放的是jasper  studio的设计jrxml  便于参考复习
