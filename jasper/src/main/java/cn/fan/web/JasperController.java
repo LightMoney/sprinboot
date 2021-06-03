@@ -288,6 +288,49 @@ public class JasperController {
             os.close();
         }
     }
+
+
+    /**
+     * 父子报表
+     * subList 类型
+     * java.util.List
+     *
+     * Data  source  expression
+     * new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($P{subList})
+     *
+     * @param request
+     * @param response
+     * @throws Exception
+     */
+    @GetMapping("/test/double")
+    public void creatPdf7(HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+        ServletOutputStream os = response.getOutputStream();
+        //1.引入使用工具建好的jasper 文件
+        Resource classPathResource = new ClassPathResource("template/main.jasper");
+        FileInputStream inputStream = new FileInputStream(classPathResource.getFile());
+//        2.创建jasperPrint，向jasper 中填充数据
+        try {
+            HashMap<String, Object> map = new HashMap<>();
+            List<UserCount> users = new ArrayList<UserCount>();
+            UserCount user1 = new UserCount("光源科技", 10L);
+            UserCount user2 = new UserCount("佳佳科技", 5L);
+            users.add(user1);
+            users.add(user2);
+            Resource resource = new ClassPathResource("template/chart.jasper");
+            map.put("subPath",resource.getFile().getPath());
+            map.put("subList",users);
+
+            JasperPrint print = JasperFillManager.fillReport(inputStream, map, new JREmptyDataSource());
+//            3.将 jasperPrint 输出 为pdf
+            JasperExportManager.exportReportToPdfStream(print, os);
+        } catch (JRException e) {
+            e.printStackTrace();
+        } finally {
+            os.flush();
+            os.close();
+        }
+    }
 }
 
 
