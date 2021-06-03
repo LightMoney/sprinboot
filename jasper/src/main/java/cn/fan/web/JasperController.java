@@ -1,6 +1,7 @@
 package cn.fan.web;
 
 import cn.fan.model.User;
+import cn.fan.model.UserCount;
 import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import org.springframework.core.io.ClassPathResource;
@@ -270,24 +271,12 @@ public class JasperController {
 //        2.创建jasperPrint，向jasper 中填充数据
         try {
             HashMap<String, Object> map = new HashMap<>();
-            List<User> users = new ArrayList<User>();
-            for (int i = 0; i < 5; i++) {
-                User user = new User();
-                user.setName("colin");
-                user.setAge("12");
-                user.setCompany("光源科技");
-                user.setDept("研发部");
-                users.add(user);
-            }
+            List<UserCount> users = new ArrayList<UserCount>();
+            UserCount user1 = new UserCount("光源科技", 10L);
+            UserCount user2 = new UserCount("佳佳科技", 5L);
+            users.add(user1);
+            users.add(user2);
 
-            for (int i = 0; i < 5; i++) {
-                User user = new User();
-                user.setName("li");
-                user.setAge("12");
-                user.setCompany("佳佳科技");
-                user.setDept("研发部");
-                users.add(user);
-            }
             JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(users);
             JasperPrint print = JasperFillManager.fillReport(inputStream, map, dataSource);
 //            3.将 jasperPrint 输出 为pdf

@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.5.0.final using JasperReports Library version 6.5.0  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="chart" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4c893a13-c198-4a3d-8cc4-4aae16c101fd">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="chart" pageWidth="595" pageHeight="842" whenNoDataType="NoDataSection" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4c893a13-c198-4a3d-8cc4-4aae16c101fd">
 	<queryString>
 		<![CDATA[]]>
 	</queryString>
-	<field name="companyName" class="java.lang.String"/>
-	<field name="count" class="java.lang.Long">
-		<fieldDescription><![CDATA[员工数量]]></fieldDescription>
-	</field>
+	<field name="company" class="java.lang.String"/>
+	<field name="count" class="java.lang.Long"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -26,7 +24,7 @@
 		<band height="307" splitType="Stretch">
 			<pieChart>
 				<chart evaluationTime="Report">
-					<reportElement x="150" y="80" width="200" height="200" uuid="24ed957c-0d5f-481e-bb11-f0f5adfefd73"/>
+					<reportElement stretchType="ElementGroupHeight" x="150" y="80" width="200" height="200" uuid="a507a96b-53d6-4b28-a51c-bbb1445752fe"/>
 					<chartTitle>
 						<font fontName="华文宋体"/>
 						<titleExpression><![CDATA["公司人员统计图"]]></titleExpression>
@@ -35,9 +33,9 @@
 					<chartLegend/>
 				</chart>
 				<pieDataset>
-					<keyExpression><![CDATA[$F{companyName}]]></keyExpression>
+					<keyExpression><![CDATA[$F{company}]]></keyExpression>
 					<valueExpression><![CDATA[$F{count}]]></valueExpression>
-					<labelExpression><![CDATA[$F{companyName}]]></labelExpression>
+					<labelExpression><![CDATA[$F{company}]]></labelExpression>
 				</pieDataset>
 				<piePlot>
 					<plot/>
